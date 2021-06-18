@@ -44,8 +44,6 @@ public class InMemoryHttpBasic extends WebSecurityConfigurerAdapter {
 
             auth.inMemoryAuthentication().withUser(username).password(password).roles(role);
 
-
-
         }
 
         System.out.print("users from database" + "\n");
@@ -53,27 +51,16 @@ public class InMemoryHttpBasic extends WebSecurityConfigurerAdapter {
 
     }
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-        http
-                .httpBasic()
-                .and()
-                .csrf().disable();
-
+        // protect all resources
+        http.authorizeRequests().anyRequest().fullyAuthenticated();
+        // protect with http basic authentication
+        http.httpBasic();
+        http.csrf().disable();
     }
 
-
-
-
-    /*
-
-            enity label for gui JInternal is loading without
-            http basic method
-
-     */
-
+    @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/detaillabeldesktopentry/getloginlabel");
     }
