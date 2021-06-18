@@ -23,7 +23,7 @@ public class CtlDesktopLabel
     @Autowired
     de.jgsoftware.lanserver.service.LoginWindowService loginWindowService;
 
-    @GetMapping("/detaillabeldesktopentry/getloginlabel")
+    @RequestMapping("/detaillabeldesktopentry/getloginlabel")
     public ResponseEntity<List<Desktoplayout>> getWindowEntitys()
     {
         return new ResponseEntity<List<Desktoplayout>>(loginWindowService.getLoginWindow().getlogintextentry(), HttpStatus.OK);
