@@ -6,10 +6,7 @@
         <packages>
           <package value="de.jgsoftware.lanserver.model" />
         </packages>
-        <entities>
-          <entity value="org.springframework.data.jpa.domain.AbstractPersistable" />
-          <entity value="org.springframework.data.jpa.domain.AbstractAuditable" />
-        </entities>
+       
       </persistence-unit>
     </persistence-units>
   </component>
