@@ -1,9 +1,15 @@
 package de.jgsoftware.lanserver.model;
 
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "DESKTOPLAYOUT", schema = "PUBLIC", catalog = "DEMODB")
 public class Desktoplayout
 {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String framename;
     private String de;

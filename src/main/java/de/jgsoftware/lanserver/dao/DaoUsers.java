@@ -18,7 +18,7 @@ public class DaoUsers
 
     public List<Users> getAllUsers()
     {
-        List<Users> demousers = jtm.query("select * from userdata", new BeanPropertyRowMapper(Users.class));
+        List<Users> demousers = jtm.query("select * from users", new BeanPropertyRowMapper(Users.class));
         return demousers;
     }
 

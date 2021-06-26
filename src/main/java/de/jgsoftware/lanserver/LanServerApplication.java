@@ -12,12 +12,20 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 @SpringBootApplication
 public class LanServerApplication {
 
+    static {
+        //for localhost testing only
+        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
+                (hostname, sslSession) -> hostname.equals("localhost"));
+    }
+
     public static void main(String[] args)
     {
         System.setProperty("spring.profiles.default", "dev");
 
         System.setProperty("spring.devtools.restart.enabled", "true");
+
+
+
         SpringApplication.run(LanServerApplication.class, args);
     }
-
 }
