@@ -41,6 +41,18 @@ public class CtrlUsers
 
 
 
+    @RequestMapping("/loginclientuser")
+    public ResponseEntity<Users> loginclientuser(String username, String password)
+    {
+
+
+        String user = username.toString();
+        String pass = password.toString();
+
+
+        return new ResponseEntity<Users>(HttpStatus.OK);
+    }
+
 
     @RequestMapping("/getUserData")
     public String getTestLogin()
