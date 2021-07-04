@@ -48,9 +48,9 @@ public class DaoLoginWindow
 
         String result = framename.toString();
 
-        String sql = "select * from desktoptextlayout where framename like " + "'" + result + "'";
+        String sql = "select * from DESKTOPLAYOUT where framename like " + "'" + result + "'";
         System.out.print(sql + "\n" + "\n");
-        List<Desktoplayout> desktopframeentytext = jtm.query("select * from desktoptextlayout where framename like " + "'" + result + "'", new BeanPropertyRowMapper(Desktoplayout.class));
+        List<Desktoplayout> desktopframeentytext = jtm.query("select * from DESKTOPLAYOUT where framename like " + "'" + result + "'", new BeanPropertyRowMapper(Desktoplayout.class));
         return desktopframeentytext;
 
     }

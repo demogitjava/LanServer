@@ -8,16 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.util.List;
 
-@Controller
+@RestController
 public class CtrlUsers
 {
 
@@ -31,7 +28,7 @@ public class CtrlUsers
         return user;
     }
 
-    @GetMapping(value = "/user", consumes = "application/json")
+    @PostMapping(value = "/user")
     public ResponseEntity<String> getUserById(String token)
     {
         token.getBytes(StandardCharsets.UTF_8);
@@ -39,9 +36,7 @@ public class CtrlUsers
         return new ResponseEntity<String>("success", HttpStatus.OK);
     }
 
-
-
-    @RequestMapping("/loginclientuser")
+    @PostMapping("/loginclientuser")
     public ResponseEntity<Users> loginclientuser(String username, String password)
     {
 
@@ -64,6 +59,7 @@ public class CtrlUsers
     @PostMapping(value = "/createuser")
     public ResponseEntity<Users> createUser(Users users)
     {
+
 
         System.out.print("es soll ein benutzer angelegt werden!");
         return createUser(users);
