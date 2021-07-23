@@ -23,7 +23,4 @@ public class LanServerApplication {
         SpringApplication.run(LanServerApplication.class, args);
     }
 
-
-
-
 }
