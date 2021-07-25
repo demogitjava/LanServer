@@ -29,7 +29,7 @@
             <url>http://repo.maven.apache.org/maven2/</url>
             <layout>default</layout>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </releases>
             <snapshots>
                 <enabled>false</enabled>
@@ -180,7 +180,10 @@
             <artifactId>commons-compress</artifactId>
             <version>1.0</version>
         </dependency>
-
+        
+     
+      
+        
     </dependencies>
 
     <build>
