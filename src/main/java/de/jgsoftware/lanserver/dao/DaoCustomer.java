@@ -23,7 +23,7 @@ public class DaoCustomer
     public List<MKundenstamm> getCustomerbyname(String customername)
     {
         String beginswith = customername + "%";
-        List<MKundenstamm> customerlist = jtm.query("select * from kundenstamm where ansprechpartner like " + "'" + beginswith + "'", new BeanPropertyRowMapper(MKundenstamm.class));
+        List<MKundenstamm> customerlist = jtm.query("select * from kundenstamm where kundenname like " + "'" + beginswith + "'", new BeanPropertyRowMapper(MKundenstamm.class));
         return customerlist;
     }
 }
