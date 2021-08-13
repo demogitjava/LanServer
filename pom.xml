@@ -19,7 +19,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-       
+      
     </properties>
 
 
@@ -194,14 +194,18 @@
 
     <build>
 
-        <!--
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.4.5</version>
+                <configuration>
+                    <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
-        -->
+
 
     </build>
 
