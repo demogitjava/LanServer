@@ -6,8 +6,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.0</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <version>2.4.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>de.jgsoftware.lanserver</groupId>
@@ -206,6 +206,7 @@
             </plugin>
         </plugins>
 
+        <finalName>lanserver</finalName>
 
     </build>
 
