@@ -195,6 +195,7 @@
     <build>
 
 
+        <finalName>Lanserver</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -204,9 +205,8 @@
                     <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
                 </configuration>
             </plugin>
-        </plugins>
 
-        <finalName>lanserver</finalName>
+        </plugins>
 
     </build>
 
