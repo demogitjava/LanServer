@@ -61,6 +61,38 @@ public class MKundenstamm implements Serializable {
 
     private Date timestamp;
 
+    private int gebiet;
+
+    private int vertreter;
+
+    private String bankverbindung;
+
+    public int getVertreter() {
+        return vertreter;
+    }
+
+    public void setVertreter(int vertreter) {
+        this.vertreter = vertreter;
+    }
+
+    public String getBankverbindung() {
+        return bankverbindung;
+    }
+
+    public void setBankverbindung(String bankverbindung) {
+        this.bankverbindung = bankverbindung;
+    }
+
+    public int getGebiet() {
+        return gebiet;
+    }
+
+    public void setGebiet(int gebiet) {
+        this.gebiet = gebiet;
+    }
+
+
+
     public MKundenstamm() {
     }
 

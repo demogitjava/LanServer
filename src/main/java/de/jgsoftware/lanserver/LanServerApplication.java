@@ -92,9 +92,10 @@ public class LanServerApplication {
 
     public static void main(String[] args)
     {
+        /*
         System.setProperty("spring.profiles.default", "dev");
         System.setProperty("spring.devtools.restart.enabled", "true");
-
+            */
         SpringApplication.run(LanServerApplication.class, args);
     }
 
