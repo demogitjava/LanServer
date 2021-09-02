@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -36,4 +37,14 @@ public class CtrlCustomer
         List<MKundenstamm> customerlist = customerservice.getDaocustomer().getCustomerbyname(customername);
         return new ResponseEntity<List<MKundenstamm>>(customerlist, HttpStatus.OK);
     }
+
+    @PostMapping("/createnewcustomer")
+    public ResponseEntity<MKundenstamm> createnewcustomer(MKundenstamm mKundenstamm)
+    {
+
+        customerservice.getDaocustomer().createCustomer(mKundenstamm);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
