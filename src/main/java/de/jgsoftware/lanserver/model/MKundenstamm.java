@@ -11,6 +11,7 @@ import javax.validation.constraints.Size;
  */
 public class MKundenstamm {
 
+
     private int id;
 
     private String kundennummer;
@@ -71,6 +72,7 @@ public class MKundenstamm {
 
     public MKundenstamm() {
     }
+
 
     public int getId() {
         return id;

@@ -7,16 +7,14 @@ package de.jgsoftware.lanserver.controller;
 
 import de.jgsoftware.lanserver.model.Desktoplayout;
 import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.service.SCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,12 +37,14 @@ public class CtrlCustomer
     }
 
     @PostMapping("/createnewcustomer")
-    public ResponseEntity<MKundenstamm> createnewcustomer(MKundenstamm mKundenstamm)
+    @ResponseStatus(HttpStatus.CREATED)
+    public  ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
-
         customerservice.getDaocustomer().createCustomer(mKundenstamm);
-
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+
+
 
 }

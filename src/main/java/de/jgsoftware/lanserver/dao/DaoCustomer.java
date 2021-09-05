@@ -33,9 +33,10 @@ public class DaoCustomer
     public MKundenstamm createCustomer(MKundenstamm mKundenstamm)
     {
 
-        String saveuser = "INSERT INTO KUNDENSTAMM(id,fname,lname,email) values(?,?,?,?)";
+        String saveuser = "INSERT INTO KUNDENSTAMM(id,kundennummer,kundenname,land,nameAnschrift1,nameAnschrift2,nameAnschrift3,nameAnschrift4,strasse,plz,ort,iban,blz,kontoNr,kreditlimit,telefon,mobil1,mobil2,sip,email,ansprechpartner,umsatzLfdJahr,umsatzJahr1,umsatzJahr2,timestamp,gebiet,vertreter,bankverbindung) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         jtm.update(saveuser, kdstamm);
 
+       
         return mKundenstamm;
     }
 }
