@@ -1,0 +1,6 @@
+version: '3'
+services:
+  lanserver:
+    build: lanserver/
+    ports:
+      - "8443:8443"

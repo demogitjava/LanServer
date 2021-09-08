@@ -6,6 +6,7 @@
 package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.model.Desktoplayout;
+import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.stereotype.Repository;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import java.util.List;
@@ -33,10 +34,13 @@ public class DaoCustomer
     public MKundenstamm createCustomer(MKundenstamm mKundenstamm)
     {
 
-        String saveuser = "INSERT INTO KUNDENSTAMM(id,kundennummer,kundenname,land,nameAnschrift1,nameAnschrift2,nameAnschrift3,nameAnschrift4,strasse,plz,ort,iban,blz,kontoNr,kreditlimit,telefon,mobil1,mobil2,sip,email,ansprechpartner,umsatzLfdJahr,umsatzJahr1,umsatzJahr2,timestamp,gebiet,vertreter,bankverbindung) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-        jtm.update(saveuser, kdstamm);
+        String saveuser = "INSERT INTO KUNDENSTAMM(kundennummer,kundenname,land,name_Anschrift1,name_Anschrift2,name_Anschrift3,name_Anschrift4,strasse,plz,ort,iban,blz,konto_nr,kreditlimit,telefon,mobil1,mobil2,sip,email,ansprechpartner,umsatz_Lfd_Jahr,umsatz_Jahr_1,umsatz_Jahr_2,timestamp,gebiet,vertreter,bankverbindung,id) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        //jtm.update(saveuser, mKundenstamm);
 
-       
+
+
         return mKundenstamm;
     }
 }
+
+

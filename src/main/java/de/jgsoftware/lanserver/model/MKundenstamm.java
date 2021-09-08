@@ -2,6 +2,9 @@ package de.jgsoftware.lanserver.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -9,9 +12,12 @@ import javax.validation.constraints.Size;
  *
  * @author hoscho
  */
-public class MKundenstamm {
+public class MKundenstamm implements Serializable{
 
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String kundennummer;

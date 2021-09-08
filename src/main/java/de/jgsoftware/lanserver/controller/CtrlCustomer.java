@@ -40,7 +40,7 @@ public class CtrlCustomer
     @ResponseStatus(HttpStatus.CREATED)
     public  ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
-        mKundenstamm = new MKundenstamm();
+
         customerservice.getDaocustomer().createCustomer(mKundenstamm);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
