@@ -77,7 +77,10 @@ public class LanServerApplication {
 
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("de.jgsoftware.lanserver.model");
+        
+        
         factory.setDataSource(dataSource);
+                
         factory.afterPropertiesSet();
         return factory.getObject();
     }

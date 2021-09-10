@@ -6,15 +6,17 @@
 package de.jgsoftware.lanserver.dao.interfaces;
 
 import de.jgsoftware.lanserver.model.MKundenstamm;
+import java.io.Serializable;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author hoscho
  */
-public interface DCustomer extends JpaRepository<MKundenstamm, Integer>
+public interface DCustomer extends CrudRepository<MKundenstamm,Serializable>
 {
-    
+   
   
 }
