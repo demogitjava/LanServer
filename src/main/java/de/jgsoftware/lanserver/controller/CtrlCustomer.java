@@ -41,12 +41,20 @@ public class CtrlCustomer
     public  ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
 
-        customerservice.getDaocustomer().saveCustomer(mKundenstamm);
+        customerservice.getDaocustomer().saveOrUpdate(mKundenstamm);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 
-    
+    @PostMapping("/updatenewcustomer")
+    @ResponseStatus(HttpStatus.OK)
+    public  ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm mKundenstamm)
+    {
+
+        customerservice.getDaocustomer().saveOrUpdate(mKundenstamm);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
 
 
 }

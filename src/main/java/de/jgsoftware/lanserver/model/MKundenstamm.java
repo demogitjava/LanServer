@@ -20,7 +20,6 @@ public class MKundenstamm implements Serializable
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
     private String kundennummer;
