@@ -22,6 +22,11 @@ public class LanServerApplication {
 
     private org.h2.tools.Server h2Server;
 
+
+    private DriverManagerDataSource dataSource3;
+    private DriverManagerDataSource dataSource1;
+    private DriverManagerDataSource dataSource2;
+
     public LanServerApplication()
     {
 
@@ -52,16 +57,40 @@ public class LanServerApplication {
     @Bean
     @Primary
     @ConfigurationProperties(prefix="spring.datasource")
-    public DataSource datasource()
+    public DataSource datasource3()
     {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-            /*
-            dataSource.setDriverClassName("org.h2.Driver");
-            dataSource.setUrl("jdbc:h2:tcp://localhost:9092/~/shopdb");
-            dataSource.setUsername("admin");
-            dataSource.setPassword("jj78mvpr52k1");
-            */
-        return dataSource;
+        dataSource3 = new DriverManagerDataSource();
+        dataSource3.setDriverClassName("org.h2.Driver");
+        dataSource3.setUrl("jdbc:h2:tcp://localhost:9092/~/demodb");
+        dataSource3.setUsername("admin");
+        dataSource3.setPassword("jj78mvpr52k1");
+
+        return dataSource3;
+    }
+
+
+    // mawi db
+    public DataSource dataSource1()
+    {
+        dataSource1 = new DriverManagerDataSource();
+        dataSource1.setDriverClassName("org.h2.Driver");
+        dataSource1.setUrl("jdbc:h2:tcp://localhost:9092/~/mawi");
+        dataSource1.setUsername("admin");
+        dataSource1.setPassword("jj78mvpr52k1");
+
+        return dataSource1;
+    }
+
+
+    public DataSource dataSource2()
+    {
+        dataSource2 = new DriverManagerDataSource();
+        dataSource2.setDriverClassName("org.h2.Driver");
+        dataSource2.setUrl("jdbc:h2:tcp://localhost:9092/~/fibu");
+        dataSource2.setUsername("admin");
+        dataSource2.setPassword("jj78mvpr52k1");
+
+        return dataSource2;
     }
 
 
@@ -79,8 +108,11 @@ public class LanServerApplication {
         factory.setPackagesToScan("de.jgsoftware.lanserver.model");
         
         
-        factory.setDataSource(dataSource);
-                
+        factory.setDataSource(datasource3());  // demodb
+        factory.setDataSource(dataSource2()); // mawi
+        factory.setDataSource(dataSource1()); // fibu
+
+
         factory.afterPropertiesSet();
         return factory.getObject();
     }

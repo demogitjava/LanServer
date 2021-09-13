@@ -25,8 +25,8 @@ public class CtrlCustomer
     
     @Autowired
     SCustomer customerservice;
-    
-    
+
+    de.jgsoftware.lanserver.dto.MKundenstamm dtokundenstamm;
 
 
     @GetMapping("/getCustomerbyName/{customername}")
@@ -41,18 +41,18 @@ public class CtrlCustomer
     public  ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
 
-        customerservice.getDaocustomer().saveOrUpdate(mKundenstamm);
+        customerservice.getDaocustomer().save(mKundenstamm);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 
     @PostMapping("/updatenewcustomer")
     @ResponseStatus(HttpStatus.OK)
-    public  ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm mKundenstamm)
+    public  ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm dtokundenstamm)
     {
 
-        customerservice.getDaocustomer().saveOrUpdate(mKundenstamm);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        customerservice.getDaocustomer().UpdateCustomer(dtokundenstamm);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

@@ -5,6 +5,7 @@
  */
 package de.jgsoftware.lanserver.dao;
 
+import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import de.jgsoftware.lanserver.model.MKundenstamm;
@@ -20,20 +21,21 @@ public class DaoCustomer
 {
 
 
-    final
+    @Autowired
     JdbcTemplate jtm;
 
-    final
+    @Autowired
     DCustomer interfaceDCustomer;
+
+    @Autowired
+    JPACustomer restjpacustomer;
 
     private MKundenstamm kdstamm;
     
-    public DaoCustomer(DCustomer interfaceDCustomer, JdbcTemplate jtm)
+    public DaoCustomer()
     {
 
 
-        this.interfaceDCustomer = interfaceDCustomer;
-        this.jtm = jtm;
     }
     
    
@@ -45,20 +47,16 @@ public class DaoCustomer
     }
     
     
-    // save new customer
-    /*
-    public MKundenstamm saveCustomer(MKundenstamm mKundenstamm)
-    {       
-       
-        int id = (int) interfaceDCustomer.count();
-        mKundenstamm.setId(id+1);
 
-        return interfaceDCustomer.save(mKundenstamm);
+    public MKundenstamm UpdateCustomer(MKundenstamm dtokundenstamm)
+    {
+
+        return interfaceDCustomer.save(dtokundenstamm);
     }
-    */
+
     
 
-    public MKundenstamm saveOrUpdate(MKundenstamm mKundenstamm)
+    public MKundenstamm save(MKundenstamm mKundenstamm)
     {
         int id = (int) interfaceDCustomer.count();
         mKundenstamm.setId(id+1);
