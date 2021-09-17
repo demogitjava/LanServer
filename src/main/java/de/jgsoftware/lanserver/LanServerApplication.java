@@ -1,5 +1,6 @@
 package de.jgsoftware.lanserver;
 
+
 import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
@@ -52,16 +53,15 @@ public class LanServerApplication {
     }
 
     // demodb
-    @Bean
 
+    /*
+    @Bean
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource datasource()
     {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         return dataSource;
     }
-
-
 
     // demodb
     @Bean
@@ -79,6 +79,9 @@ public class LanServerApplication {
         factory.afterPropertiesSet();
         return factory.getObject();
     }
+
+    */
+
 
     static {
         //for localhost testing only

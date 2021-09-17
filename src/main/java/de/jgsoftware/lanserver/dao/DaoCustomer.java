@@ -7,6 +7,7 @@ package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import java.util.List;
