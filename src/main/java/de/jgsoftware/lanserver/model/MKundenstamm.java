@@ -20,9 +20,9 @@ public class MKundenstamm implements Serializable
 
 
     @Id
-    private int id;
+    private Long id;
 
-    private String kundennummer;
+    private Long kundennummer;
 
     private String kundenname;
 
@@ -82,11 +82,11 @@ public class MKundenstamm implements Serializable
     }
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -114,8 +114,6 @@ public class MKundenstamm implements Serializable
         this.bankverbindung = bankverbindung;
     }
 
-
-
     public String getKundenname() {
         return kundenname;
     }
@@ -124,18 +122,11 @@ public class MKundenstamm implements Serializable
         this.kundenname = kundenname;
     }
 
-
-
-
-    public MKundenstamm(String kundennummer) {
-        this.kundennummer = kundennummer;
-    }
-
-    public String getKundennummer() {
+    public Long getKundennummer() {
         return kundennummer;
     }
 
-    public void setKundennummer(String kundennummer) {
+    public void setKundennummer(Long kundennummer) {
         this.kundennummer = kundennummer;
     }
 
@@ -195,9 +186,6 @@ public class MKundenstamm implements Serializable
         this.konto_Nr = konto_Nr;
     }
 
-  
-    
-
     public Double getKreditlimit() {
         return kreditlimit;
     }
@@ -253,8 +241,6 @@ public class MKundenstamm implements Serializable
     public void setAnsprechpartner(String ansprechpartner) {
         this.ansprechpartner = ansprechpartner;
     }
-
-
 
     public Date getTimestamp() {
         return timestamp;

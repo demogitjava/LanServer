@@ -5,6 +5,10 @@ Demo Lanserver
 this is a demolanserver application to 
 run rest-services behind a router.
 
+install the h2 database
+
+http://www.h2database.com/html/download.html
+an start the server h2.bat under windows.
 
 
 To run the application over maven from source type

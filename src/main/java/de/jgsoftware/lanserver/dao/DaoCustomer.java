@@ -59,10 +59,8 @@ public class DaoCustomer
 
     public MKundenstamm save(MKundenstamm mKundenstamm)
     {
-        int id = (int) interfaceDCustomer.count();
+        Long id = (Long) interfaceDCustomer.count();
         mKundenstamm.setId(id+1);
-
-
 
         return interfaceDCustomer.save(mKundenstamm);
     }

@@ -2,6 +2,7 @@ package de.jgsoftware.lanserver.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,27 +13,29 @@ import javax.validation.constraints.Size;
  *
  * @author hoscho
  */
-public class MKundenstamm implements Serializable{
+
+public class dtoMKundenstamm
+{
 
 
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String kundennummer;
+    private Long kundennummer;
 
     private String kundenname;
 
     private String land;
 
-    private String nameAnschrift1;
+    private String name_Anschrift1;
 
-    private String nameAnschrift2;
+    private String name_Anschrift2;
 
-    private String nameAnschrift3;
+    private String name_Anschrift3;
 
-    private String nameAnschrift4;
+    private String name_Anschrift4;
 
     private String strasse;
 
@@ -44,7 +47,7 @@ public class MKundenstamm implements Serializable{
 
     private String blz;
 
-    private String kontoNr;
+    private String konto_Nr;
 
     private Double kreditlimit;
 
@@ -60,11 +63,11 @@ public class MKundenstamm implements Serializable{
 
     private String ansprechpartner;
 
-    private Float umsatzLfdJahr;
+    private Float umsatz_Lfd_Jahr;
 
-    private Float umsatzJahr1;
+    private Float umsatz_Jahr_1;
 
-    private Float umsatzJahr2;
+    private Float umsatz_Jahr_2;
 
     private Date timestamp;
 
@@ -76,15 +79,15 @@ public class MKundenstamm implements Serializable{
 
 
 
-    public MKundenstamm() {
+    public dtoMKundenstamm() {
     }
 
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -112,8 +115,6 @@ public class MKundenstamm implements Serializable{
         this.bankverbindung = bankverbindung;
     }
 
-
-
     public String getKundenname() {
         return kundenname;
     }
@@ -122,18 +123,11 @@ public class MKundenstamm implements Serializable{
         this.kundenname = kundenname;
     }
 
-
-
-
-    public MKundenstamm(String kundennummer) {
-        this.kundennummer = kundennummer;
-    }
-
-    public String getKundennummer() {
+    public Long getKundennummer() {
         return kundennummer;
     }
 
-    public void setKundennummer(String kundennummer) {
+    public void setKundennummer(Long kundennummer) {
         this.kundennummer = kundennummer;
     }
 
@@ -143,38 +137,6 @@ public class MKundenstamm implements Serializable{
 
     public void setLand(String land) {
         this.land = land;
-    }
-
-    public String getNameAnschrift1() {
-        return nameAnschrift1;
-    }
-
-    public void setNameAnschrift1(String nameAnschrift1) {
-        this.nameAnschrift1 = nameAnschrift1;
-    }
-
-    public String getNameAnschrift2() {
-        return nameAnschrift2;
-    }
-
-    public void setNameAnschrift2(String nameAnschrift2) {
-        this.nameAnschrift2 = nameAnschrift2;
-    }
-
-    public String getNameAnschrift3() {
-        return nameAnschrift3;
-    }
-
-    public void setNameAnschrift3(String nameAnschrift3) {
-        this.nameAnschrift3 = nameAnschrift3;
-    }
-
-    public String getNameAnschrift4() {
-        return nameAnschrift4;
-    }
-
-    public void setNameAnschrift4(String nameAnschrift4) {
-        this.nameAnschrift4 = nameAnschrift4;
     }
 
     public String getStrasse() {
@@ -217,12 +179,12 @@ public class MKundenstamm implements Serializable{
         this.blz = blz;
     }
 
-    public String getKontoNr() {
-        return kontoNr;
+    public String getKonto_Nr() {
+        return konto_Nr;
     }
 
-    public void setKontoNr(String kontoNr) {
-        this.kontoNr = kontoNr;
+    public void setKonto_Nr(String konto_Nr) {
+        this.konto_Nr = konto_Nr;
     }
 
     public Double getKreditlimit() {
@@ -281,30 +243,6 @@ public class MKundenstamm implements Serializable{
         this.ansprechpartner = ansprechpartner;
     }
 
-    public Float getUmsatzLfdJahr() {
-        return umsatzLfdJahr;
-    }
-
-    public void setUmsatzLfdJahr(Float umsatzLfdJahr) {
-        this.umsatzLfdJahr = umsatzLfdJahr;
-    }
-
-    public Float getUmsatzJahr1() {
-        return umsatzJahr1;
-    }
-
-    public void setUmsatzJahr1(Float umsatzJahr1) {
-        this.umsatzJahr1 = umsatzJahr1;
-    }
-
-    public Float getUmsatzJahr2() {
-        return umsatzJahr2;
-    }
-
-    public void setUmsatzJahr2(Float umsatzJahr2) {
-        this.umsatzJahr2 = umsatzJahr2;
-    }
-
     public Date getTimestamp() {
         return timestamp;
     }
@@ -313,25 +251,66 @@ public class MKundenstamm implements Serializable{
         this.timestamp = timestamp;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (kundennummer != null ? kundennummer.hashCode() : 0);
-        return hash;
+    public String getName_Anschrift1() {
+        return name_Anschrift1;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof MKundenstamm)) {
-            return false;
-        }
-        MKundenstamm other = (MKundenstamm) object;
-        if ((this.kundennummer == null && other.kundennummer != null) || (this.kundennummer != null && !this.kundennummer.equals(other.kundennummer))) {
-            return false;
-        }
-        return true;
+    public void setName_Anschrift1(String name_Anschrift1) {
+        this.name_Anschrift1 = name_Anschrift1;
     }
+
+    public String getName_Anschrift2() {
+        return name_Anschrift2;
+    }
+
+    public void setName_Anschrift2(String name_Anschrift2) {
+        this.name_Anschrift2 = name_Anschrift2;
+    }
+
+    public String getName_Anschrift3() {
+        return name_Anschrift3;
+    }
+
+    public void setName_Anschrift3(String name_Anschrift3) {
+        this.name_Anschrift3 = name_Anschrift3;
+    }
+
+    public String getName_Anschrift4() {
+        return name_Anschrift4;
+    }
+
+    public void setName_Anschrift4(String name_Anschrift4) {
+        this.name_Anschrift4 = name_Anschrift4;
+    }
+
+    public Float getUmsatz_Lfd_Jahr() {
+        return umsatz_Lfd_Jahr;
+    }
+
+    public void setUmsatz_Lfd_Jahr(Float umsatz_Lfd_Jahr) {
+        this.umsatz_Lfd_Jahr = umsatz_Lfd_Jahr;
+    }
+
+    public Float getUmsatz_Jahr_1() {
+        return umsatz_Jahr_1;
+    }
+
+    public void setUmsatz_Jahr_1(Float umsatz_Jahr_1) {
+        this.umsatz_Jahr_1 = umsatz_Jahr_1;
+    }
+
+    public Float getUmsatz_Jahr_2() {
+        return umsatz_Jahr_2;
+    }
+
+    public void setUmsatz_Jahr_2(Float umsatz_Jahr_2) {
+        this.umsatz_Jahr_2 = umsatz_Jahr_2;
+    }
+
+
+
+
+
 
     @Override
     public String toString() {

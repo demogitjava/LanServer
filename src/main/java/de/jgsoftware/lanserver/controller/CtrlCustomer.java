@@ -5,15 +5,13 @@
  */
 package de.jgsoftware.lanserver.controller;
 
-import de.jgsoftware.lanserver.model.Desktoplayout;
+import de.jgsoftware.lanserver.dto.dtoMKundenstamm;
 import de.jgsoftware.lanserver.model.MKundenstamm;
-import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.service.SCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,7 +24,7 @@ public class CtrlCustomer
     @Autowired
     SCustomer customerservice;
 
-    de.jgsoftware.lanserver.dto.MKundenstamm dtokundenstamm;
+    dtoMKundenstamm dtokundenstamm;
 
 
     @GetMapping("/getCustomerbyName/{customername}")
@@ -38,7 +36,7 @@ public class CtrlCustomer
 
     @PostMapping("/savenewcustomer")
     @ResponseStatus(HttpStatus.CREATED)
-    public  ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
+    public ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
 
         customerservice.getDaocustomer().save(mKundenstamm);
@@ -48,7 +46,7 @@ public class CtrlCustomer
 
     @PostMapping("/updatenewcustomer")
     @ResponseStatus(HttpStatus.OK)
-    public  ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm dtokundenstamm)
+    public ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm dtokundenstamm)
     {
 
         customerservice.getDaocustomer().UpdateCustomer(dtokundenstamm);
