@@ -1,7 +1,7 @@
 package de.jgsoftware.lanserver;
 
 
-import org.h2.tools.Server;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-
+import org.h2.tools.Server;
 import javax.net.ssl.HttpsURLConnection;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
