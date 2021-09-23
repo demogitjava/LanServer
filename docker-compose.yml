@@ -1,6 +1,6 @@
 version: '3'
 services:
-  lanserver:
-    build: lanserver/
+  h2:
+    build: h2/
     ports:
       - "8443:8443"

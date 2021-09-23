@@ -29,15 +29,21 @@ public class LanServerApplication {
     public LanServerApplication()
     {
 
-        startH2Server();
+        try {
+            h2Server();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
+    /*
     // start h2 database server
     private static void startH2Server()
     {
         try
         {
-            Server h2Server = Server.createTcpServer().start();
+           // Server h2Server = Server.createTcpServer().start();
+            Server h2Server = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").start();
             if (h2Server.isRunning(true))
             {
                 System.out.print("H2 server was started and is running." + "\n");
@@ -50,6 +56,13 @@ public class LanServerApplication {
             throw new RuntimeException("Failed to start H2 server: " + e + "\n");
         }
 
+    }
+    */
+
+
+    @Bean(initMethod = "start", destroyMethod = "stop")
+    public Server h2Server() throws SQLException {
+        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092");
     }
 
     // demodb
