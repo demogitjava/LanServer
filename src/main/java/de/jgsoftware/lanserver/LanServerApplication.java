@@ -23,27 +23,24 @@ import java.sql.SQLException;
 public class LanServerApplication {
 
 
-    private Server h2Server;
+    private org.h2.tools.Server h2Server;
 
 
     public LanServerApplication()
     {
 
-        try {
-            h2Server();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        startH2Server();
+
     }
 
-    /*
+
     // start h2 database server
     private static void startH2Server()
     {
         try
         {
            // Server h2Server = Server.createTcpServer().start();
-            Server h2Server = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").start();
+            org.h2.tools.Server h2Server = org.h2.tools.Server.createTcpServer().start();
             if (h2Server.isRunning(true))
             {
                 System.out.print("H2 server was started and is running." + "\n");
@@ -57,13 +54,10 @@ public class LanServerApplication {
         }
 
     }
-    */
 
 
-    @Bean(initMethod = "start", destroyMethod = "stop")
-    public Server h2Server() throws SQLException {
-        return Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092");
-    }
+
+
 
     // demodb
 

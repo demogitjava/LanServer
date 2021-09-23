@@ -1,6 +1,9 @@
 version: '3'
+
 services:
   h2:
-    build: h2/
-    ports:
-      - "8443:8443"
+    image: h2
+    container_name: h2
+    restart: always
+    expose:
+      - "9092:9092"
