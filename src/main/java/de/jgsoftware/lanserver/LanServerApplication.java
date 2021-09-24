@@ -15,6 +15,7 @@ import org.h2.tools.Server;
 import javax.net.ssl.HttpsURLConnection;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.io.File;
 import java.sql.SQLException;
 
 
@@ -23,35 +24,36 @@ import java.sql.SQLException;
 public class LanServerApplication {
 
 
-    private org.h2.tools.Server h2Server;
+
+    //private org.h2.tools.Server tcpServer;
 
 
     public LanServerApplication()
     {
-
-        startH2Server();
-
+        try {
+            startServer();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
     // start h2 database server
-    private static void startH2Server()
-    {
-        try
-        {
-           // Server h2Server = Server.createTcpServer().start();
-            org.h2.tools.Server h2Server = org.h2.tools.Server.createTcpServer().start();
-            if (h2Server.isRunning(true))
-            {
-                System.out.print("H2 server was started and is running." + "\n");
-            } else
-            {
-                h2Server = Server.createTcpServer().start();
-                throw new RuntimeException("Could not start H2 server." + "\n");
+    public void startServer() throws Exception {
+        new Thread(() -> {
+            try {
+                Server server = Server.createTcpServer().start();
+               // tcpServer = Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092").start();
+               
+                //tcpServer.run();
+
+                System.out.print("Tcp H2 Server is started");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to start H2 server: " + e + "\n");
-        }
+        }).start();
+
 
     }
 
@@ -61,13 +63,23 @@ public class LanServerApplication {
 
     // demodb
 
-    /*
+
     @Bean
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource datasource()
     {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         return dataSource;
+    }
+
+
+    @Bean
+    @Primary
+    @ConfigurationProperties(prefix="spring.datasource1")
+    public DataSource datasource1()
+    {
+        DriverManagerDataSource dataSource1 = new DriverManagerDataSource();
+        return dataSource1;
     }
 
     // demodb
@@ -87,7 +99,7 @@ public class LanServerApplication {
         return factory.getObject();
     }
 
-    */
+
 
 
     static {
