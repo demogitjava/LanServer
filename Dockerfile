@@ -4,10 +4,10 @@ ADD http://github.com/demogitjava/demodatabase/raw/master/demodb.mv.db /root/dem
 ADD http://github.com/demogitjava/demodatabase/raw/master/mawi.mv.db /root/mawi.mv.db
 ADD http://github.com/demogitjava/demodatabase/raw/master/shopdb.mv.db /root/shopdb.mv.db
 
-#COPY target/Lanserver.jar lanserver.jar
+COPY target/Lanserver.jar lanserver.jar
 
-#EXPOSE 8443
-#ENTRYPOINT ["java", "-jar", "lanserver.jar"]
+EXPOSE 8443
+ENTRYPOINT ["java", "-jar", "lanserver.jar"]
 
 
 
