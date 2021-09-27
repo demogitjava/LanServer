@@ -53,6 +53,13 @@ public class CtrlCustomer
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/newCustomer")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<List<MKundenstamm>> getnewcustomer()
+    {
+        List<MKundenstamm> newcustomerlist = customerservice.getDaocustomer().createnewCustomer();
+        return new ResponseEntity<List<MKundenstamm>>(newcustomerlist, HttpStatus.OK);
+    }
 
 
 }
