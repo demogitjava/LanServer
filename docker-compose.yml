@@ -1,9 +1,0 @@
-version: '3'
-
-services:
-  h2:
-    image: h2
-    container_name: h2
-    restart: always
-    expose:
-      - "9092:9092"

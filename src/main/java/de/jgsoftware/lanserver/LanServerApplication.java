@@ -65,6 +65,7 @@ public class LanServerApplication {
 
 
     @Bean
+    @Primary
     @ConfigurationProperties(prefix="spring.datasource")
     public DataSource datasource()
     {
@@ -74,7 +75,6 @@ public class LanServerApplication {
 
 
     @Bean
-    @Primary
     @ConfigurationProperties(prefix="spring.datasource1")
     public DataSource datasource1()
     {

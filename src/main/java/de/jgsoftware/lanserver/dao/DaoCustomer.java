@@ -6,11 +6,13 @@
 package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import de.jgsoftware.lanserver.model.MKundenstamm;
-import java.util.List;
+
+import java.util.*;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -63,6 +65,26 @@ public class DaoCustomer
         mKundenstamm.setId(id+1);
 
         return interfaceDCustomer.save(mKundenstamm);
+    }
+
+    public List createnewCustomer()
+    {
+
+        Long kundennummer = (Long) interfaceDCustomer.count();
+        Long kdnummernkreis = kundennummer + 10102000 + 1;
+
+        Long id = (Long) interfaceDCustomer.count() +1;
+
+
+        MKundenstamm mkdstamm = new MKundenstamm();
+        mkdstamm.setId(id);
+        mkdstamm.setKundennummer(kdnummernkreis);
+
+        List<MKundenstamm> newcustomerlist = new ArrayList<>();
+        newcustomerlist.add(mkdstamm);
+
+
+        return newcustomerlist;
     }
 
    
