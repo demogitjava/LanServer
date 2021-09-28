@@ -87,6 +87,14 @@ public class DaoCustomer
         return newcustomerlist;
     }
 
+
+    public MKundenstamm deleteCusomter(MKundenstamm dtokundenstamm)
+    {
+
+
+        restjpacustomer.deleteById(dtokundenstamm.getId());
+        return dtokundenstamm;
+    }
    
 }
 

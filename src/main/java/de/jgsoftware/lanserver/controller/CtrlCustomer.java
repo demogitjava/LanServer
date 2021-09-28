@@ -61,5 +61,11 @@ public class CtrlCustomer
         return new ResponseEntity<List<MKundenstamm>>(newcustomerlist, HttpStatus.OK);
     }
 
+    @PostMapping("/deletecustomer")
+    public MKundenstamm deleteCustomer(@RequestBody MKundenstamm dtokundenstamm)
+    {
+
+        return customerservice.getDaocustomer().deleteCusomter(dtokundenstamm);
+    }
 
 }
