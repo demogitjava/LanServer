@@ -90,8 +90,6 @@ public class DaoCustomer
 
     public MKundenstamm deleteCusomter(MKundenstamm dtokundenstamm)
     {
-
-
         restjpacustomer.deleteById(dtokundenstamm.getId());
         return dtokundenstamm;
     }
