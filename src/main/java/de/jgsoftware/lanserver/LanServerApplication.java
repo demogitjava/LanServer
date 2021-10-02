@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -30,30 +31,6 @@ public class LanServerApplication {
 
     public LanServerApplication()
     {
-        try {
-            startServer();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    // start h2 database server
-    public void startServer() throws Exception {
-        new Thread(() -> {
-            try {
-                Server server = Server.createTcpServer().start();
-               // tcpServer = Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092").start();
-               
-                //tcpServer.run();
-
-                System.out.print("Tcp H2 Server is started");
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }).start();
-
 
     }
 
@@ -61,9 +38,12 @@ public class LanServerApplication {
 
 
 
-    // demodb
 
 
+
+    // single db connect  demodb / spring.datasource
+
+    /*
     @Bean
     @Primary
     @ConfigurationProperties(prefix="spring.datasource")
@@ -82,6 +62,10 @@ public class LanServerApplication {
         return dataSource1;
     }
 
+
+
+
+
     // demodb
     @Bean
     public EntityManagerFactory entityManagerFactory(DataSource dataSource)
@@ -89,8 +73,6 @@ public class LanServerApplication {
 
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         // vendorAdapter.setDatabase(Database.H2);
-
-
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("de.jgsoftware.lanserver.model");
@@ -98,6 +80,8 @@ public class LanServerApplication {
         factory.afterPropertiesSet();
         return factory.getObject();
     }
+
+*/
 
 
 
