@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.h2.tools.Server;
+
 import javax.net.ssl.HttpsURLConnection;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -36,24 +36,6 @@ public class LanServerApplication {
 
 
 
-
-
-
-
-
-    // single db connect  demodb / spring.datasource
-
-    /*
-    @Bean
-    @Primary
-    @ConfigurationProperties(prefix="spring.datasource")
-    public DataSource datasource()
-    {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        return dataSource;
-    }
-
-
     @Bean
     @ConfigurationProperties(prefix="spring.datasource1")
     public DataSource datasource1()
@@ -66,7 +48,27 @@ public class LanServerApplication {
 
 
 
+
+    // single db connect  demodb / spring.datasource
+    @Bean
+    @Primary
+    @ConfigurationProperties(prefix="spring.datasource")
+    public DataSource datasource()
+    {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        return dataSource;
+    }
+
+
+
+
+
+
+
+
     // demodb
+
+    /*
     @Bean
     public EntityManagerFactory entityManagerFactory(DataSource dataSource)
     {
@@ -81,8 +83,8 @@ public class LanServerApplication {
         return factory.getObject();
     }
 
-*/
 
+     */
 
 
 

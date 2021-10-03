@@ -1,8 +1,13 @@
 package de.jgsoftware.lanserver.model;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
+
+@Entity
+@Table(name = "BUCHUNGSDATEN", schema = "PUBLIC", catalog = "MAWI")
 public class Buchungsdaten
 {
 

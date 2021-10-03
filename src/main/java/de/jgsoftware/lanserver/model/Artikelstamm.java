@@ -2,10 +2,15 @@ package de.jgsoftware.lanserver.model;
 
 
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.sql.DataSource;
 import java.util.Date;
 
+
+@Entity
+@Table(name = "ARTIKELSTAMM", schema = "PUBLIC", catalog = "MAWI")
 public class Artikelstamm
 {
     @Id
