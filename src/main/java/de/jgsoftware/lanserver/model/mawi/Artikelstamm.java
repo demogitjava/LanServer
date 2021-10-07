@@ -1,4 +1,4 @@
-package de.jgsoftware.lanserver.model;
+package de.jgsoftware.lanserver.model.mawi;
 
 
 

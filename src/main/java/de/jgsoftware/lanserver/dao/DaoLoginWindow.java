@@ -14,6 +14,7 @@ import java.util.List;
 public class DaoLoginWindow
 {
     @Autowired
+    @Qualifier("defaultJdbcTemplate")
     private JdbcTemplate jtm;
 
 

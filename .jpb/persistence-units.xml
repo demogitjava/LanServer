@@ -6,7 +6,12 @@
         <packages>
           <package value="de.jgsoftware.lanserver.model" />
         </packages>
-       
+      </persistence-unit>
+      <persistence-unit name="Book" persistenceXmlPath="src/main/resources/jdbcconnects/default.xml">
+        <entities>
+          <entity value="de.jgsoftware.lanserver.model.mawi.Artikelstamm" />
+          <entity value="de.jgsoftware.lanserver.model.mawi.Buchungsdaten" />
+        </entities>
       </persistence-unit>
     </persistence-units>
   </component>

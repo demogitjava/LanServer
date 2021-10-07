@@ -3,6 +3,7 @@ package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -15,6 +16,7 @@ public class DaoUsers
 
 
     @Autowired
+    @Qualifier("defaultJdbcTemplate")
     private JdbcTemplate jtm;
 
     public List<Users> getAllUsers()

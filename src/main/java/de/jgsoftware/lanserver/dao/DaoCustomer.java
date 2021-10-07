@@ -25,6 +25,7 @@ public class DaoCustomer
 
 
     @Autowired
+    @Qualifier("defaultJdbcTemplate")
     JdbcTemplate jtm;
 
     @Autowired

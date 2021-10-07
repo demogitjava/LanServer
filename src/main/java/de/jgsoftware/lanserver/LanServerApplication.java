@@ -25,29 +25,12 @@ public class LanServerApplication {
     public LanServerApplication()
     {
 
-        startH2Server();
-    }
-
-    // start h2 database server
-    private static void startH2Server()
-    {
-        try
-        {
-            org.h2.tools.Server h2Server = Server.createTcpServer().start();
-            if (h2Server.isRunning(true))
-            {
-                System.out.print("H2 server was started and is running." + "\n");
-            } else
-            {
-                h2Server = Server.createTcpServer().start();
-                throw new RuntimeException("Could not start H2 server." + "\n");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to start H2 server: " + e + "\n");
-        }
 
     }
 
+
+
+    /*
     // demodb
     @Bean
     @Primary
@@ -55,19 +38,13 @@ public class LanServerApplication {
     public DataSource datasource()
     {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-            /*
-            dataSource.setDriverClassName("org.h2.Driver");
-            dataSource.setUrl("jdbc:h2:tcp://localhost:9092/~/shopdb");
-            dataSource.setUsername("admin");
-            dataSource.setPassword("jj78mvpr52k1");
-            */
+
         return dataSource;
     }
 
 
-
-
     @Bean
+    @Primary
     public EntityManagerFactory entityManagerFactory(DataSource dataSource)
     {
 
@@ -81,6 +58,8 @@ public class LanServerApplication {
         factory.afterPropertiesSet();
         return factory.getObject();
     }
+
+    */
 
 
     static {
