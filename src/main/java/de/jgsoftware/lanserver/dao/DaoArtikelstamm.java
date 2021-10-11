@@ -1,6 +1,7 @@
 package de.jgsoftware.lanserver.dao;
 
 
+import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -35,6 +36,23 @@ public class DaoArtikelstamm
         List<Artikelstamm> allartikellist = jtm1.query("select * from ARTIKELSTAMM", new BeanPropertyRowMapper(Artikelstamm.class));
         return allartikellist;
     }
+
+
+
+    public List<Artikelstamm> getArtikelselectionclient(String bezeichnung)
+    {
+        String beginswith = bezeichnung + "%";
+        List<Artikelstamm> arikelclientselection = jtm1.query("select * from artikelstamm where artikelbezeichnung like " + "'" + bezeichnung + "'", new BeanPropertyRowMapper(Artikelstamm.class));
+        return arikelclientselection;
+    }
+
+    public List<Artikelstamm> getSelectedAllArtikel()
+    {
+        Integer selectionnumber = 1;
+        List<Artikelstamm> allartikellist = jtm1.query("select * from ARTIKELSTAMM where selectionclient like " + "'" + selectionnumber + "'", new BeanPropertyRowMapper(Artikelstamm.class));
+        return allartikellist;
+    }
+
 
 }
 
