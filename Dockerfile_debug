@@ -1,0 +1,16 @@
+FROM java:8u111-jdk
+
+ADD http://github.com/demogitjava/demodatabase/raw/master/demodb.mv.db /root/demodb.mv.db
+ADD http://github.com/demogitjava/demodatabase/raw/master/mawi.mv.db /root/mawi.mv.db
+ADD http://github.com/demogitjava/demodatabase/raw/master/shopdb.mv.db /root/shopdb.mv.db
+
+ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,address=5005,server=y,suspend=n
+
+COPY target/Lanserver.jar lanserver.jar
+
+EXPOSE 8443/tcp
+EXPOSE 5005/tcp
+EXPOSE 8082/tcp
+EXPOSE 9092/tcp
+
+ENTRYPOINT ["java", "-jar", "lanserver.jar"]

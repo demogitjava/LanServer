@@ -1,14 +1,13 @@
-version: '2'
+version: '3.8'
 services:
-  jgsoftwares:
-    container_name: demolanver
+  demolanserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
 
-    image: jgsoftwares/jgsoftwares:demolanserver
     ports:
-      - 8443:8888
-    networks:
-      - spring-cloud-network
+      - 8443:8443
+      - 9092:9092
+    command: ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000"
 
-networks:
-  spring-cloud-network:
-    driver: bridge
+
