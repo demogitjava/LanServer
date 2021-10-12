@@ -42,7 +42,7 @@ public class DaoArtikelstamm
     public List<Artikelstamm> getArtikelselectionclient(String bezeichnung)
     {
         String beginswith = bezeichnung + "%";
-        List<Artikelstamm> arikelclientselection = jtm1.query("select * from artikelstamm where artikelbezeichnung like " + "'" + bezeichnung + "'", new BeanPropertyRowMapper(Artikelstamm.class));
+        List<Artikelstamm> arikelclientselection = jtm1.query("select * from artikelstamm where artikelbezeichnung like " + "'" + beginswith + "'", new BeanPropertyRowMapper(Artikelstamm.class));
         return arikelclientselection;
     }
 
