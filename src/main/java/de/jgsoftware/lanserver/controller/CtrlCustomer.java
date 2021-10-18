@@ -24,6 +24,7 @@ public class CtrlCustomer
     @Autowired
     SCustomer customerservice;
 
+    @Autowired
     dtoMKundenstamm dtokundenstamm;
 
 

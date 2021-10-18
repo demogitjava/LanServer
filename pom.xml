@@ -19,7 +19,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      
     </properties>
 
 
@@ -28,12 +27,15 @@
             <id>maven-snapshots</id>
             <url>http://repo.maven.apache.org/maven2/</url>
             <layout>default</layout>
+
             <releases>
                 <enabled>true</enabled>
             </releases>
+
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+
         </repository>
 
         <repository>
@@ -79,10 +81,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -107,8 +111,6 @@
             <scope>runtime</scope>
         </dependency>
 
-
-
         <!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
         <dependency>
             <groupId>org.webjars</groupId>
@@ -129,7 +131,6 @@
             <version>1.1.1</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
@@ -143,19 +144,15 @@
             <version>2.13.0</version>
         </dependency>
         
-          <dependency>
+        <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-jdbc</artifactId>
-
         </dependency>
 
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
-
         </dependency>
-
-
 
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-zip -->
         <dependency>
@@ -196,27 +193,35 @@
             <version>2.2.13.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.17.0</version>
+        </dependency>
 
     </dependencies>
 
 
     <build>
-
-
         <finalName>Lanserver</finalName>
 
         <plugins>
 
             <plugin>
+
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.5.3</version>
+
                 <configuration>
                     <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
                 </configuration>
+
             </plugin>
 
         </plugins>
+
 
     </build>
 

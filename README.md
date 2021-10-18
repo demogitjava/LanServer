@@ -28,7 +28,7 @@ https://openjdk.java.net/
 
 To run the server over docker type
 
-docker build -f Dockerfile -t lanserver .
+docker build -f Dockerfile -t demolanserver .
 
 and you create a docker image with the latest openjdk version
 runs in a container over port 8443

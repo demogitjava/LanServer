@@ -45,16 +45,16 @@ public class CtrArtikelstamm
 
 
     /*
-
            Table Artikelstamm - selectionclient = 1
-
-     */
+    */
     @GetMapping("/getselectedArtikel")
     public ResponseEntity<List<Artikelstamm>> getselectedAllArtikel()
     {
         List<Artikelstamm> selectedArikellist = artikelservice.getDartstamm().getSelectedAllArtikel();
         return new ResponseEntity<List<Artikelstamm>>(selectedArikellist, HttpStatus.OK);
     }
+
+
 
 
 }

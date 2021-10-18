@@ -1,4 +1,4 @@
-FROM java:8u111-jdk
+FROM sapmachine:lts
 
 ADD http://github.com/demogitjava/demodatabase/raw/master/demodb.mv.db /root/demodb.mv.db
 ADD http://github.com/demogitjava/demodatabase/raw/master/mawi.mv.db /root/mawi.mv.db
