@@ -52,7 +52,7 @@ public class DaoReports
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("reportby", "DemoReport");
+        parameters.put("reportby", "Demo");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         JasperExportManager.exportReportToPdfFile(jasperPrint,  "offerreport.pdf");
 
