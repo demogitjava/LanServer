@@ -1,19 +1,11 @@
 package de.jgsoftware.lanserver.dao;
 
 
-import de.jgsoftware.lanserver.model.Employee;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
-import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.data.JsonDataSource;
-import net.sf.jasperreports.engine.export.HtmlExporter;
-import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleHtmlExporterOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -50,13 +42,13 @@ public class DaoReports
 
 
     // angebot erstellen
-    public void createOffer() throws SQLException, JRException, IOException
+    public JasperPrint createOffer() throws SQLException, JRException, IOException
     {
 
 
         List<Yourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
         //load file and compile it
-        File file = ResourceUtils.getFile("classpath:employees.jrxml");
+        File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
         Map<String, Object> parameters = new HashMap<>();
@@ -64,7 +56,7 @@ public class DaoReports
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         JasperExportManager.exportReportToPdfFile(jasperPrint,  "offerreport.pdf");
 
-
+        return jasperPrint;
     }
 
 
