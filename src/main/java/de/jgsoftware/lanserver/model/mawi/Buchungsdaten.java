@@ -24,6 +24,15 @@ public class Buchungsdaten
     private Long artikelnummer;
     private int belegart;
 
+    private int menge;
+
+    public int getMenge() {
+        return menge;
+    }
+
+    public void setMenge(int menge) {
+        this.menge = menge;
+    }
 
     public int getId() {
         return id;
