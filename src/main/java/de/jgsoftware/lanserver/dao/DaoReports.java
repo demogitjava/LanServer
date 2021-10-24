@@ -2,7 +2,6 @@ package de.jgsoftware.lanserver.dao;
 
 
 import de.jgsoftware.lanserver.model.Yourcompanydata;
-import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,11 +60,6 @@ public class DaoReports
     }
 
 
-    public Buchungsdaten saveoffertodb(Buchungsdaten buchungsdaten)
-    {
 
-
-        return buchungsdaten;
-    }
 
 }

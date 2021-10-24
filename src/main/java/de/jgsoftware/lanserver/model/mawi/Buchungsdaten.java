@@ -1,30 +1,39 @@
 package de.jgsoftware.lanserver.model.mawi;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
-@Table(name = "BUCHUNGSDATEN", schema = "PUBLIC", catalog = "MAWI")
-public class Buchungsdaten
-{
+@Table(name = "Buchungsdaten", schema = "MAWI")
+public class Buchungsdaten implements Serializable {
 
     @Id
-    private int id;
+    private Integer id;
 
     private Long kdnummer;
     private String kdname;
     private int beleg;
     private int wg;
     private double vk;
-    private double ek;
+
     private Date bdatum;
     private Long artikelnummer;
     private int belegart;
 
     private int menge;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public int getMenge() {
         return menge;
@@ -34,13 +43,6 @@ public class Buchungsdaten
         this.menge = menge;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public Long getKdnummer() {
         return kdnummer;
@@ -82,13 +84,7 @@ public class Buchungsdaten
         this.vk = vk;
     }
 
-    public double getEk() {
-        return ek;
-    }
 
-    public void setEk(double ek) {
-        this.ek = ek;
-    }
 
     public Date getBdatum() {
         return bdatum;

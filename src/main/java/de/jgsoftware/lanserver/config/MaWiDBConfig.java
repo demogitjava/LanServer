@@ -63,7 +63,7 @@ public class MaWiDBConfig
     }
 
     @Bean(name = "mawiEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean bookEntityManagerFactory(EntityManagerFactoryBuilder builder,
+    public LocalContainerEntityManagerFactoryBean mawiEntityManagerFactory(EntityManagerFactoryBuilder builder,
                                                                            @Qualifier("mawiDataSource") DataSource dataSource) {
         HashMap<String, Object> properties = new HashMap<>();
         //properties.put("hibernate.hbm2ddl.auto", "update");
@@ -73,14 +73,22 @@ public class MaWiDBConfig
     }
 
     @Bean(name = "mawiTransactionManager")
-    public PlatformTransactionManager bookTransactionManager(
-            @Qualifier("mawiEntityManagerFactory") EntityManagerFactory bookEntityManagerFactory) {
-        return new JpaTransactionManager(bookEntityManagerFactory);
+    public PlatformTransactionManager mawiTransactionManager(
+            @Qualifier("mawiEntityManagerFactory") EntityManagerFactory mawiEntityManagerFactory) {
+        return new JpaTransactionManager(mawiEntityManagerFactory);
     }
 
     @Bean(name = "mawiJdbcTemplate")
-    public JdbcTemplate jdbcTemplate(@Qualifier("mawiDataSource") DataSource dsMySQL)
+    public JdbcTemplate jdbcTemplate(@Qualifier("mawiDataSource") DataSource dsmawi)
     {
-        return new JdbcTemplate(dsMySQL);
+        return new JdbcTemplate(dsmawi);
+    }
+
+    public JdbcTemplate getJtm1() {
+        return jtm1;
+    }
+
+    public void setJtm1(JdbcTemplate jtm1) {
+        this.jtm1 = jtm1;
     }
 }

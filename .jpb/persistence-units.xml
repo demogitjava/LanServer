@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="PersistenceUnitSettings">
+
     <persistence-units>
+
       <persistence-unit name="Default">
-        <packages>
-          <package value="de.jgsoftware.lanserver.model" />
-        </packages>
+        <entities>
+          <entity value="de.jgsoftware.lanserver.model.Desktoplayout" />
+          <entity value="de.jgsoftware.lanserver.model.MKundenstamm" />
+          <entity value="de.jgsoftware.lanserver.model.Sprachen" />
+          <entity value="de.jgsoftware.lanserver.model.Spring_Session" />
+          <entity value="de.jgsoftware.lanserver.model.Spring_Session_Attributes" />
+          <entity value="de.jgsoftware.lanserver.model.Userdata" />
+          <entity value="de.jgsoftware.lanserver.model.Userdetail" />
+          <entity value="de.jgsoftware.lanserver.model.Users" />
+          <entity value="de.jgsoftware.lanserver.model.Webtextlayout" />
+          <entity value="de.jgsoftware.lanserver.model.Yourcompanydata" />
+        </entities>
       </persistence-unit>
-      <persistence-unit name="mawi" persistenceXmlPath="src/main/resources/jdbcconnects/default.xml">
+
+      <persistence-unit name="MAWI" persistenceXmlPath="src/main/resources/jdbcconnects/default.xml">
         <entities>
           <entity value="de.jgsoftware.lanserver.model.mawi.Artikelstamm" />
           <entity value="de.jgsoftware.lanserver.model.mawi.Buchungsdaten" />
         </entities>
       </persistence-unit>
+
     </persistence-units>
   </component>
 </project>

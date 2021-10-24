@@ -1,31 +1,27 @@
 package de.jgsoftware.lanserver.controller;
 
 
-import de.jgsoftware.lanserver.model.MKundenstamm;
-import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import de.jgsoftware.lanserver.dao.interfaces.JPAOffer;
 import de.jgsoftware.lanserver.service.ReportService;
 
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperExportManager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 @Controller
-@RequestMapping("/offernumber")
+@RequestMapping("/report")
 public class CtrReports
 {
 
     @Autowired
     ReportService reportService;
 
+    @Autowired
+    JPAOffer offerReport;
 
     // pdf angebot response
     @GetMapping("/getOffer/{offernumber}")
@@ -38,12 +34,6 @@ public class CtrReports
         return offernumber;
     }
 
-    @PostMapping("/savenewoffer")
-    @ResponseStatus(HttpStatus.CREATED)
-    public List<Buchungsdaten> createnewcustomer(@RequestBody List<Buchungsdaten> buchungsdaten)
-    {
 
-        //reportService.getDaoReports().saveoffertodb(buchungsdaten);
-        return buchungsdaten;
-    }
+
 }
