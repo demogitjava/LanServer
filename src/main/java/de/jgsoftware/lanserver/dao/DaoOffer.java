@@ -10,6 +10,7 @@ import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,24 +24,23 @@ import java.util.List;
 public class DaoOffer
 {
 
-    public DaoOffer()
-    {
-
-
-    }
-
     @Autowired
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
 
-    @Autowired
-    de.jgsoftware.lanserver.config.MaWiDBConfig maWiDBConfig;
 
     @Autowired
     JPAOffer jpaOffer;
 
     @Autowired
     CrudOffer crudOffer;
+
+    public DaoOffer(MaWiDBConfig maWiDBConfig)
+    {
+
+    }
+
+
 
     public List<Buchungsdaten> savenewOffer(List<Buchungsdaten> buchungsdaten)
     {

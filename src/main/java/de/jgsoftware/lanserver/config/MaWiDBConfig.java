@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.h2.tools.Server;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -15,6 +16,7 @@ import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -23,11 +25,20 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource({"classpath:mawi.properties"})
-@EnableTransactionManagement
+@EnableJpaRepositories(entityManagerFactoryRef = "mawiEntityManagerFactory", basePackages = {
+        "de.jgsoftware.lanserver.dao" })
 public class MaWiDBConfig
 {
 
     JdbcTemplate jtm1;
+
+    @Autowired
+    EntityManagerFactoryBuilder builder;
+
+    @Autowired
+    DataSource dataSource;
+
+
 
     public MaWiDBConfig()
     {
@@ -64,12 +75,12 @@ public class MaWiDBConfig
 
     @Bean(name = "mawiEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean mawiEntityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                           @Qualifier("mawiDataSource") DataSource dataSource) {
+                                                                           @Qualifier("mawiDataSource") DataSource dsmawi) {
         HashMap<String, Object> properties = new HashMap<>();
         //properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         return builder.dataSource(dataSource).properties(properties)
-                .packages(" de.jgsoftware.lanserver.model.mawi").persistenceUnit("Mawi").build();
+                .packages("de.jgsoftware.lanserver.model.mawi").persistenceUnit("Mawi").build();
     }
 
     @Bean(name = "mawiTransactionManager")
@@ -91,4 +102,6 @@ public class MaWiDBConfig
     public void setJtm1(JdbcTemplate jtm1) {
         this.jtm1 = jtm1;
     }
+
+
 }
