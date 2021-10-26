@@ -25,8 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @PropertySource({"classpath:mawi.properties"})
-@EnableJpaRepositories(entityManagerFactoryRef = "mawiEntityManagerFactory", basePackages = {
-        "de.jgsoftware.lanserver.dao" })
+@EnableTransactionManagement
 public class MaWiDBConfig
 {
 
