@@ -78,7 +78,7 @@ public class MaWiDBConfig
         HashMap<String, Object> properties = new HashMap<>();
         //properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-        return builder.dataSource(dataSource).properties(properties)
+        return builder.dataSource(dsmawi).properties(properties)
                 .packages("de.jgsoftware.lanserver.model.mawi").persistenceUnit("Mawi").build();
     }
 
