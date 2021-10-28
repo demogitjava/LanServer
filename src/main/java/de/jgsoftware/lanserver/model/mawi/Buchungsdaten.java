@@ -8,7 +8,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "Buchungsdaten", schema = "MAWI")
+@Table(name = "Buchungsdaten")
 public class Buchungsdaten implements Serializable {
 
     @Id

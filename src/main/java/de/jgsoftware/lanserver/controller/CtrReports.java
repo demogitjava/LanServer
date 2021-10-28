@@ -1,7 +1,7 @@
 package de.jgsoftware.lanserver.controller;
 
 
-import de.jgsoftware.lanserver.dao.interfaces.JPAOffer;
+import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
 import de.jgsoftware.lanserver.service.ReportService;
 
 import net.sf.jasperreports.engine.JRException;
@@ -20,8 +20,6 @@ public class CtrReports
     @Autowired
     ReportService reportService;
 
-    @Autowired
-    JPAOffer offerReport;
 
     // pdf angebot response
     @GetMapping("/getOffer/{offernumber}")

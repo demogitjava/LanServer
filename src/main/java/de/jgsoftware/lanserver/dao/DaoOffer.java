@@ -2,22 +2,15 @@ package de.jgsoftware.lanserver.dao;
 
 
 import de.jgsoftware.lanserver.config.MaWiDBConfig;
-import de.jgsoftware.lanserver.dao.interfaces.CrudOffer;
-import de.jgsoftware.lanserver.dao.interfaces.DCustomer;
-import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
-import de.jgsoftware.lanserver.dao.interfaces.JPAOffer;
+import de.jgsoftware.lanserver.dao.interfaces.mawi.CrudBuchungsdaten;
+import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManagerFactory;
 import java.util.List;
 
 @Repository
@@ -30,10 +23,10 @@ public class DaoOffer
 
 
     @Autowired
-    JPAOffer jpaOffer;
+    JPABuchungsdaten jpaBuchungsdaten;
 
     @Autowired
-    CrudOffer crudOffer;
+    CrudBuchungsdaten crudBuchungsdaten;
 
     public DaoOffer(MaWiDBConfig maWiDBConfig)
     {
@@ -65,8 +58,8 @@ public class DaoOffer
             {
                 Buchungsdaten buchungsdaten1 = new Buchungsdaten();
 
-                crudOffer.count();
-                crudOffer.save(buchdat);
+                jpaBuchungsdaten.count();
+                jpaBuchungsdaten.save(buchungsdaten1);
             } catch (Exception e)
             {
                 System.out.print("Fehler " +e);

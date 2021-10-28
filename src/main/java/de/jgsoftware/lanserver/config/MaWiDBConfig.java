@@ -24,7 +24,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@PropertySource({"classpath:mawi.properties"})
+//@PropertySource({"classpath:mawi.properties"})
 @EnableTransactionManagement
 public class MaWiDBConfig
 {
