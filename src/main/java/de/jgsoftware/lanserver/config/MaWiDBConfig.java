@@ -74,11 +74,11 @@ public class MaWiDBConfig
 
     @Bean(name = "mawiEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean mawiEntityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                           @Qualifier("mawiDataSource") DataSource dsmawi) {
+                                                                           @Qualifier("mawiDataSource") DataSource dataSource) {
         HashMap<String, Object> properties = new HashMap<>();
         //properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-        return builder.dataSource(dsmawi).properties(properties)
+        return builder.dataSource(dataSource).properties(properties)
                 .packages("de.jgsoftware.lanserver.model.mawi").persistenceUnit("Mawi").build();
     }
 
@@ -89,9 +89,9 @@ public class MaWiDBConfig
     }
 
     @Bean(name = "mawiJdbcTemplate")
-    public JdbcTemplate jdbcTemplate(@Qualifier("mawiDataSource") DataSource dsmawi)
+    public JdbcTemplate jdbcTemplate(@Qualifier("mawiDataSource") DataSource dataSource)
     {
-        return new JdbcTemplate(dsmawi);
+        return new JdbcTemplate(dataSource);
     }
 
     public JdbcTemplate getJtm1() {
