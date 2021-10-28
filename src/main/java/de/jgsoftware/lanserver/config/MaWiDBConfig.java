@@ -24,15 +24,13 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-//@PropertySource({"classpath:mawi.properties"})
 @EnableTransactionManagement
+
 public class MaWiDBConfig
 {
-
+    @Autowired
     JdbcTemplate jtm1;
 
-    @Autowired
-    EntityManagerFactoryBuilder builder;
 
     @Autowired
     DataSource dataSource;
@@ -41,29 +39,10 @@ public class MaWiDBConfig
 
     public MaWiDBConfig()
     {
-      startH2Server();
-    }
-
-    // start h2 database server
-    private static void startH2Server()
-    {
-        try
-        {
-            //org.h2.tools.Server h2Server = Server.createTcpServer("-tcpPort", "9092", "-tcpAllowOthers").start();
-            org.h2.tools.Server h2Server = Server.createTcpServer().start();
-            if (h2Server.isRunning(true))
-            {
-                System.out.print("H2 server was started and is running." + "\n");
-            } else
-            {
-                h2Server = Server.createTcpServer().start();
-                throw new RuntimeException("Could not start H2 server." + "\n");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to start H2 server: " + e + "\n");
-        }
 
     }
+
+
 
     @Bean(name = "mawiDataSource")
     @ConfigurationProperties(prefix = "spring.mawi.datasource")
@@ -94,13 +73,6 @@ public class MaWiDBConfig
         return new JdbcTemplate(dataSource);
     }
 
-    public JdbcTemplate getJtm1() {
-        return jtm1;
-    }
-
-    public void setJtm1(JdbcTemplate jtm1) {
-        this.jtm1 = jtm1;
-    }
 
 
 }

@@ -11,11 +11,11 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class DaoOffer
-{
+public class DaoOffer {
 
     @Autowired
     @Qualifier("mawiJdbcTemplate")
@@ -28,7 +28,7 @@ public class DaoOffer
     @Autowired
     CrudBuchungsdaten crudBuchungsdaten;
 
-    public DaoOffer(MaWiDBConfig maWiDBConfig)
+    public DaoOffer()
     {
 
     }
@@ -48,11 +48,11 @@ public class DaoOffer
         for(int i = 0; i < buchungsdaten.size(); i++)
         {
 
-            Integer id = buchungsdaten.get(i).getId() + 1 + 200000;
+            Integer idbuchdat = buchungsdaten.get(i).getId() + 1 + 200000;
 
 
 
-            buchdat.setId(id);
+            buchdat.setId(idbuchdat);
             buchdat.setArtikelnummer(buchungsdaten.get(i).getArtikelnummer());
             try
             {
@@ -68,7 +68,6 @@ public class DaoOffer
 
         return buchungsdaten;
     }
-
 
 
 }
