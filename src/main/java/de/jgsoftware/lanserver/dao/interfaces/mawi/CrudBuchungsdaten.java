@@ -9,19 +9,16 @@ import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 
 import javax.persistence.Id;
 
-/**
- *
- * @author hoscho
- */
+
 @Repository
-public interface CrudBuchungsdaten extends CrudRepository<Buchungsdaten, Integer>
-{
+public interface CrudBuchungsdaten extends CrudRepository<Buchungsdaten, Integer>, JpaSpecificationExecutor<Buchungsdaten> {
 
 
 }

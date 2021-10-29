@@ -2,26 +2,25 @@ package de.jgsoftware.lanserver.model.mawi;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.sql.DataSource;
 import java.util.Date;
 
 
 @Entity
-@Table(name = "ARTIKELSTAMM")
+@Table(name = "ARTIKELSTAMM", schema = "PUBLIC", catalog = "MAWI")
 public class Artikelstamm
 {
     @Id
     private int id;
-
     private String artikelbezeichnung;
     private int wg;
     private double ek;
     private double vk;
     private Date letzebuchnung;
     private Long artikelnummer;
+    private java.sql.Date letzebuchung;
+    private Integer selectionclient;
 
 
     public int getId() {
@@ -78,5 +77,21 @@ public class Artikelstamm
 
     public void setArtikelnummer(Long artikelnummer) {
         this.artikelnummer = artikelnummer;
+    }
+
+    public java.sql.Date getLetzebuchung() {
+        return letzebuchung;
+    }
+
+    public void setLetzebuchung(java.sql.Date letzebuchung) {
+        this.letzebuchung = letzebuchung;
+    }
+
+    public Integer getSelectionclient() {
+        return selectionclient;
+    }
+
+    public void setSelectionclient(Integer selectionclient) {
+        this.selectionclient = selectionclient;
     }
 }

@@ -8,23 +8,22 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "Buchungsdaten")
+@Table(name = "BUCHUNGSDATEN", schema = "PUBLIC", catalog = "MAWI")
 public class Buchungsdaten implements Serializable {
 
     @Id
+    @GeneratedValue
     private Integer id;
-
     private Long kdnummer;
     private String kdname;
     private int beleg;
     private int wg;
     private double vk;
-
     private Date bdatum;
     private Long artikelnummer;
     private int belegart;
-
     private int menge;
+    private Integer buchungskz;
 
 
     public Integer getId() {
@@ -34,15 +33,6 @@ public class Buchungsdaten implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public int getMenge() {
-        return menge;
-    }
-
-    public void setMenge(int menge) {
-        this.menge = menge;
-    }
-
 
     public Long getKdnummer() {
         return kdnummer;
@@ -84,8 +74,6 @@ public class Buchungsdaten implements Serializable {
         this.vk = vk;
     }
 
-
-
     public Date getBdatum() {
         return bdatum;
     }
@@ -108,5 +96,21 @@ public class Buchungsdaten implements Serializable {
 
     public void setBelegart(int belegart) {
         this.belegart = belegart;
+    }
+
+    public int getMenge() {
+        return menge;
+    }
+
+    public void setMenge(int menge) {
+        this.menge = menge;
+    }
+
+    public Integer getBuchungskz() {
+        return buchungskz;
+    }
+
+    public void setBuchungskz(Integer buchungskz) {
+        this.buchungskz = buchungskz;
     }
 }

@@ -4,7 +4,7 @@ package de.jgsoftware.lanserver.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "DESKTOPLAYOUT", schema = "PUBLIC", catalog = "DEMODB")
+@Table(name = "", schema = "PUBLIC", catalog = "")
 public class Desktoplayout
 {
 
