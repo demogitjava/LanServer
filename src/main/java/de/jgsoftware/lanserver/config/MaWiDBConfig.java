@@ -44,16 +44,18 @@ public class MaWiDBConfig
 
 
 
-    @Bean(name = "mawiDataSource")
-    @ConfigurationProperties(prefix = "spring.mawi.datasource")
-    public DataSource dataSource()
+    @Bean("ds2")
+    @ConfigurationProperties(prefix="app.datasource2")
+    public DataSource secondDS()
     {
         return DataSourceBuilder.create().build();
     }
 
+
+
     @Bean(name = "mawiEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean mawiEntityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                           @Qualifier("mawiDataSource") DataSource dataSource) {
+                                                                           @Qualifier("ds2") DataSource dataSource) {
         HashMap<String, Object> properties = new HashMap<>();
         //properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
@@ -68,7 +70,7 @@ public class MaWiDBConfig
     }
 
     @Bean(name = "mawiJdbcTemplate")
-    public JdbcTemplate jdbcTemplate(@Qualifier("mawiDataSource") DataSource dataSource)
+    public JdbcTemplate jdbcTemplate(@Qualifier("ds2") DataSource dataSource)
     {
         return new JdbcTemplate(dataSource);
     }
