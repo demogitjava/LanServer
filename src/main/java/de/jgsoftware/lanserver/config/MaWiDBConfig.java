@@ -7,6 +7,7 @@ import java.util.HashMap;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import com.zaxxer.hikari.HikariConfig;
 import org.h2.tools.Server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,8 +26,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-
-public class MaWiDBConfig
+public class MaWiDBConfig extends HikariConfig
 {
     @Autowired
     JdbcTemplate jtm1;

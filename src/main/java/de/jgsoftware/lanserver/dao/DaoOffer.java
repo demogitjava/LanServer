@@ -1,6 +1,8 @@
 package de.jgsoftware.lanserver.dao;
 
 
+import com.zaxxer.hikari.HikariConfig;
+import de.jgsoftware.lanserver.config.MaWiDBConfig;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.CrudBuchungsdaten;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
@@ -21,6 +23,9 @@ public class DaoOffer {
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
 
+    @Autowired
+    MaWiDBConfig maWiDBConfig;
+
 
     @Autowired
     JPABuchungsdaten jpaBuchungsdaten;
@@ -28,8 +33,9 @@ public class DaoOffer {
     @Autowired
     CrudBuchungsdaten crudBuchungsdaten;
 
-    public DaoOffer(EntityManagerFactory entityManagerFactory)
+    public DaoOffer()
     {
+
 
     }
 
@@ -57,8 +63,6 @@ public class DaoOffer {
             try
             {
                 Buchungsdaten buchungsdaten1 = new Buchungsdaten();
-
-
                 jpaBuchungsdaten.save(buchungsdaten1);
             } catch (Exception e)
             {

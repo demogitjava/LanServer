@@ -1,16 +1,15 @@
 package de.jgsoftware.lanserver.service;
 
+import de.jgsoftware.lanserver.config.MaWiDBConfig;
 import de.jgsoftware.lanserver.dao.DaoOffer;
-import de.jgsoftware.lanserver.dao.DaoReports;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
+import javax.sql.DataSource;
 
 @Service
 public class OfferService
@@ -19,12 +18,24 @@ public class OfferService
     DaoOffer daoOffer;
 
     @Autowired
+    EntityManagerFactoryBuilder builder;
+
+    @Autowired
+    DataSource dataSource;
+
+
+    @Autowired
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
 
-    @Qualifier("mawiJdbcTemplate")
-    @PersistenceUnit
-    EntityManagerFactory entityManagerFactory;
+
+
+
+
+    public OfferService()
+    {
+
+    }
 
 
 
