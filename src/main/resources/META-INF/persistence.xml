@@ -5,16 +5,10 @@
              version="2.2">
 
     <persistence-unit name="demodb">
-        <class>de.jgsoftware.lanserver.model.mawi.Artikelstamm</class>
-        <class>de.jgsoftware.lanserver.model.mawi.Buchungsarten</class>
-        <class>de.jgsoftware.lanserver.model.mawi.Buchungsdaten</class>
-        <class>de.jgsoftware.lanserver.model.mawi.Belegarten</class>
-        <class>de.jgsoftware.lanserver.model.mawi.SpringSession</class>
-        <class>de.jgsoftware.lanserver.model.mawi.SpringSessionAttributes</class>
 
 
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:h2:tcp://localhost:9092/~/mawi"/>
+            <property name="hibernate.connection.url" value="jdbc:h2:tcp://localhost:9092/~/demodb"/>
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
             <property name="hibernate.connection.user" value="admin"/>
             <property name="hibernate.connection.password" value="jj78mvpr52k1"/>
