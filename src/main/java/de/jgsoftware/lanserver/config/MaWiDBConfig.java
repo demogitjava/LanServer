@@ -57,7 +57,7 @@ public class MaWiDBConfig extends HikariConfig
     public LocalContainerEntityManagerFactoryBean mawiEntityManagerFactory(EntityManagerFactoryBuilder builder,
                                                                            @Qualifier("mawidb") DataSource dataSource) {
         HashMap<String, Object> properties = new HashMap<>();
-        //properties.put("hibernate.hbm2ddl.auto", "update");
+
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         return builder.dataSource(dataSource).properties(properties)
                 .packages("de.jgsoftware.lanserver.model.mawi").persistenceUnit("Mawi").build();

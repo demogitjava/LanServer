@@ -86,7 +86,8 @@ public class DemoDBConfig extends HikariConfig
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder,
                                                                        @Qualifier("demodb") DataSource dataSource) {
       HashMap<String, Object> properties = new HashMap<>();
-       // properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+
+        properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         return builder.dataSource(dataSource).properties(properties)
                 .packages("de.jgsoftware.lanserver.model").persistenceUnit("DemoDb").build();
 
