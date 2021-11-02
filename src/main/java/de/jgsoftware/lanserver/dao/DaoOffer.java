@@ -27,6 +27,7 @@ public class DaoOffer {
     MaWiDBConfig maWiDBConfig;
 
 
+
     @Autowired
     JPABuchungsdaten jpaBuchungsdaten;
 

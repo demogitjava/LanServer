@@ -43,8 +43,8 @@ public class MaWiDBConfig extends HikariConfig
     }
 
 
-
     @Bean("ds2")
+    @Qualifier("mawidb")
     @ConfigurationProperties(prefix="app.datasource2")
     public DataSource secondDS()
     {
@@ -55,7 +55,7 @@ public class MaWiDBConfig extends HikariConfig
 
     @Bean(name = "mawiEntityManagerFactory")
     public LocalContainerEntityManagerFactoryBean mawiEntityManagerFactory(EntityManagerFactoryBuilder builder,
-                                                                           @Qualifier("ds2") DataSource dataSource) {
+                                                                           @Qualifier("mawidb") DataSource dataSource) {
         HashMap<String, Object> properties = new HashMap<>();
         //properties.put("hibernate.hbm2ddl.auto", "update");
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
