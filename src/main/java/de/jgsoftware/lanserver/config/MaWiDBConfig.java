@@ -26,6 +26,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "de.jgsoftware.lanserver.dao.interfaces.mawi",
+        entityManagerFactoryRef = "mawiEntityManagerFactory",
+        transactionManagerRef = "mawiTransactionManager")
 public class MaWiDBConfig extends HikariConfig
 {
     @Autowired

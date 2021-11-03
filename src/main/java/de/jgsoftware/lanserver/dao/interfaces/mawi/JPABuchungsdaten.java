@@ -9,7 +9,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import de.jgsoftware.lanserver.config.MaWiDBConfig;
+
 @Repository
-public interface JPABuchungsdaten extends JpaRepository<Buchungsdaten, Integer> {
+public interface JPABuchungsdaten extends JpaRepository<Buchungsdaten, Integer>
+{
 
 }

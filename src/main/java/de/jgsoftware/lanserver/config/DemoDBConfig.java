@@ -40,6 +40,10 @@ import java.util.Map;
 
 @Configuration
 @EnableTransactionManagement
+
+@EnableJpaRepositories(basePackages = "de.jgsoftware.lanserver.dao.interfaces",
+        entityManagerFactoryRef = "entityManagerFactory",
+        transactionManagerRef = "transactionManager")
 public class DemoDBConfig extends HikariConfig
 {
 
@@ -90,9 +94,6 @@ public class DemoDBConfig extends HikariConfig
         properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         return builder.dataSource(dataSource).properties(properties)
                 .packages("de.jgsoftware.lanserver.model").persistenceUnit("DemoDb").build();
-
-
-
 
     }
 
