@@ -9,8 +9,8 @@ ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,address=5005,server=y,s
 
 COPY target/Lanserver.jar lanserver.jar
 
-EXPOSE 8443/tcp
 EXPOSE 5005/tcp
+EXPOSE 8443/tcp
 EXPOSE 8082/tcp
 EXPOSE 9092/tcp
 

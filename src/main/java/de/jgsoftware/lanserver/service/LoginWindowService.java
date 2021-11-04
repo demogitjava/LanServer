@@ -13,6 +13,11 @@ public class LoginWindowService
     @Autowired
     DaoLoginWindow loginWindow;
 
+    public LoginWindowService(DaoLoginWindow loginWindow)
+    {
+
+    }
+
     public DaoLoginWindow getLoginWindow() {
         return loginWindow;
     }

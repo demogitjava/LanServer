@@ -19,6 +19,11 @@ public class SCustomer
     @Autowired
     DaoCustomer daocustomer;
 
+    public SCustomer()
+    {
+
+    }
+
     public DaoCustomer getDaocustomer() {
         return daocustomer;
     }

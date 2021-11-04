@@ -12,6 +12,11 @@ public class ReportService
     @Autowired
     DaoReports daoReports;
 
+    public ReportService()
+    {
+
+    }
+
     public DaoReports getDaoReports() {
         return daoReports;
     }

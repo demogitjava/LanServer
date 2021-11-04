@@ -14,6 +14,11 @@ public class Artikelservice
     @Autowired
     DaoArtikelstamm dartstamm;
 
+    public Artikelservice(DaoArtikelstamm dartstamm)
+    {
+
+    }
+
 
     public DaoArtikelstamm getDartstamm() {
         return dartstamm;

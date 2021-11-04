@@ -12,6 +12,11 @@ public class UserService
     @Autowired
     DaoUsers duser;
 
+    public UserService()
+    {
+
+    }
+
     public DaoUsers getDuser() {
         return duser;
     }
