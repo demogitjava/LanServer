@@ -18,7 +18,7 @@ public class CrtOffer
     de.jgsoftware.lanserver.service.OfferService offerService;
 
 
-    @PostMapping("/savenewoffer/{kdnummer}")
+    @PostMapping("/savenewoffer")
     @ResponseStatus(HttpStatus.CREATED)
     public List<Buchungsdaten> createnewcustomer(@RequestBody List<Buchungsdaten> buchungsdaten)
     {
