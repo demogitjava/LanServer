@@ -11,6 +11,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -45,7 +48,7 @@ public class DaoOffer {
 
         List<Buchungsdaten> countid = jtm1.query("SELECT COUNT(*) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", new BeanPropertyRowMapper(Buchungsdaten.class));
         // get id count from table
-        Integer intcount = (Integer) countid.get(0).getId() + 1;
+        Integer intcount = (Integer) countid.size() + 1;
 
 
         Buchungsdaten buchdat = new Buchungsdaten();
@@ -57,7 +60,7 @@ public class DaoOffer {
 
 
             // beleg
-            Integer idbuchdat = buchungsdaten.get(i).getId() + 1 + 200000;
+            Integer idbuchdat = intcount + 200000;
 
             // get id from rowtable bevor save pojo
             Integer rowidforsave= 0;
@@ -69,10 +72,16 @@ public class DaoOffer {
 
             buchdat.setBeleg(idbuchdat);
             buchdat.setArtikelnummer(buchungsdaten.get(i).getArtikelnummer());
+
+
+            Date datum = new java.util.Date();
+            //SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
+            //String dateString = (Date) formater.format(datum);
+            buchdat.setBdatum(datum);
             try
             {
-                Buchungsdaten buchungsdaten1 = new Buchungsdaten();
-                jpaBuchungsdaten.save(buchungsdaten1);
+
+                jpaBuchungsdaten.save(buchdat);
             } catch (Exception e)
             {
                 System.out.print("Fehler " +e);
