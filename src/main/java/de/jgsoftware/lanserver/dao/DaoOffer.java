@@ -4,6 +4,7 @@ package de.jgsoftware.lanserver.dao;
 import de.jgsoftware.lanserver.config.MaWiDBConfig;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.CrudBuchungsdaten;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
+import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -51,13 +52,10 @@ public class DaoOffer {
         Integer intcount = (Integer) countid.size() + 1;
 
 
-        Buchungsdaten buchdat = new Buchungsdaten();
-
-
         for(int i = 0; i < buchungsdaten.size(); i++)
         {
 
-
+            Buchungsdaten buchdat = new Buchungsdaten();
 
             // beleg
             Integer idbuchdat = intcount + 200000;
@@ -78,6 +76,29 @@ public class DaoOffer {
             //SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
             //String dateString = (Date) formater.format(datum);
             buchdat.setBdatum(datum);
+
+            buchdat.setBuchungskz(5); // set to offer
+
+            Artikelstamm artikelstamm = new Artikelstamm();
+
+            Long artikelnummer = buchdat.getArtikelnummer();
+            List<Artikelstamm> artlist = getartikelkenzeichen(artikelnummer);
+
+            buchdat.setWg(artlist.get(0).getWg());
+            buchdat.setVk(artlist.get(0).getVk());
+
+            buchdat.setBelegart(2);
+            // einbuchung angebot
+            // 2 -- Angebot
+            // 2 -- Einbuchung
+            buchdat.setBuchungskz(2);
+
+            Integer menge = buchdat.getMenge();
+            if(menge == 0)
+            {
+                int bmenge = 1;
+                buchdat.setMenge(bmenge);
+            }
             try
             {
 
@@ -97,6 +118,13 @@ public class DaoOffer {
         List<Buchungsdaten> countid = jtm1.query("SELECT COUNT(*) FROM Buchungsdaten", new BeanPropertyRowMapper(Buchungsdaten.class));
         rowidforsave = countid.get(0).getId();
         return rowidforsave;
+    }
+
+    public List<Artikelstamm> getartikelkenzeichen(Long artikelnummer)
+    {
+        String beginswith = artikelnummer + "%";
+        List<Artikelstamm> arikellist = jtm1.query("select * from artikelstamm where ARTIKELNUMMER like " + "'" + artikelnummer + "'", new BeanPropertyRowMapper(Artikelstamm.class));
+        return arikellist;
     }
 
 

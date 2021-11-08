@@ -3,11 +3,12 @@ services:
   demolanserver:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile_debug
 
     ports:
       - 8443:8443
       - 9092:9092
-    command: ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000"
+      - 5005:5005
+      - 8082:8082
 
 
