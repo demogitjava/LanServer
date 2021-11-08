@@ -87,7 +87,7 @@ public class DaoOffer {
             buchdat.setWg(artlist.get(0).getWg());
             buchdat.setVk(artlist.get(0).getVk());
 
-            buchdat.setBelegart(2);
+            buchdat.setBelegart(5);
             // einbuchung angebot
             // 2 -- Angebot
             // 2 -- Einbuchung

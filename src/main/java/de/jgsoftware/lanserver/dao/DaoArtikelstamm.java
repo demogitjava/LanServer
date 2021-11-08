@@ -37,8 +37,6 @@ public class DaoArtikelstamm
         return allartikellist;
     }
 
-
-
     public List<Artikelstamm> getArtikelselectionclient(String bezeichnung)
     {
         String beginswith = bezeichnung + "%";
