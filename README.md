@@ -21,8 +21,15 @@ make sure that maven is installed if you want to make a compile.
 maven
 https://downloads.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.zip
 
-java Open JDK
+java 
+
+Open JDK
 https://openjdk.java.net/
+
+or
+
+SAPMaschine
+https://sap.github.io/SapMachine/
 
 
 
@@ -35,7 +42,6 @@ runs in a container over port 8443
 
 docker for windows are avalable on
 https://www.docker.com/products/docker-desktop
-
 
 
 

@@ -47,9 +47,18 @@ public class DaoOffer {
     {
 
 
-        List<Buchungsdaten> countid = jtm1.query("SELECT COUNT(*) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", new BeanPropertyRowMapper(Buchungsdaten.class));
+       // int countid = jtm1.queryforObject("SELECT COUNT(DISTINCT BELEG) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", new Object[] { BELEG }, Integer.class);
+
+        int countid = this.jtm1.queryForObject("SELECT COUNT(DISTINCT BELEG) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", Integer.class);
+
+        if(countid == 0)
+        {
+            int coutid = 200000;
+        }
+
         // get id count from table
-        Integer intcount = (Integer) countid.size() + 1;
+        Integer intcount = countid + 200000;
+
 
 
         for(int i = 0; i < buchungsdaten.size(); i++)
@@ -57,8 +66,7 @@ public class DaoOffer {
 
             Buchungsdaten buchdat = new Buchungsdaten();
 
-            // beleg
-            Integer idbuchdat = intcount + 200000;
+
 
             // get id from rowtable bevor save pojo
             Integer rowidforsave= 0;
@@ -68,7 +76,7 @@ public class DaoOffer {
             buchdat.setKdnummer(buchungsdaten.get(i).getKdnummer()); // kdnummer
             buchdat.setKdname(buchungsdaten.get(i).getKdname()); // kdname
 
-            buchdat.setBeleg(idbuchdat);
+            buchdat.setBeleg(intcount);
             buchdat.setArtikelnummer(buchungsdaten.get(i).getArtikelnummer());
 
 
