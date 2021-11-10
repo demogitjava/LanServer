@@ -20,16 +20,23 @@ public class CrtOffer
     @Autowired
     de.jgsoftware.lanserver.service.OfferService offerService;
 
+    public CrtOffer()
+    {
+
+    }
+
 
     @PostMapping("/savenewoffer")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<List<Buchungsdaten>> createnewcustomer(@RequestBody List<Buchungsdaten> buchungsdaten)
-    {
+    public ResponseEntity<List<Buchungsdaten>> createnewcustomer(@RequestBody List<Buchungsdaten> buchungsdaten) {
 
+
+        System.out.print("Cachelist ist leer " + "\n");
         buchungsdaten = offerService.getDaoOffer().savenewOffer(buchungsdaten);
-        System.out.print("buchungsdaten" + buchungsdaten.get(0).getBeleg() + "\n");
+
         return new ResponseEntity<List<Buchungsdaten>>(buchungsdaten, HttpStatus.OK);
     }
+
 
 
 }

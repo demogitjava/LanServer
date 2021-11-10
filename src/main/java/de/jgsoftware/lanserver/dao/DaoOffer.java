@@ -24,16 +24,17 @@ public class DaoOffer {
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
 
-    @Autowired
-    MaWiDBConfig maWiDBConfig;
-
-
 
     @Autowired
     JPABuchungsdaten jpaBuchungsdaten;
 
     @Autowired
     CrudBuchungsdaten crudBuchungsdaten;
+
+
+    public List<Buchungsdaten> offercachelist;
+
+    public List<Buchungsdaten> buchungsdaten;
 
     public DaoOffer()
     {
@@ -47,7 +48,7 @@ public class DaoOffer {
     {
 
 
-       // int countid = jtm1.queryforObject("SELECT COUNT(DISTINCT BELEG) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", new Object[] { BELEG }, Integer.class);
+        // int countid = jtm1.queryforObject("SELECT COUNT(DISTINCT BELEG) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", new Object[] { BELEG }, Integer.class);
 
         int countid = this.jtm1.queryForObject("SELECT COUNT(DISTINCT BELEG) FROM Buchungsdaten where BELEG BETWEEN 200000 and 299999", Integer.class);
 
@@ -109,12 +110,15 @@ public class DaoOffer {
             }
             try
             {
-
                 jpaBuchungsdaten.save(buchdat);
+
+                buchungsdaten.get(i).setBeleg(intcount);
+
             } catch (Exception e)
             {
                 System.out.print("Fehler " +e);
             }
+
         }
 
         return buchungsdaten;
@@ -135,5 +139,20 @@ public class DaoOffer {
         return arikellist;
     }
 
+    public List<Buchungsdaten> additemstooffercache(Buchungsdaten buchdat)
+    {
 
+        offercachelist.add(buchdat);
+        return offercachelist;
+    }
+
+
+
+    public List<Buchungsdaten> getOffercachelist() {
+        return offercachelist;
+    }
+
+    public void setOffercachelist(List<Buchungsdaten> offercachelist) {
+        this.offercachelist = offercachelist;
+    }
 }
