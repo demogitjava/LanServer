@@ -14,6 +14,7 @@ public class Buchungsdaten implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+
     private Long kdnummer;
     private String kdname;
     private int beleg;
