@@ -31,7 +31,7 @@ public class CrtOffer
     public ResponseEntity<List<Buchungsdaten>> createnewcustomer(@RequestBody List<Buchungsdaten> buchungsdaten) {
 
 
-        System.out.print("Cachelist ist leer " + "\n");
+        System.out.print("Cachelist is empty " + "\n");
         buchungsdaten = offerService.getDaoOffer().savenewOffer(buchungsdaten);
 
         return new ResponseEntity<List<Buchungsdaten>>(buchungsdaten, HttpStatus.OK);
