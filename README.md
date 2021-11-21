@@ -14,6 +14,14 @@ install the h2 database
 http://www.h2database.com/html/download.html
 an start the server h2.bat under windows.
 
+used databases:
+
+https://github.com/demogitjava/demodatabase
+
+- demodb.mv.db
+- mawi.mv.db
+
+
 
 
 
