@@ -51,7 +51,7 @@ To run the server over docker type
 and you create a docker image with the latest openjdk version
 runs in a container over port 8443
 
-docker for windows are avalable on
+docker for windows are available on
 https://www.docker.com/products/docker-desktop
 
 
