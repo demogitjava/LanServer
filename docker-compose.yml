@@ -3,7 +3,7 @@ services:
   demolanserver:
     build:
       context: .
-      dockerfile: Dockerfile_debug
+      dockerfile: Dockerfile_debug_sap
 
     ports:
       - 8443:8443

@@ -21,16 +21,21 @@ public class CtrReports
     ReportService reportService;
 
 
-    // pdf angebot response
+
+    // return offernumber to client
     @GetMapping("/getOffer/{offernumber}")
     public String getUserById(@PathVariable("offernumber") String offernumber) throws JRException, SQLException, IOException {
 
         offernumber = new String();
         reportService.getDaoReports().createOffer();
 
-
         return offernumber;
     }
+
+
+
+
+
 
 
 

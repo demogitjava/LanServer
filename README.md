@@ -29,7 +29,9 @@ https://downloads.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin
 
 java 
 
-Open JDK
+Java JDK
+https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0
+or
 https://openjdk.java.net/
 
 or
