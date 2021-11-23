@@ -25,8 +25,6 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import org.springframework.util.ResourceUtils;
 
-import javax.servlet.http.HttpServletResponse;
-
 @Repository
 public class DaoReports
 {
@@ -39,11 +37,11 @@ public class DaoReports
     private ResourceLoader resourceLoader;
 
     JasperReport offerReport;
-    HttpServletResponse response;
+
 
 
     // angebot erstellen
-    public JasperPrint createOffer() throws SQLException, JRException, IOException
+    public JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException
     {
 
 
@@ -54,11 +52,12 @@ public class DaoReports
 
         //load file and compile it
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
-        File file = new ClassPathResource("offerreport.jrxml").getFile();
+        //File file = new ClassPathResource("offerreport.jrxml").getFile();
 
 
-        JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-
+        //InputStream file = new ClassPathResource("offerreport.jrxml").getInputStream();
+        File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
 
         Map<String, Object> parameters = new HashMap<>();
