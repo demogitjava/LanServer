@@ -6,6 +6,7 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -39,7 +40,10 @@ public class DaoReports
 
     JasperReport offerReport;
 
+    JasperPrint jasperPrint;
 
+    @Value("offerreport.jrxml")
+    Resource resourceFile;
 
     // angebot erstellen
     public JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException
@@ -57,22 +61,20 @@ public class DaoReports
 
 
         //InputStream file = new ClassPathResource("offerreport.jrxml").getInputStream();
-        File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
-        if(file == null)
-        {
-            System.out.print("report file not found" + "\n");
-            System.out.print("switch to github report direcotry " + "\n");
-            file = new File("https://raw.githubusercontent.com/demogitjava/demodatabase/master/reports/offerreport.jrxml");
-        }
 
+
+        //File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
+        File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
         JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
+
+
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("reportby", "Demo asdf sdfsdf");
 
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
+        jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         JasperExportManager.exportReportToPdfFile(jasperPrint,  "offerreport.pdf");
 
         return jasperPrint;
