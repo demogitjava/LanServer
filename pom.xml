@@ -21,7 +21,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-
     <repositories>
         <repository>
             <id>maven-snapshots</id>
@@ -243,8 +242,10 @@
 
         <plugins>
 
-            <plugin>
 
+
+
+        <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.5.3</version>
@@ -252,8 +253,8 @@
                 <configuration>
                     <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
                 </configuration>
-
             </plugin>
+
 
         </plugins>
 

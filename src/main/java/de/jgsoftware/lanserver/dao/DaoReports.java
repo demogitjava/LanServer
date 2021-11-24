@@ -7,6 +7,7 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -56,8 +57,9 @@ public class DaoReports
 
 
         //InputStream file = new ClassPathResource("offerreport.jrxml").getInputStream();
-        //File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
-        InputStream file = ClassLoader.getSystemResourceAsStream("classpath:offerreport.jrxml");
+        File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
+
+        //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
         JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
 

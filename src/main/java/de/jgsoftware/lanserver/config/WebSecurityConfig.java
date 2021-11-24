@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
 @EnableWebSecurity
@@ -58,5 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     {
         web.ignoring().antMatchers("/detaillabeldesktopentry/getloginlabel");
     }
+
+
 
 }
