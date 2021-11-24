@@ -56,7 +56,8 @@ public class DaoReports
 
 
         //InputStream file = new ClassPathResource("offerreport.jrxml").getInputStream();
-        File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
+        //File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
+        InputStream file = ClassLoader.getSystemResourceAsStream("classpath:offerreport.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
 
