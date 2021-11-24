@@ -58,6 +58,12 @@ public class DaoReports
 
         //InputStream file = new ClassPathResource("offerreport.jrxml").getInputStream();
         File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
+        if(file == null)
+        {
+            System.out.print("report file not found" + "\n");
+            System.out.print("switch to github report direcotry " + "\n");
+            file = new File("https://raw.githubusercontent.com/demogitjava/demodatabase/master/reports/offerreport.jrxml");
+        }
 
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
         JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
