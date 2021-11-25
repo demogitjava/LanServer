@@ -12,7 +12,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
 import java.sql.SQLException;
@@ -35,15 +35,13 @@ public class DaoReports
     @Qualifier("defaultJdbcTemplate")
     JdbcTemplate jtm;
 
-    @Autowired
-    private ResourceLoader resourceLoader;
+
 
     JasperReport offerReport;
 
     JasperPrint jasperPrint;
 
-    @Value("offerreport.jrxml")
-    Resource resourceFile;
+    ClassPathResource res;
 
     // angebot erstellen
     public JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException
@@ -52,20 +50,12 @@ public class DaoReports
 
         List<Yourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
 
-
-
-
-        //load file and compile it
-        //File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
-        //File file = new ClassPathResource("offerreport.jrxml").getFile();
-
-
-        //InputStream file = new ClassPathResource("offerreport.jrxml").getInputStream();
-
-
-        //File file = ResourceUtils.getFile("classpath:offerreport.jrxml");
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
-        File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
+        Resource resource = new ClassPathResource("offerreport.jrxml");
+
+        InputStream input = resource.getInputStream();
+
+        File file = resource.getFile();
         JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
 
 
