@@ -5,6 +5,7 @@
              version="2.2">
 
     <persistence-unit name="demodb">
+        <class>de.jgsoftware.lanserver.model.Reports</class>
 
 
         <properties>

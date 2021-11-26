@@ -1,31 +1,31 @@
 package de.jgsoftware.lanserver.dao;
 
 
+import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.Reports;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.core.io.ClassPathResource;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.*;
-
-import org.springframework.core.io.ResourceLoader;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
-import org.springframework.util.ResourceUtils;
 
 @Repository
 public class DaoReports
@@ -35,7 +35,9 @@ public class DaoReports
     @Qualifier("defaultJdbcTemplate")
     JdbcTemplate jtm;
 
-
+    @Autowired
+    @Qualifier("mawiJdbcTemplate")
+    JdbcTemplate jtm1;
 
     JasperReport offerReport;
 
@@ -51,12 +53,46 @@ public class DaoReports
         List<Yourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
 
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
+        /*
         Resource resource = new ClassPathResource("offerreport.jrxml");
 
         InputStream input = resource.getInputStream();
 
         File file = resource.getFile();
-        JasperReport jasperReport = JasperCompileManager.compileReport(String.valueOf(file));
+
+        */
+
+        /*
+                    load offerdate from
+                    table buchungsdaten on mawi db
+         */
+        String offerreceipt = offernumber + "%";
+        List<Buchungsdaten> bookingreceipt = jtm1.query("select * from BUCHUNGSDATEN where BELEG like " + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
+
+
+        /*
+                   load customer master data
+                   db is demodb
+         */
+        Long stcustomernumber = (Long) bookingreceipt.get(0).getKdnummer();
+        List<MKundenstamm> lscustomermasterdata = jtm.query("select * from KUNDENSTAMM where KUNDENNUMMER like " + "'" + stcustomernumber + "'", new BeanPropertyRowMapper(MKundenstamm.class));
+
+
+        /*
+
+                load report form db
+                db is demodb
+
+         */
+        String customerepot = new String("offerreport");
+        List<Reports> lsoffereport = jtm.query("select * from reports where reportname like " + "'" + customerepot + "'", new BeanPropertyRowMapper(Reports.class));
+
+        byte[] offerreporttext = lsoffereport.get(0).getReportdata();
+
+        try (FileOutputStream fos = new FileOutputStream("offerreport.jrxml")) {
+            fos.write(offerreporttext);
+        }
+        JasperReport jasperReport = JasperCompileManager.compileReport("offerreport.jrxml");
 
 
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
