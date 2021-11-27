@@ -89,7 +89,9 @@ public class DaoReports
 
         byte[] offerreporttext = lsoffereport.get(0).getReportdata();
 
-        try (FileOutputStream fos = new FileOutputStream("offerreport.jrxml")) {
+        try (FileOutputStream fos = new FileOutputStream("offerreport.jrxml"))
+        {
+
             fos.write(offerreporttext);
         }
         JasperReport jasperReport = JasperCompileManager.compileReport("offerreport.jrxml");
