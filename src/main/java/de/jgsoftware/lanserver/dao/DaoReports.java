@@ -19,6 +19,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import net.sf.jasperreports.engine.JRException;
@@ -117,7 +119,14 @@ public class DaoReports
         String userhome = "user.home";
         String path = System.getProperty(userhome);
 
-        JasperExportManager.exportReportToPdfFile(jasperPrint,  path + "/pdf/" + "offerreport.pdf");
+
+        String pdfkdoffernumber = String.valueOf(bookingreceipt.get(0).getKdnummer());
+        String pdfoffernumber = String.valueOf(bookingreceipt.get(0).getBeleg());
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String dateformate = dateFormat.format(new Date());
+        String endpdf = ".pdf";
+        JasperExportManager.exportReportToPdfFile(jasperPrint,  path + "/pdf/" + dateformate  + "_" + pdfkdoffernumber + "_" + pdfoffernumber + endpdf);
 
         return jasperPrint;
     }
