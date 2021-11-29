@@ -24,8 +24,7 @@ public class LanServerApplication {
 
     public LanServerApplication()
     {
-        de.jgsoftware.lanserver.config.FileConfiguration fileConfiguration = new de.jgsoftware.lanserver.config.FileConfiguration();
-        fileConfiguration.checkFolders();
+
 
     }
 

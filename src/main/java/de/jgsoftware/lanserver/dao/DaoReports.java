@@ -43,12 +43,20 @@ public class DaoReports
 
     JasperPrint jasperPrint;
 
-    ClassPathResource res;
+    public DaoReports()
+    {
+
+    }
+
 
     // angebot erstellen
     public JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException
     {
 
+        /*
+            check that /root/pdf folder exist
+         */
+        de.jgsoftware.lanserver.config.FileConfiguration.checkFolders();
 
         List<Yourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
 
@@ -103,7 +111,13 @@ public class DaoReports
         parameters.put("reportby", "Demo asdf sdfsdf");
 
         jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
-        JasperExportManager.exportReportToPdfFile(jasperPrint,  "offerreport.pdf");
+
+
+
+        String userhome = "user.home";
+        String path = System.getProperty(userhome);
+
+        JasperExportManager.exportReportToPdfFile(jasperPrint,  path + "/pdf/" + "offerreport.pdf");
 
         return jasperPrint;
     }

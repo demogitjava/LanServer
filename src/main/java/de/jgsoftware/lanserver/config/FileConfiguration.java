@@ -21,7 +21,7 @@ public class FileConfiguration implements WebMvcConfigurer{
     }
 
 
-    public void checkFolders()
+    public static void checkFolders()
     {
 
         String userhome = "user.home";
