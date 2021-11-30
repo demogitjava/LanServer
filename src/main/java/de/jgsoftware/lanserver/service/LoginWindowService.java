@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class LoginWindowService
+public class LoginWindowService implements de.jgsoftware.lanserver.service.interfaces.iLoginWindowService
 {
 
 

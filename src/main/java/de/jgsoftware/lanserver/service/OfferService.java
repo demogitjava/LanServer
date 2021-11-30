@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.util.List;
 
 @Service
-public class OfferService
+public class OfferService implements de.jgsoftware.lanserver.service.interfaces.iOfferService
 {
     @Autowired
     DaoOffer daoOffer;

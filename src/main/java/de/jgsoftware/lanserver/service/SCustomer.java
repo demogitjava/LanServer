@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author hoscho
  */
 @Service
-public class SCustomer 
+public class SCustomer implements de.jgsoftware.lanserver.service.interfaces.iSCustomer
 {
     @Autowired
     DaoCustomer daocustomer;

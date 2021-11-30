@@ -92,8 +92,6 @@ Run the application and open ports by create a new container
 
 
 
-
-
 docker for windows are available on
 https://www.docker.com/products/docker-desktop
 

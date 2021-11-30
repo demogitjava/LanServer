@@ -33,10 +33,4 @@ public class CtrReports
     }
 
 
-
-
-
-
-
-
 }

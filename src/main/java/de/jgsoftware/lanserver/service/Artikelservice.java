@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import de.jgsoftware.lanserver.dao.DaoArtikelstamm;
 
 @Service
-public class Artikelservice
+public class Artikelservice implements de.jgsoftware.lanserver.service.interfaces.iArtikelservice
 {
 
     @Autowired
