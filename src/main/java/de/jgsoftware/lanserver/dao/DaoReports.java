@@ -60,7 +60,11 @@ public class DaoReports
          */
         de.jgsoftware.lanserver.config.FileConfiguration.checkFolders();
 
+
+
         List<Yourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
+
+
 
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
         /*
@@ -73,7 +77,7 @@ public class DaoReports
         */
 
         /*
-                    load offerdate from
+                    load offerdata from
                     table buchungsdaten on mawi db
          */
         String offerreceipt = offernumber + "%";
@@ -130,8 +134,5 @@ public class DaoReports
 
         return jasperPrint;
     }
-
-
-
 
 }
