@@ -114,11 +114,22 @@ public class DaoReports
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
 
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("reportby", "Demo asdf sdfsdf");
+        //parameters.put("reportby", "Demo asdf sdfsdf");
+
+        /*
+                add customer data as parameter
+                for letterhead in report
+         */
+
+
+
+
+        parameters.put("kundenname", lscustomermasterdata.get(0).getKundenname()); // String
+        parameters.put("strassecustomer", lscustomermasterdata.get(0).getStrasse()); // String
+        parameters.put("plzcustomer", String.valueOf(lscustomermasterdata.get(0).getPlz())); // Integer
+        parameters.put("ortcustomer", lscustomermasterdata.get(0).getKundenname()); // String
 
         jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
-
-
 
         String userhome = "user.home";
         String path = System.getProperty(userhome);
@@ -134,5 +145,4 @@ public class DaoReports
 
         return jasperPrint;
     }
-
 }
