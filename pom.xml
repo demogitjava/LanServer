@@ -18,6 +18,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <start-class>de.jgsoftware.lanserver.LanServerApplication</start-class>
     </properties>
 
     <repositories>
@@ -53,6 +54,14 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+
+
+            <repository>
+                <id>spring-releases</id>
+                <name>Spring Releases</name>
+                <url>https://repo.spring.io/release</url>
+            </repository>
+
 
     </repositories>
 
@@ -228,6 +237,13 @@
             <version>0.7.1</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -245,9 +261,6 @@
 
         <plugins>
 
-
-
-
         <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -257,6 +270,7 @@
                     <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
                 </configuration>
             </plugin>
+
 
 
         </plugins>
