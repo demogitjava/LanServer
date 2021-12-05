@@ -9,9 +9,5 @@ public interface iReportService
 {
     DaoReports getDaoReports();
     public void setDaoReports(DaoReports daoReports);
-    public void uploadFile(MultipartFile file, String filePath);
 
-    public static boolean isInternetReachable() {
-        return false;
-    }
 }

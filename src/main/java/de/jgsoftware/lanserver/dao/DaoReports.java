@@ -81,14 +81,18 @@ public class DaoReports
 
         File file = resource.getFile();
 
-        */
-
         /*
                     load offerdata from
                     table buchungsdaten on mawi db
+
+                    SELECT DISTINCT *
+                        FROM buchungsdaten
+                            JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer
+                        where buchungsdaten.beleg like '200000'
+
          */
         String offerreceipt = offernumber + "%";
-        List<Buchungsdaten> bookingreceipt = jtm1.query("select * from BUCHUNGSDATEN where BELEG like " + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
+        List<Buchungsdaten> bookingreceipt = jtm1.query("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
 
 
         /*
@@ -158,13 +162,6 @@ public class DaoReports
         JasperExportManager.exportReportToPdfFile(jasperPrint,  path + "/pdf/" + dateformate  + "_" + pdfkdoffernumber + "_" + pdfoffernumber + endpdf);
 
 
-        /*
-                upload file to dropbox
-                jgsoftwares / pdf / reports
-
-         */
-        File file = new File(path + "/pdf/" + dateformate  + "_" + pdfkdoffernumber + "_" + pdfoffernumber + endpdf);
-        reportService.uploadFile((MultipartFile) file, path);
 
 
         return jasperPrint;
