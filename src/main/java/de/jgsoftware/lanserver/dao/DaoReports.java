@@ -5,6 +5,7 @@ import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.Reports;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import de.jgsoftware.lanserver.service.ReportService;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
+import org.springframework.web.multipart.MultipartFile;
 
 @Repository
 public class DaoReports
@@ -40,6 +42,11 @@ public class DaoReports
     @Autowired
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
+
+
+    @Autowired
+    ReportService reportService;
+
 
     JasperReport offerReport;
 
@@ -124,10 +131,17 @@ public class DaoReports
 
 
 
+        /*
+                    add customer data to letterhead of report
+         */
         parameters.put("kundenname", lscustomermasterdata.get(0).getKundenname()); // String
         parameters.put("strassecustomer", lscustomermasterdata.get(0).getStrasse()); // String
-        parameters.put("plzcustomer", String.valueOf(lscustomermasterdata.get(0).getPlz())); // Integer
+        parameters.put("plzcustomer", String.valueOf(lscustomermasterdata.get(0).getPlz())); // Integer cast to stirng
         parameters.put("ortcustomer", lscustomermasterdata.get(0).getKundenname()); // String
+
+
+
+
 
         jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 
@@ -142,6 +156,16 @@ public class DaoReports
         String dateformate = dateFormat.format(new Date());
         String endpdf = ".pdf";
         JasperExportManager.exportReportToPdfFile(jasperPrint,  path + "/pdf/" + dateformate  + "_" + pdfkdoffernumber + "_" + pdfoffernumber + endpdf);
+
+
+        /*
+                upload file to dropbox
+                jgsoftwares / pdf / reports
+
+         */
+        File file = new File(path + "/pdf/" + dateformate  + "_" + pdfkdoffernumber + "_" + pdfoffernumber + endpdf);
+        reportService.uploadFile((MultipartFile) file, path);
+
 
         return jasperPrint;
     }

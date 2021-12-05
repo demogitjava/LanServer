@@ -231,16 +231,17 @@
       <scope>provided</scope>
     </dependency>
 
-        <dependency>
-            <groupId>org.springframework.experimental</groupId>
-            <artifactId>spring-graalvm-native</artifactId>
-            <version>0.7.1</version>
-        </dependency>
 
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dropbox.core</groupId>
+            <artifactId>dropbox-core-sdk</artifactId>
+            <version>2.1.1</version>
         </dependency>
 
 
@@ -261,15 +262,17 @@
 
         <plugins>
 
-        <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.5.3</version>
 
-                <configuration>
-                    <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
-                </configuration>
-            </plugin>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <version>2.5.3</version>
+
+                        <configuration>
+                            <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
+                        </configuration>
+                    </plugin>
+
 
 
 
