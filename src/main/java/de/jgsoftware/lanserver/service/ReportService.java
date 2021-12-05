@@ -47,55 +47,16 @@ public class ReportService implements de.jgsoftware.lanserver.service.interfaces
     @Autowired
     DaoReports daoReports;
 
-    @Autowired
-    DbxClientV2 dropboxClient;
+
 
     public ReportService()
     {
 
     }
 
-    public void uploadFile(MultipartFile file, String filePath)
-    {
-
-        try
-        {
-            ByteArrayInputStream inputStream = new ByteArrayInputStream(file.getBytes());
-            Metadata uploadMetaData = dropboxClient.files().uploadBuilder(filePath).uploadAndFinish(inputStream);
-
-            inputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
 
 
-    }
-
-
-    public static boolean isInternetReachable()
-    {
-        try {
-
-            InetAddress address = InetAddress.getByName("dropbox.com");
-
-            if(address == null)
-            {
-                return false;
-            }
-
-        } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            return false;
-        }
-        catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            return false;
-        }
-        return true;
-    }
 
 
 
