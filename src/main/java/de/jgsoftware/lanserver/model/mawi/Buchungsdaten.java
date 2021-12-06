@@ -5,11 +5,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsdaten;
 
 @Entity
 @Table(name = "BUCHUNGSDATEN", schema = "PUBLIC", catalog = "MAWI")
-public class Buchungsdaten implements Serializable {
+public class Buchungsdaten implements iMBuchungsdaten {
 
     @Id
     @GeneratedValue

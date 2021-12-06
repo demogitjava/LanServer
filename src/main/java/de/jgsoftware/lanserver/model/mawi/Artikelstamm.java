@@ -5,11 +5,11 @@ package de.jgsoftware.lanserver.model.mawi;
 import javax.persistence.*;
 import javax.sql.DataSource;
 import java.util.Date;
-
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMArtikelstamm;
 
 @Entity
 @Table(name = "ARTIKELSTAMM", schema = "PUBLIC", catalog = "MAWI")
-public class Artikelstamm
+public class Artikelstamm implements iMArtikelstamm
 {
     @Id
     private int id;

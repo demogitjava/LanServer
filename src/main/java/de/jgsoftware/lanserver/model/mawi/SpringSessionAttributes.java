@@ -2,10 +2,11 @@ package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
 import java.util.Arrays;
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMSpringSessionAttributes;
 
 @Entity
 @Table(name = "SPRING_SESSION_ATTRIBUTES", schema = "PUBLIC", catalog = "MAWI")
-public class SpringSessionAttributes
+public class SpringSessionAttributes implements iMSpringSessionAttributes
 {
     @Id
     private Integer sessionPrimaryId;

@@ -1,10 +1,11 @@
 package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMBelegarten;
 
 @Entity
 @Table(name = "Belegarten", schema = "PUBLIC", catalog = "MAWI")
-public class Belegarten
+public class Belegarten implements iMBelegarten
 {
     @Id
     private Integer id;

@@ -1,10 +1,13 @@
 package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsarten;
+
 
 @Entity
 @Table(name = "BUCHUNGSARTEN", schema = "PUBLIC", catalog = "MAWI")
-public class Buchungsarten {
+public class Buchungsarten implements iMBuchungsarten
+{
 
     @Id
     private Integer id;
