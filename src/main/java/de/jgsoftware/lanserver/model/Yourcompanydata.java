@@ -4,10 +4,10 @@ package de.jgsoftware.lanserver.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import de.jgsoftware.lanserver.model.interfaces.iMYourcompanydata;
 @Entity
 @Table(name = "YOURCOMANYDATA", schema = "PUBLIC", catalog = "DEMODB")
-public class Yourcompanydata
+public class Yourcompanydata implements iMYourcompanydata
 {
 
     @Id

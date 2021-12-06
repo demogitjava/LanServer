@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import de.jgsoftware.lanserver.model.interfaces.iMKundenstamm;
 /**
  *
  * @author hoscho
  */
 @Entity(name = "Kundenstamm")
-public class MKundenstamm implements Serializable
+public class MKundenstamm implements iMKundenstamm
 {
 
 

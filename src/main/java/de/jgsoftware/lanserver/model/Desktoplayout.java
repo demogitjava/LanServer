@@ -2,10 +2,12 @@ package de.jgsoftware.lanserver.model;
 
 
 import javax.persistence.*;
+import de.jgsoftware.lanserver.model.interfaces.iMDesktoplayout;
+
 
 @Entity
 @Table(name = "", schema = "PUBLIC", catalog = "")
-public class Desktoplayout
+public class Desktoplayout implements iMDesktoplayout
 {
 
     @Id

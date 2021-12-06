@@ -6,6 +6,7 @@ import de.jgsoftware.lanserver.model.Reports;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import de.jgsoftware.lanserver.service.ReportService;
+import de.jgsoftware.lanserver.service.interfaces.iReportService;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class DaoReports
 
 
     @Autowired
-    ReportService reportService;
+    iReportService reportService;
 
 
     JasperReport offerReport;
@@ -94,6 +95,8 @@ public class DaoReports
         String offerreceipt = offernumber + "%";
         List<Buchungsdaten> bookingreceipt = jtm1.query("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
 
+
+        List buchungsdtwithartst = jtm1.queryForList("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'");
 
         /*
                    load customer master data

@@ -1,6 +1,8 @@
 package de.jgsoftware.lanserver.model;
 
 
+import de.jgsoftware.lanserver.model.interfaces.iMReports;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,7 +11,7 @@ import javax.persistence.Lob;
 
 @Entity
 @Table(name = "Reports", schema = "PUBLIC", catalog = "DEMODB")
-public class Reports
+public class Reports implements iMReports
 {
     @Id
     private Integer id;
@@ -18,6 +20,7 @@ public class Reports
 
     @Lob
     private byte[] reportdata;
+
 
 
     public Integer getId() {
@@ -44,4 +47,6 @@ public class Reports
     public void setReportdata(byte[] reportdata) {
         this.reportdata = reportdata;
     }
+
+
 }
