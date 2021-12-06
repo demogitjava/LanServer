@@ -3,6 +3,12 @@ package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.Reports;
+
+import de.jgsoftware.lanserver.model.interfaces.iMReports;
+import de.jgsoftware.lanserver.model.interfaces.iMKundenstamm;
+import de.jgsoftware.lanserver.model.interfaces.iMYourcompanydata;
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsdaten;
+
 import de.jgsoftware.lanserver.model.Yourcompanydata;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import de.jgsoftware.lanserver.service.ReportService;
@@ -44,14 +50,12 @@ public class DaoReports
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
 
-
     @Autowired
     iReportService reportService;
 
-
     JasperReport offerReport;
-
     JasperPrint jasperPrint;
+
 
     public DaoReports()
     {
@@ -70,7 +74,7 @@ public class DaoReports
 
 
 
-        List<Yourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
+        List<iMYourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
 
 
 
@@ -93,7 +97,7 @@ public class DaoReports
 
          */
         String offerreceipt = offernumber + "%";
-        List<Buchungsdaten> bookingreceipt = jtm1.query("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
+        List<iMBuchungsdaten> bookingreceipt = jtm1.query("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
 
 
         List buchungsdtwithartst = jtm1.queryForList("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'");
@@ -103,7 +107,7 @@ public class DaoReports
                    db is demodb
          */
         Long stcustomernumber = (Long) bookingreceipt.get(0).getKdnummer();
-        List<MKundenstamm> lscustomermasterdata = jtm.query("select * from KUNDENSTAMM where KUNDENNUMMER like " + "'" + stcustomernumber + "'", new BeanPropertyRowMapper(MKundenstamm.class));
+        List<iMKundenstamm> lscustomermasterdata = jtm.query("select * from KUNDENSTAMM where KUNDENNUMMER like " + "'" + stcustomernumber + "'", new BeanPropertyRowMapper(MKundenstamm.class));
 
 
         /*
@@ -113,7 +117,7 @@ public class DaoReports
 
          */
         String customerepot = new String("offerreport");
-        List<Reports> lsoffereport = jtm.query("select * from reports where reportname like " + "'" + customerepot + "'", new BeanPropertyRowMapper(Reports.class));
+        List<iMReports> lsoffereport = jtm.query("select * from reports where reportname like " + "'" + customerepot + "'", new BeanPropertyRowMapper(Reports.class));
 
         byte[] offerreporttext = lsoffereport.get(0).getReportdata();
 

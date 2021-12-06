@@ -40,7 +40,8 @@ public class Reports implements iMReports
     }
 
 
-    public byte[] getReportdata() {
+    public byte[] getReportdata()
+    {
         return reportdata;
     }
 
