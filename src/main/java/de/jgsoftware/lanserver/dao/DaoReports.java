@@ -72,11 +72,7 @@ public class DaoReports
          */
         de.jgsoftware.lanserver.config.FileConfiguration.checkFolders();
 
-
-
         List<iMYourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
-
-
 
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
         /*
@@ -96,11 +92,18 @@ public class DaoReports
                         where buchungsdaten.beleg like '200000'
 
          */
+
         String offerreceipt = offernumber + "%";
         List<iMBuchungsdaten> bookingreceipt = jtm1.query("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'", new BeanPropertyRowMapper(Buchungsdaten.class));
 
+        /*
+                offerdata form table buchungsdaten
 
+                with artnumber and arttyper and offer number
+                to offer details
+         */
         List buchungsdtwithartst = jtm1.queryForList("SELECT DISTINCT * FROM buchungsdaten JOIN artikelstamm ON buchungsdaten.artikelnummer = artikelstamm.artikelnummer where buchungsdaten.beleg like" + "'" + offerreceipt + "'");
+
 
         /*
                    load customer master data
@@ -128,7 +131,6 @@ public class DaoReports
         }
         JasperReport jasperReport = JasperCompileManager.compileReport("offerreport.jrxml");
 
-
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
 
         Map<String, Object> parameters = new HashMap<>();
@@ -153,12 +155,10 @@ public class DaoReports
 
 
 
-
         jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 
         String userhome = "user.home";
         String path = System.getProperty(userhome);
-
 
         String pdfkdoffernumber = String.valueOf(bookingreceipt.get(0).getKdnummer());
         String pdfoffernumber = String.valueOf(bookingreceipt.get(0).getBeleg());
@@ -168,9 +168,7 @@ public class DaoReports
         String endpdf = ".pdf";
         JasperExportManager.exportReportToPdfFile(jasperPrint,  path + "/pdf/" + dateformate  + "_" + pdfkdoffernumber + "_" + pdfoffernumber + endpdf);
 
-
-
-
         return jasperPrint;
     }
+
 }
