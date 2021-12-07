@@ -148,7 +148,7 @@ public class DaoReports
         parameters.put("firmenname", lscustomermasterdata.get(0).getKundenname()); // String
         parameters.put("strassecustomer", lscustomermasterdata.get(0).getStrasse()); // String
         parameters.put("plzcustomer", String.valueOf(lscustomermasterdata.get(0).getPlz())); // Integer cast to stirng
-        parameters.put("ortcustomer", lscustomermasterdata.get(0).getKundenname()); // String
+        parameters.put("ortcustomer", lscustomermasterdata.get(0).getOrt()); // String
 
 
 
