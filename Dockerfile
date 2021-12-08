@@ -14,8 +14,4 @@ ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,addr
 
 COPY target/Lanserver.jar lanserver.jar
 
-EXPOSE 8443/tcp
-EXPOSE 5005/tcp
-
-
 ENTRYPOINT ["java", "-jar", "lanserver.jar"]
