@@ -21,6 +21,13 @@ public class FileConfiguration implements WebMvcConfigurer{
     }
 
 
+    /*
+                create a pdf folder
+                under root default
+                to save pdf files to disk
+
+                like offer or other reports
+     */
     public static void checkFolders()
     {
 
@@ -42,6 +49,32 @@ public class FileConfiguration implements WebMvcConfigurer{
             }
         }
 
+    }
+
+    /*
+            add module folder for jars
+            to inject at runtime
+
+     */
+    public static void addModulejarFolder()
+    {
+        String userhome = "user.home";
+        String path = System.getProperty(userhome);
+
+        File pdffolder = new File(path + "/modules");
+        if(pdffolder.exists())
+        {
+            System.out.print("pdf tempfolder exist" + "\n");
+        }
+        else
+        {
+            Path pdfpath = Paths.get(String.valueOf(pdffolder));
+            try {
+                Files.createDirectory(pdfpath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
