@@ -1,4 +1,5 @@
-FROM ghcr.io/graalvm/graalvm-ce:latest
+FROM ghcr.io/graalvm/native-image:latest
+#FROM ghcr.io/graalvm/graalvm-ce:latest
 
 
 ADD http://github.com/demogitjava/demodatabase/raw/master/demodb.mv.db /root/demodb.mv.db
