@@ -152,7 +152,7 @@ public class DaoReports
         parameters.put("plzcustomer", String.valueOf(lscustomermasterdata.get(0).getPlz())); // Integer cast to stirng
         parameters.put("ortcustomer", lscustomermasterdata.get(0).getOrt()); // String
 
-        parameters.put("offernumber", ((org.springframework.util.LinkedCaseInsensitiveMap)buchungsdtwithartst.get(0)).entrySet().toArray()[3]);
+        parameters.put("offernumber", offernumber);
 
 
         jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
