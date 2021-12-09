@@ -3,10 +3,10 @@ services:
   demolanserver:
     build:
       context: .
-      dockerfile: Dockerfile_debug_sap
+      dockerfile: Dockerfile
 
     ports:
-      - 8443:8443
-      - 9092:9092
-      - 5005:5005
-      - 8082:8082
+      - 127.0.0.1:8443:8443
+      - 127.0.0.1:9092:9092
+      - 127.0.0.1:5005:5005
+      - 127.0.0.1:8082:8082

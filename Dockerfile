@@ -1,5 +1,5 @@
-FROM ghcr.io/graalvm/native-image:latest
-#FROM ghcr.io/graalvm/graalvm-ce:latest
+#FROM ghcr.io/graalvm/native-image:latest
+FROM ghcr.io/graalvm/graalvm-ce:latest
 
 USER root
 
