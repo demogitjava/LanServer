@@ -72,7 +72,7 @@ public class DaoReports
          */
         de.jgsoftware.lanserver.config.FileConfiguration.checkFolders();
 
-        List<iMYourcompanydata> employees = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
+        List<iMYourcompanydata> companydata = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
 
         //File file = ResourceUtils.getFile("classpath:offerreport.jrxml").getAbsoluteFile();
         /*
@@ -131,7 +131,7 @@ public class DaoReports
         }
         JasperReport jasperReport = JasperCompileManager.compileReport("offerreport.jrxml");
 
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(companydata);
 
         Map<String, Object> parameters = new HashMap<>();
         //parameters.put("reportby", "Demo asdf sdfsdf");
@@ -152,6 +152,16 @@ public class DaoReports
         parameters.put("plzcustomer", String.valueOf(lscustomermasterdata.get(0).getPlz())); // Integer cast to stirng
         parameters.put("ortcustomer", lscustomermasterdata.get(0).getOrt()); // String
 
+        parameters.put("offernumber", offernumber);
+
+        // letterfooter
+        parameters.put("yourcompanyname", companydata.get(0).getFirmenname());
+        parameters.put("yourcompanystreet", companydata.get(0).getStrasse());
+        parameters.put("yourcompanyplz", companydata.get(0).getPlz());
+        parameters.put("yourcompanyort", companydata.get(0).getOrt());
+        parameters.put("yourcompanyemail", "Email: " + companydata.get(0).getEmail());
+        parameters.put("yourcompanytelefon", "Telefon: " + companydata.get(0).getTelefon());
+       // parameters.put("steuernummer", "Steuernummer: " + companydata.get(0).);
         parameters.put("offernumber", offernumber);
 
 

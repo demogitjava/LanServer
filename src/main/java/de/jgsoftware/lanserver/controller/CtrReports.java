@@ -26,7 +26,6 @@ public class CtrReports
     @GetMapping("/getOffer/{offernumber}")
     public String getUserById(@PathVariable("offernumber") String offernumber) throws JRException, SQLException, IOException {
 
-       // offernumber = new String();
         reportService.getDaoReports().createOffer(offernumber);
 
         return offernumber;

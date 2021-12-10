@@ -18,4 +18,18 @@ public interface iMYourcompanydata
     public void setEmail(String email);
     public Integer getFirmennumer();
     public void setFirmennumer(Integer firmennumer);
+    public String getSteuernummer();
+    public void setSteuernummer(String steuernummer);
+    public String getUstIdNr();
+    public void setUstIdNr(String ustIdNr);
+    public String getGeschäftsführer();
+    public void setGeschäftsführer(String geschäftsführer);
+    public String getAmtsgericht();
+    public void setAmtsgericht(String amtsgericht);
+    public String getBank();
+    public void setBank(String bank);
+    public String getKontoinhaber();
+    public void setKontoinhaber(String kontoinhaber);
+    public String getIban();
+    public void setIban(String iban);
 }
