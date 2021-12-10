@@ -157,13 +157,17 @@ public class DaoReports
         // letterfooter
         parameters.put("yourcompanyname", companydata.get(0).getFirmenname());
         parameters.put("yourcompanystreet", companydata.get(0).getStrasse());
-        parameters.put("yourcompanyplz", companydata.get(0).getPlz());
+        parameters.put("yourcompanyplz", String.valueOf(companydata.get(0).getPlz()));
         parameters.put("yourcompanyort", companydata.get(0).getOrt());
         parameters.put("yourcompanyemail", "Email: " + companydata.get(0).getEmail());
         parameters.put("yourcompanytelefon", "Telefon: " + companydata.get(0).getTelefon());
-       // parameters.put("steuernummer", "Steuernummer: " + companydata.get(0).);
-        parameters.put("offernumber", offernumber);
-
+        parameters.put("steuernummer", "Steuernummer: " + companydata.get(0).getSteuernummer());
+        parameters.put("Ust.IdNr", "Ust.IdNr: " + companydata.get(0).getUstIdNr());
+        parameters.put("Geschäftsführer", "Geschäftsführer: " + companydata.get(0).getGeschäftsführer());
+        parameters.put("amtsgericht", "Amtsgericht: " + companydata.get(0).getAmtsgericht());
+        parameters.put("Bank", "Bank: " + companydata.get(0).getBank());
+        parameters.put("Kontoinhaber", "Kontoinhaber: " + companydata.get(0).getKontoinhaber());
+        parameters.put("IBAN", "IBAN: " + companydata.get(0).getIban());
 
         jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 

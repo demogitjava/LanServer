@@ -74,8 +74,7 @@ public class MKundenstamm implements iMKundenstamm
 
 
 
-    public MKundenstamm() {
-    }
+
 
 
     public Long getId() {
