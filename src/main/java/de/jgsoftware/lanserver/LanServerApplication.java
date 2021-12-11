@@ -1,11 +1,13 @@
 package de.jgsoftware.lanserver;
 
 import org.h2.tools.Server;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
@@ -67,6 +69,7 @@ public class LanServerApplication {
         javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
                 (hostname, sslSession) -> hostname.equals("localhost"));
     }
+
 
 
     public static void main(String[] args)

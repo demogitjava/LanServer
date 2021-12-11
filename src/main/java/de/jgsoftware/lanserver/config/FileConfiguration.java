@@ -11,8 +11,25 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+
+import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import java.io.File;
+import java.io.FileOutputStream;
+
+import java.net.URL;
+import java.io.IOException;
+import java.net.URLClassLoader;
+import java.net.MalformedURLException;
+
 @Configuration
-public class FileConfiguration implements WebMvcConfigurer{
+public class FileConfiguration implements WebMvcConfigurer
+{
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -76,6 +93,15 @@ public class FileConfiguration implements WebMvcConfigurer{
             }
         }
     }
+
+
+    public void loaddropboxclient()
+    {
+
+
+    }
+
+
 
 
 
