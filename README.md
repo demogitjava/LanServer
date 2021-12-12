@@ -39,6 +39,12 @@ To run the application over maven from source type
 
 `mvn spring-boot:run`
 
+or
+
+`mvn spring-boot:build-image`
+
+for a native spring boot build jar on the target folder.
+
 
 make sure that maven is installed if you want to make a compile.
 
