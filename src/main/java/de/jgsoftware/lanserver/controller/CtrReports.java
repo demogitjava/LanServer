@@ -4,6 +4,7 @@ package de.jgsoftware.lanserver.controller;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
 import de.jgsoftware.lanserver.service.ReportService;
 
+import de.jgsoftware.lanserver.service.interfaces.iReportService;
 import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class CtrReports
 {
 
     @Autowired
-    ReportService reportService;
+    iReportService reportService;
 
 
 
