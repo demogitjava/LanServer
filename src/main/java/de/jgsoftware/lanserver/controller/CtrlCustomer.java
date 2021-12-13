@@ -8,7 +8,9 @@ package de.jgsoftware.lanserver.controller;
 import de.jgsoftware.lanserver.dto.dtoMKundenstamm;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.service.SCustomer;
+import de.jgsoftware.lanserver.service.interfaces.iSCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -20,9 +22,10 @@ import java.util.List;
 @RequestMapping("/customer")
 public class CtrlCustomer 
 {
-    
+
+    @Qualifier("SCustomer")
     @Autowired
-    SCustomer customerservice;
+    iSCustomer customerservice;
 
     @Autowired
     dtoMKundenstamm dtokundenstamm;

@@ -4,6 +4,7 @@ package de.jgsoftware.lanserver.controller;
 import de.jgsoftware.lanserver.model.Desktoplayout;
 import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.service.UserService;
+import de.jgsoftware.lanserver.service.interfaces.iUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class CtrlUsers
 
 
     @Autowired
-    UserService userService;
+    iUserService userService;
 
     @RequestMapping("/")
     public Principal user(Principal user)
