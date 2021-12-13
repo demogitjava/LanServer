@@ -3,6 +3,7 @@ package de.jgsoftware.lanserver.controller;
 
 import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import de.jgsoftware.lanserver.service.interfaces.iOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ public class CrtOffer
 {
 
     @Autowired
-    de.jgsoftware.lanserver.service.OfferService offerService;
+    iOfferService offerService;
 
     public CrtOffer()
     {

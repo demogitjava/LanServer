@@ -2,6 +2,7 @@ package de.jgsoftware.lanserver.controller;
 
 
 import de.jgsoftware.lanserver.model.Desktoplayout;
+import de.jgsoftware.lanserver.service.interfaces.iLoginWindowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ public class CtlDesktopLabel
 {
 
     @Autowired
-    de.jgsoftware.lanserver.service.LoginWindowService loginWindowService;
+    iLoginWindowService loginWindowService;
 
 
     /*

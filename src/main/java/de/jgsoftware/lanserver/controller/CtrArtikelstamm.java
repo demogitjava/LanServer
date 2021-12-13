@@ -4,6 +4,7 @@ package de.jgsoftware.lanserver.controller;
 
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
+import de.jgsoftware.lanserver.service.interfaces.iArtikelservice;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class CtrArtikelstamm
 
 
     @Autowired
-    de.jgsoftware.lanserver.service.Artikelservice artikelservice;
+    iArtikelservice artikelservice;
 
 
     @GetMapping("/getallartikel")
