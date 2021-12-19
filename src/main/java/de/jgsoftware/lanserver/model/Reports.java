@@ -22,29 +22,29 @@ public class Reports implements iMReports
     private byte[] reportdata;
 
 
-
+    @Override
     public Integer getId() {
         return id;
     }
-
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
-
+    @Override
     public String getReportname() {
         return reportname;
     }
-
+    @Override
     public void setReportname(String reportname) {
         this.reportname = reportname;
     }
 
-
+    @Override
     public byte[] getReportdata()
     {
         return reportdata;
     }
-
+    @Override
     public void setReportdata(byte[] reportdata) {
         this.reportdata = reportdata;
     }
