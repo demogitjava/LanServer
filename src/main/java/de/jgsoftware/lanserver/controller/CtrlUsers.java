@@ -4,6 +4,7 @@ package de.jgsoftware.lanserver.controller;
 import de.jgsoftware.lanserver.model.Desktoplayout;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.Users;
+import de.jgsoftware.lanserver.model.Yourcompanydata;
 import de.jgsoftware.lanserver.service.UserService;
 import de.jgsoftware.lanserver.service.interfaces.iUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,12 +73,12 @@ public class CtrlUsers
 
 
     @GetMapping("/getCompanydata")
-    public ResponseEntity<List> getUserById()
+    public ResponseEntity<List<Yourcompanydata>> getCompanydata()
     {
 
-        List yourcompanydata = new ArrayList();
+        List yourcompanydata = userService.getDuser().getYourCompanydata();
 
-        return new ResponseEntity<List>(yourcompanydata, HttpStatus.OK);
+        return new ResponseEntity<List<Yourcompanydata>>(yourcompanydata, HttpStatus.OK);
     }
 
 
