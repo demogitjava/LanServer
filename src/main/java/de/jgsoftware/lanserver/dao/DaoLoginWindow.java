@@ -1,6 +1,7 @@
 package de.jgsoftware.lanserver.dao;
 
 
+import de.jgsoftware.lanserver.dao.interfaces.iDaoLoginWindow;
 import de.jgsoftware.lanserver.model.Desktoplayout;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class DaoLoginWindow
+public class DaoLoginWindow implements iDaoLoginWindow
 {
     @Autowired
     @Qualifier("defaultJdbcTemplate")
@@ -25,6 +26,7 @@ public class DaoLoginWindow
          LOGIN Text for Labels
 
    */
+    @Override
     public List<Desktoplayout> getlogintextentry()
     {
 
@@ -45,6 +47,7 @@ public class DaoLoginWindow
       request over Framename
 
    */
+    @Override
     public List<Desktoplayout> getFrameDesktopEntry(String framename)
     {
 

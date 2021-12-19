@@ -19,11 +19,11 @@ public class Artikelservice implements de.jgsoftware.lanserver.service.interface
 
     }
 
-
+    @Override
     public DaoArtikelstamm getDartstamm() {
         return dartstamm;
     }
-
+    @Override
     public void setDartstamm(DaoArtikelstamm dartstamm) {
         this.dartstamm = dartstamm;
     }

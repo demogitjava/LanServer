@@ -59,11 +59,11 @@ public class ReportService implements de.jgsoftware.lanserver.service.interfaces
 
 
 
-
+    @Override
     public DaoReports getDaoReports() {
         return daoReports;
     }
-
+    @Override
     public void setDaoReports(DaoReports daoReports) {
         this.daoReports = daoReports;
     }

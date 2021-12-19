@@ -6,6 +6,7 @@
 package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
+import de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,7 +21,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import de.jgsoftware.lanserver.dao.interfaces.DCustomer;
 
 @Repository
-public class DaoCustomer 
+public class DaoCustomer implements iDaoCustomer
 {
 
 
@@ -42,24 +43,24 @@ public class DaoCustomer
 
     }
     
-   
+    @Override
     public List<MKundenstamm> getCustomerbyname(String customername)
     {
         String beginswith = customername + "%";
         List<MKundenstamm> customerlist = jtm.query("select * from kundenstamm where kundenname like " + "'" + beginswith + "'", new BeanPropertyRowMapper(MKundenstamm.class));
         return customerlist;
     }
-    
-    
 
+
+    @Override
     public MKundenstamm UpdateCustomer(MKundenstamm dtokundenstamm)
     {
 
         return interfaceDCustomer.save(dtokundenstamm);
     }
 
-    
 
+    @Override
     public MKundenstamm save(MKundenstamm mKundenstamm)
     {
         Long id = (Long) interfaceDCustomer.count();
@@ -67,7 +68,7 @@ public class DaoCustomer
 
         return interfaceDCustomer.save(mKundenstamm);
     }
-
+    @Override
     public List createnewCustomer()
     {
 
@@ -88,7 +89,7 @@ public class DaoCustomer
         return newcustomerlist;
     }
 
-
+    @Override
     public MKundenstamm deleteCusomter(MKundenstamm dtokundenstamm)
     {
         restjpacustomer.deleteById(dtokundenstamm.getId());

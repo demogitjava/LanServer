@@ -2,6 +2,7 @@ package de.jgsoftware.lanserver.dao;
 
 
 import de.jgsoftware.lanserver.config.MaWiDBConfig;
+import de.jgsoftware.lanserver.dao.interfaces.iDaoOffer;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.CrudBuchungsdaten;
 import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
 import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
@@ -18,7 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class DaoOffer {
+public class DaoOffer implements iDaoOffer {
 
     @Autowired
     @Qualifier("mawiJdbcTemplate")
@@ -43,7 +44,7 @@ public class DaoOffer {
     }
 
 
-
+    @Override
     public List<Buchungsdaten> savenewOffer(List<Buchungsdaten> buchungsdaten)
     {
 
@@ -124,6 +125,7 @@ public class DaoOffer {
         return buchungsdaten;
     }
 
+    @Override
     public Integer getIdfromtable(Integer rowidforsave)
     {
 
@@ -132,6 +134,7 @@ public class DaoOffer {
         return rowidforsave;
     }
 
+    @Override
     public List<Artikelstamm> getartikelkenzeichen(Long artikelnummer)
     {
         String beginswith = artikelnummer + "%";
@@ -139,6 +142,7 @@ public class DaoOffer {
         return arikellist;
     }
 
+    @Override
     public List<Buchungsdaten> additemstooffercache(Buchungsdaten buchdat)
     {
 
@@ -147,11 +151,11 @@ public class DaoOffer {
     }
 
 
-
+    @Override
     public List<Buchungsdaten> getOffercachelist() {
         return offercachelist;
     }
-
+    @Override
     public void setOffercachelist(List<Buchungsdaten> offercachelist) {
         this.offercachelist = offercachelist;
     }

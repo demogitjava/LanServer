@@ -17,11 +17,11 @@ public class LoginWindowService implements de.jgsoftware.lanserver.service.inter
     {
 
     }
-
+    @Override
     public DaoLoginWindow getLoginWindow() {
         return loginWindow;
     }
-
+    @Override
     public void setLoginWindow(DaoLoginWindow loginWindow) {
         this.loginWindow = loginWindow;
     }

@@ -43,11 +43,11 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
     }
 
 
-
+    @Override
     public DaoOffer getDaoOffer() {
         return daoOffer;
     }
-
+    @Override
     public void setDaoOffer(DaoOffer daoOffer) {
         this.daoOffer = daoOffer;
     }

@@ -1,6 +1,7 @@
 package de.jgsoftware.lanserver.dao;
 
 
+import de.jgsoftware.lanserver.dao.interfaces.iDaoArtikelstamm;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class DaoArtikelstamm
+public class DaoArtikelstamm implements iDaoArtikelstamm
 {
 
 
@@ -29,7 +30,7 @@ public class DaoArtikelstamm
     }
 
 
-
+    @Override
     public List<Artikelstamm> getAllArtikel()
     {
 
@@ -37,6 +38,7 @@ public class DaoArtikelstamm
         return allartikellist;
     }
 
+    @Override
     public List<Artikelstamm> getArtikelselectionclient(String bezeichnung)
     {
         String beginswith = bezeichnung + "%";
@@ -44,6 +46,7 @@ public class DaoArtikelstamm
         return arikelclientselection;
     }
 
+    @Override
     public List<Artikelstamm> getSelectedAllArtikel()
     {
         Integer selectionnumber = 1;

@@ -23,11 +23,11 @@ public class SCustomer implements de.jgsoftware.lanserver.service.interfaces.iSC
     {
 
     }
-
+    @Override
     public DaoCustomer getDaocustomer() {
         return daocustomer;
     }
-
+    @Override
     public void setDaocustomer(DaoCustomer daocustomer) {
         this.daocustomer = daocustomer;
     }

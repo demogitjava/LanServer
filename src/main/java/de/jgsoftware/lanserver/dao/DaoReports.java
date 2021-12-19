@@ -1,6 +1,7 @@
 package de.jgsoftware.lanserver.dao;
 
 
+import de.jgsoftware.lanserver.dao.interfaces.iDaoReports;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.Reports;
 
@@ -39,7 +40,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import org.springframework.web.multipart.MultipartFile;
 
 @Repository
-public class DaoReports
+public class DaoReports implements iDaoReports
 {
 
     @Autowired
@@ -64,6 +65,7 @@ public class DaoReports
 
 
     // angebot erstellen
+    @Override
     public JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException
     {
 
