@@ -30,18 +30,10 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
     @Qualifier("mawiJdbcTemplate")
     JdbcTemplate jtm1;
 
-
-
-
-
-
-
-
     public OfferService()
     {
 
     }
-
 
     @Override
     public DaoOffer getDaoOffer() {

@@ -3,6 +3,7 @@ package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.dao.interfaces.iDaoUsers;
 import de.jgsoftware.lanserver.model.Users;
+import de.jgsoftware.lanserver.model.Yourcompanydata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -33,5 +34,14 @@ public class DaoUsers implements iDaoUsers
         Users users = (Users) jtm.query("SELECT * FROM USERS WHERE ID=?", new BeanPropertyRowMapper(Users.class));
         return users;
     }
+
+    @Override
+    public List getYourCompanydata()
+    {
+        List yourcompanydata = jtm.query("select * from YOURCOMPANYDATA", new BeanPropertyRowMapper(Yourcompanydata.class));
+        return yourcompanydata;
+    }
+
+
 
 }
