@@ -26,39 +26,39 @@ public class Buchungsdaten implements iMBuchungsdaten {
     private int menge;
     private Integer buchungskz;
 
-
+    @Override
     public Integer getId() {
         return id;
     }
-
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
-
+    @Override
     public Long getKdnummer() {
         return kdnummer;
     }
-
+    @Override
     public void setKdnummer(Long kdnummer) {
         this.kdnummer = kdnummer;
     }
-
+    @Override
     public String getKdname() {
         return kdname;
     }
-
+    @Override
     public void setKdname(String kdname) {
         this.kdname = kdname;
     }
-
+    @Override
     public int getBeleg() {
         return beleg;
     }
-
+    @Override
     public void setBeleg(int beleg) {
         this.beleg = beleg;
     }
-
+    @Override
     public int getWg() {
         return wg;
     }
