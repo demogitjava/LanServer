@@ -1,25 +1,13 @@
 package de.jgsoftware.lanserver;
 
-import org.h2.tools.Server;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-import java.sql.SQLException;
 
 
 //@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @SpringBootApplication
-public class LanServerApplication {
+public class LanServerApplication
+{
 
 
     private org.h2.tools.Server h2Server;
