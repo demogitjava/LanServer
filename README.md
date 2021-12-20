@@ -103,7 +103,9 @@ docker for windows are available on
 https://www.docker.com/products/docker-desktop
 
 for config on an docker image make a backup with
-'docker save -o jgsoftwares.tar jgsoftwares/jgsoftwares'
+
+`docker save -o jgsoftwares.tar jgsoftwares/jgsoftwares`
+
 after then the config´s on docker are available and 
 editable watch about a "05b5bd8ec6601010e1ddbb270b128638013bb91854278d62e35d58f5c8d33e89.json" for this case.
 
