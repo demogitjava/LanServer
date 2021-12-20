@@ -109,7 +109,6 @@ for config on an docker image make a backup with
 after then the config´s on docker are available and 
 editable watch about a "05b5bd8ec6601010e1ddbb270b128638013bb91854278d62e35d58f5c8d33e89.json" for this case.
 
-
-
-
+to load your image to docker desktop type:
+`docker load --input jgsoftwares.tar`
 
