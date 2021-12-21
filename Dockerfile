@@ -1,5 +1,5 @@
 #FROM ghcr.io/graalvm/graalvm-ce:latest
-FROM jgsoftwares/jgsoftwares:latest
+FROM jgsoftwares/jgsoftwares:demolanserver
 
 
 
