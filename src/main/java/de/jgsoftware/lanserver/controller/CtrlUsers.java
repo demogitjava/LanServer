@@ -82,5 +82,14 @@ public class CtrlUsers
     }
 
 
+    // returns all users from database
+    @GetMapping("/getuserdata")
+    public ResponseEntity<List<Users>> getAllUserData()
+    {
+
+        List youruserdata = userService.getDuser().getAllUsers();
+
+        return new ResponseEntity<List<Users>>(youruserdata, HttpStatus.OK);
+    }
 
 }

@@ -6,6 +6,7 @@ import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -13,8 +14,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class DaoUsers implements iDaoUsers
-{
+public class DaoUsers implements iDaoUsers {
 
 
     @Autowired
@@ -43,5 +43,11 @@ public class DaoUsers implements iDaoUsers
     }
 
 
+    @Override
+    public List getAllUserdata()
+    {
+        List userdata = jtm.query("select * from USERS", new BeanPropertyRowMapper(Users.class));
+        return userdata;
+    }
 
 }
