@@ -58,6 +58,4 @@ public class Users implements iMUsers
 	public void setRole(String role) {
 		this.role = role;
 	}
-
-
 }
