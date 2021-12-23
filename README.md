@@ -77,7 +77,7 @@ https://bell-sw.com/pages/downloads/
 
 **For Docker** 
 
-To build the image with graalvm type:
+To build the image type:
 
 `docker build -f Dockerfile -t demolanserver .`
 
