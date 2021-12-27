@@ -92,4 +92,16 @@ public class CtrlUsers
         return new ResponseEntity<List<Users>>(youruserdata, HttpStatus.OK);
     }
 
+
+    /*
+            edit company data
+     */
+    @PostMapping(value = "/editcompanydata")
+    public ResponseEntity<Yourcompanydata> editcompydata(Yourcompanydata ycomdata)
+    {
+
+        userService.getDuser().edityourcompanydata(ycomdata);
+
+        return editcompydata(ycomdata);
+    }
 }
