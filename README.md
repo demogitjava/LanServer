@@ -85,7 +85,13 @@ and you create a docker image with ***CentOS***
 runs in a container over port 8443.
 
 
+----------------------------------------------
 
+used jdk:
+**or Java Bell Soft**
+https://bell-sw.com/pages/downloads/#mn
+
+----------------------------------------------
 
 
 
