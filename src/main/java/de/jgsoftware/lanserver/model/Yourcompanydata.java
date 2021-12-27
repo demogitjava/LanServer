@@ -93,7 +93,7 @@ public class Yourcompanydata implements iMYourcompanydata
     }
     @Override
     public void setFirmennumer(Integer firmennumer) {
-        this.firmennummer = firmennumer;
+        this.firmennummer = firmennummer;
     }
 
     @Override
