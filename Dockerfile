@@ -1,7 +1,6 @@
-
 #FROM ghcr.io/graalvm/graalvm-ce:latest
-#FROM bellsoft/liberica-openjdk-centos
 FROM jgsoftwares/jgsoftwares:latest
+
 
 USER root
 
