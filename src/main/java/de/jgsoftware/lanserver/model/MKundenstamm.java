@@ -74,8 +74,6 @@ public class MKundenstamm implements iMKundenstamm
 
 
 
-
-
     @Override
     public Long getId() {
         return id;

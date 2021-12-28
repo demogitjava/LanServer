@@ -20,6 +20,9 @@ public class Yourcompanydata implements iMYourcompanydata
     private String ort;
     private String telefon;
     private String email;
+
+
+
     private Integer firmennummer;
 
     private String steuernummer;
@@ -29,6 +32,8 @@ public class Yourcompanydata implements iMYourcompanydata
     private String bank;
     private String kontoinhaber;
     private String iban;
+
+
 
 
     @Override
@@ -87,14 +92,6 @@ public class Yourcompanydata implements iMYourcompanydata
     public void setEmail(String email) {
         this.email = email;
     }
-    @Override
-    public Integer getFirmennumer() {
-        return firmennummer;
-    }
-    @Override
-    public void setFirmennumer(Integer firmennumer) {
-        this.firmennummer = firmennummer;
-    }
 
     @Override
     public String getSteuernummer() {
@@ -104,6 +101,7 @@ public class Yourcompanydata implements iMYourcompanydata
     public void setSteuernummer(String steuernummer) {
         this.steuernummer = steuernummer;
     }
+
     @Override
     public String getUstIdNr() {
         return UstIdNr;
@@ -151,5 +149,14 @@ public class Yourcompanydata implements iMYourcompanydata
     @Override
     public void setIban(String iban) {
         this.iban = iban;
+    }
+
+    @Override
+    public Integer getFirmennummer() {
+        return firmennummer;
+    }
+    @Override
+    public void setFirmennummer(Integer firmennummer) {
+        this.firmennummer = firmennummer;
     }
 }
