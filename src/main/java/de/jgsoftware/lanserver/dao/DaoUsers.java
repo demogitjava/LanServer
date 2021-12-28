@@ -1,6 +1,7 @@
 
 package de.jgsoftware.lanserver.dao;
 
+import de.jgsoftware.lanserver.dao.interfaces.iDaoCrudRepositoryYourCompanydata;
 import de.jgsoftware.lanserver.dao.interfaces.iDaoUsers;
 import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
@@ -25,6 +26,10 @@ public class DaoUsers implements iDaoUsers {
     @Autowired
     @Qualifier("defaultJdbcTemplate")
     private JdbcTemplate jtm;
+
+
+    @Autowired
+    iDaoCrudRepositoryYourCompanydata idaoCrudrepYourCompanydata;
 
     @Override
     public List<Users> getAllUsers()
@@ -59,9 +64,9 @@ public class DaoUsers implements iDaoUsers {
     public Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata)
     {
 
-        JpaRepository<Yourcompanydata, Integer> editcompany = null;
-        editcompany.save(ycomdata);
 
+        idaoCrudrepYourCompanydata.save(ycomdata);
+        idaoCrudrepYourCompanydata.count();
 
 
         return ycomdata;
