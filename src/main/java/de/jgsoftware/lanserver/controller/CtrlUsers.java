@@ -97,7 +97,7 @@ public class CtrlUsers
             edit company data
      */
     @PostMapping(value = "/editcompanydata")
-    public ResponseEntity<Yourcompanydata> editcompydata(Yourcompanydata ycomdata)
+    public ResponseEntity<Yourcompanydata> editcompydata(@RequestBody Yourcompanydata ycomdata)
     {
 
         userService.getDuser().edityourcompanydata(ycomdata);
