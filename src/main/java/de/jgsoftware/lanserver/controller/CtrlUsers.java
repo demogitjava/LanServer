@@ -1,21 +1,16 @@
 package de.jgsoftware.lanserver.controller;
 
 
-import de.jgsoftware.lanserver.model.Desktoplayout;
-import de.jgsoftware.lanserver.model.MKundenstamm;
 import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
-import de.jgsoftware.lanserver.service.UserService;
 import de.jgsoftware.lanserver.service.interfaces.iUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.StandardCharsets;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -97,11 +92,8 @@ public class CtrlUsers
             edit company data
      */
     @PostMapping(value = "/editcompanydata")
-    public ResponseEntity<Yourcompanydata> editcompydata(@RequestBody Yourcompanydata ycomdata)
+    public Yourcompanydata editcompydata(@RequestBody Yourcompanydata ycomdata)
     {
-
-        userService.getDuser().edityourcompanydata(ycomdata);
-
-        return editcompydata(ycomdata);
+         return userService.getDuser().edityourcompanydata(ycomdata);
     }
 }

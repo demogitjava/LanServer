@@ -5,7 +5,11 @@
              version="2.2">
 
     <persistence-unit name="demodb">
+        <class>de.jgsoftware.lanserver.model.Desktoplayout</class>
+        <class>de.jgsoftware.lanserver.model.MKundenstamm</class>
         <class>de.jgsoftware.lanserver.model.Reports</class>
+        <class>de.jgsoftware.lanserver.model.Users</class>
+        <class>de.jgsoftware.lanserver.model.Yourcompanydata</class>
 
 
         <properties>

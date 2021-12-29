@@ -65,11 +65,7 @@ public class DaoUsers implements iDaoUsers {
     {
 
 
-        idaoCrudrepYourCompanydata.save(ycomdata);
-        idaoCrudrepYourCompanydata.count();
-
-
-        return ycomdata;
+        return idaoCrudrepYourCompanydata.save(ycomdata);
     }
 
 }
