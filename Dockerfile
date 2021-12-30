@@ -1,10 +1,5 @@
-
 #FROM ghcr.io/graalvm/graalvm-ce:latest
-#FROM bellsoft/liberica-openjdk-centos
 FROM jgsoftwares/jgsoftwares:latest
-
-USER root
-
 # locale to german
 ENV LANG=de_DE.UTF-8
 ENV LANGUAGE de_DE:de
