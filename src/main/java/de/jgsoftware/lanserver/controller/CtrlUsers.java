@@ -67,6 +67,8 @@ public class CtrlUsers
     }
 
 
+
+
     @GetMapping("/getCompanydata")
     public ResponseEntity<List<Yourcompanydata>> getCompanydata()
     {
