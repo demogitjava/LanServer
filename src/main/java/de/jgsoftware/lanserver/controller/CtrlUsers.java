@@ -57,13 +57,11 @@ public class CtrlUsers
         return "ok test string";
     }
 
-    @PostMapping(value = "/createuser")
-    public ResponseEntity<Users> createUser(Users users)
+    @PostMapping(value = "/createnewuser")
+    public ResponseEntity<Users> createUser(@RequestBody Users users)
     {
-
-
-        System.out.print("es soll ein benutzer angelegt werden!");
-        return createUser(users);
+        userService.getDuser().createnewuser(users);
+        return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
 
 

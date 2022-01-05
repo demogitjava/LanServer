@@ -74,6 +74,9 @@ public class DaoUsers implements iDaoUsers {
      // new user
      public Users createnewuser(Users users)
      {
+         Long newiduser = idaouserjpa.count();
+         users.setId(newiduser +1);
+         users.setEnabled(1);
          return idaouserjpa.save(users);
      }
 

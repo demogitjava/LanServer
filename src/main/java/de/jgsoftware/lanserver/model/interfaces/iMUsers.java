@@ -10,4 +10,7 @@ public interface iMUsers
     public void setPassword(String password);
     public String getRole();
     public void setRole(String role);
+
+    public Integer getEnabled();
+    public void setEnabled(Integer enabled);
 }

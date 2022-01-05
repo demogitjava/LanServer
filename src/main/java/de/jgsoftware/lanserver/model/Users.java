@@ -17,6 +17,7 @@ public class Users implements iMUsers
 	private String password;
 	private String role;
 
+	private Integer enabled;
 
 	/*
 	public User(String username, String password, String role)
@@ -57,5 +58,15 @@ public class Users implements iMUsers
 	@Override
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+
+	@Override
+	public Integer getEnabled() {
+		return enabled;
+	}
+	@Override
+	public void setEnabled(Integer enabled) {
+		this.enabled = enabled;
 	}
 }
