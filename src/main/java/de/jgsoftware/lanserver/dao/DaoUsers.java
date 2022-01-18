@@ -64,7 +64,7 @@ public class DaoUsers implements iDaoUsers {
         return userdata;
     }
 
-
+    @Override
     public Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata)
     {
      return idaoCrudrepYourCompanydata.save(ycomdata);
@@ -72,6 +72,7 @@ public class DaoUsers implements iDaoUsers {
 
 
      // new user
+     @Override
      public Users createnewuser(Users users)
      {
          Long newiduser = idaouserjpa.count();
@@ -82,12 +83,14 @@ public class DaoUsers implements iDaoUsers {
 
 
      // edit
+     @Override
      public Users edituser(Users users)
      {
          return idaousercrud.save(users);
      }
 
      // delete
+     @Override
      public Integer deleteusers(Integer id)
      {
 
