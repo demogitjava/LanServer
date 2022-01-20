@@ -90,12 +90,12 @@ public class DaoUsers implements iDaoUsers {
      // delete
      public Integer deleteusers(Integer id)
      {
-
-         try {
-             idaousercrud.deleteById(id);
+         try
+         {
+             jtm.execute("DELETE FROM USERS where id = " + id);
          } catch(Exception e)
          {
-            System.out.print("fehler bei löschen der id");
+             System.out.print("fehler " +e );
          }
          return id;
      }

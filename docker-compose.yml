@@ -1,12 +1,5 @@
-version: '3.8'
+version: "3.0"
 services:
-  demolanserver:
-    build:
-      context: .
-      dockerfile: Dockerfile
-
-    ports:
-      - 127.0.0.1:8443:8443
-      - 127.0.0.1:9092:9092
-      - 127.0.0.1:5005:5005
-      - 127.0.0.1:8082:8082
+  dns:
+    image: sha256:98a93b704012f58bc4df358dd85153d0ba431ff37117a14854da7e621968886d
+    hostname: jgsoftwares.de
