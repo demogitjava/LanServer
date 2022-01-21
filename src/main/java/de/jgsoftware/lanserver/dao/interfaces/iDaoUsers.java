@@ -14,6 +14,9 @@ public interface iDaoUsers
     public Users getItembyId(int id);
     public List getYourCompanydata();
     public List getAllUserdata();
+    public Users edituser(Users users);
+    public Users createnewuser(Users users);
 
+    public Integer deleteusers(Integer id);
     public Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata);
 }
