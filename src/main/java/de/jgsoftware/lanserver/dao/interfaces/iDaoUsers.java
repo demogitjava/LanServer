@@ -15,9 +15,7 @@ public interface iDaoUsers
     public List getYourCompanydata();
     public List getAllUserdata();
 
-    public Integer deleteusers(Integer id);
-    public Users edituser(Users users);
-    public Users createnewuser(Users users);
+
 
     public Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata);
     public Users createnewuser(Users users);
