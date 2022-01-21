@@ -94,7 +94,7 @@ public class DaoUsers implements iDaoUsers {
     @Override
     public Integer deleteusers(Integer id)
     {
-        Users users = (Users) jtm.query("DELTE FROM TABLE USERS where ID=" + id, new BeanPropertyRowMapper(Users.class));
+        jtm.execute("DELETE FROM USERS where ID=" + id);
 
         return id;
     }
