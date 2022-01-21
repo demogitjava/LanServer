@@ -1,6 +1,7 @@
 package de.jgsoftware.lanserver.controller;
 
 
+import de.jgsoftware.lanserver.dto.dtoUsers;
 import de.jgsoftware.lanserver.model.Users;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
 import de.jgsoftware.lanserver.service.interfaces.iUserService;
