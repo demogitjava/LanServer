@@ -20,4 +20,8 @@ public interface iDaoUsers
     public Users createnewuser(Users users);
 
     public Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata);
+    public Users createnewuser(Users users);
+    public Users edituser(Users users);
+    public Integer deleteusers(Integer id);
+
 }
