@@ -64,7 +64,15 @@ public class CtrlUsers
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
 
+    @PostMapping(value = "/deleteuser")
+    public ResponseEntity<Users> deleteuser(@RequestBody Users users)
+    {
 
+
+        Integer id = Integer.parseInt(String.valueOf(users.getId()));
+        userService.getDuser().deleteusers(id);
+        return new ResponseEntity<Users>(users, HttpStatus.OK);
+    }
 
 
     @GetMapping("/getCompanydata")

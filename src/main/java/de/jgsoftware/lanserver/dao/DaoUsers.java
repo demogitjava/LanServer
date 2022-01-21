@@ -87,18 +87,14 @@ public class DaoUsers implements iDaoUsers {
          return idaousercrud.save(users);
      }
 
-     // delete
-     public Integer deleteusers(Integer id)
-     {
+    // delete
+    @Override
+    public Integer deleteusers(Integer id)
+    {
+        jtm.execute("DELETE FROM USERS where ID=" + id);
 
-         try {
-             idaousercrud.deleteById(id);
-         } catch(Exception e)
-         {
-            System.out.print("fehler bei löschen der id");
-         }
-         return id;
-     }
+        return id;
+    }
 
 
 
