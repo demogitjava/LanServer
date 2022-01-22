@@ -94,7 +94,6 @@ public class DaoUsers implements iDaoUsers {
     public Integer deleteusers(Integer id)
     {
         jtm.execute("DELETE FROM USERS where ID=" + id);
-
         return id;
     }
 

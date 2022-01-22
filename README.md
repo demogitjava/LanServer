@@ -90,7 +90,8 @@ runs in a container over port 8443.
 used jdk:
 **or Java Bell Soft**
 https://bell-sw.com/pages/downloads/#mn
-
+for this project i choose
+https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64-lite.tar.gz
 ----------------------------------------------
 
 
