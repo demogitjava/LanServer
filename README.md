@@ -57,6 +57,15 @@ Java
 
 Java JDK
 
+----------------------------------------------
+
+used jdk:
+**or Java Bell Soft**
+https://bell-sw.com/pages/downloads/#mn
+https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64-lite.tar.gz
+----------------------------------------------
+
+
 GraalVM
 
 https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0
@@ -85,13 +94,7 @@ and you create a docker image with ***CentOS***
 runs in a container over port 8443.
 
 
-----------------------------------------------
 
-used jdk:
-**or Java Bell Soft**
-https://bell-sw.com/pages/downloads/#mn
-
-----------------------------------------------
 
 
 

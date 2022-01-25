@@ -12,7 +12,7 @@ ADD https://github.com/demogitjava/demodatabase/raw/master/shopdb.mv.db /root/sh
 
 # add jar to maschine
 # dropbox client
-ADD https://github.com/demogitjava/demodatabase/raw/master/Dropboxclient.jar /root/applib/dropboxclient.jar
+#ADD https://github.com/demogitjava/demodatabase/raw/master/Dropboxclient.jar /root/applib/dropboxclient.jar
 
 ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 COPY target/Lanserver.jar lanserver.jar
