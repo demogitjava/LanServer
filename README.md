@@ -45,6 +45,8 @@ or
 
 for a native spring boot build jar on the target folder.
 
+If you get an compile error from jar use recompile with -> `use classpath of module`
+
 
 make sure that maven is installed if you want to make a compile.
 
@@ -56,8 +58,6 @@ https://downloads.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin
 Java 
 
 Java JDK
-
-
 ----------------------------------------------
 
 used jdk:
