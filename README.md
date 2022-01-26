@@ -55,6 +55,16 @@ https://downloads.apache.org/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin
 
 
 
+start H2 console
+download form here and start the h2 jar with
+http://www.h2database.com/html/download.html
+
+'java -cp h2.jar org.h2.tools.Console'
+
+
+
+
+
 Java 
 
 Java JDK
@@ -68,7 +78,6 @@ https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64-li
 
 
 GraalVM
-
 https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0
 
 or
@@ -80,9 +89,10 @@ or
 SAPMaschine
 https://sap.github.io/SapMachine/
 
-BellSoft
-https://bell-sw.com/pages/downloads/
+or
 
+Azul
+https://www.azul.com/downloads/?package=jdk#download-openjdk
 
 
 **For Docker** 
