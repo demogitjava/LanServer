@@ -23,6 +23,7 @@ public class CtrlUsers
     iUserService userService;
 
 
+
     @RequestMapping("/")
     public Principal user(Principal user)
     {
@@ -61,6 +62,7 @@ public class CtrlUsers
     @PostMapping(value = "/createnewuser")
     public ResponseEntity<Users> createUser(@RequestBody Users users)
     {
+
         userService.getDuser().createnewuser(users);
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }

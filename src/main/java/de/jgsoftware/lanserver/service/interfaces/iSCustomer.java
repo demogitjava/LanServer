@@ -10,6 +10,5 @@ public interface iSCustomer
     public DaoCustomer getDaocustomer();
     public void setDaocustomer(DaoCustomer daocustomer);
 
-    public iDaoCustomer getIdaocustomer();
-    public void setIdaocustomer(iDaoCustomer idaocustomer);
+
 }

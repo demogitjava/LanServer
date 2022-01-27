@@ -39,11 +39,12 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
     }
 
 
+    /*
+          functions over interface
+     */
     public iDaoOffer getIdaooffer() {
         return idaooffer;
     }
-
-
     public void setIdaooffer(iDaoOffer idaooffer) {
         this.idaooffer = idaooffer;
     }

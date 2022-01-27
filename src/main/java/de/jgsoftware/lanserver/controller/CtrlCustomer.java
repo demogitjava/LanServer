@@ -35,7 +35,7 @@ public class CtrlCustomer
     @GetMapping("/getCustomerbyName/{customername}")
     public ResponseEntity<List<MKundenstamm>> getUserById(@PathVariable("customername") String customername)
     {
-        List<MKundenstamm> customerlist = customerservice.getIdaocustomer().getCustomerbyname(customername);
+        List<MKundenstamm> customerlist = customerservice.getDaocustomer().getCustomerbyname(customername);
         return new ResponseEntity<List<MKundenstamm>>(customerlist, HttpStatus.OK);
     }
 
@@ -44,7 +44,7 @@ public class CtrlCustomer
     public ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
 
-        customerservice.getIdaocustomer().save(mKundenstamm);
+        customerservice.getDaocustomer().save(mKundenstamm);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
@@ -54,7 +54,7 @@ public class CtrlCustomer
     public ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm dtokundenstamm)
     {
 
-        customerservice.getIdaocustomer().UpdateCustomer(dtokundenstamm);
+        customerservice.getDaocustomer().UpdateCustomer(dtokundenstamm);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -62,7 +62,7 @@ public class CtrlCustomer
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<List<MKundenstamm>> getnewcustomer()
     {
-        List<MKundenstamm> newcustomerlist = customerservice.getIdaocustomer().createnewCustomer();
+        List<MKundenstamm> newcustomerlist = customerservice.getDaocustomer().createnewCustomer();
         return new ResponseEntity<List<MKundenstamm>>(newcustomerlist, HttpStatus.OK);
     }
 
@@ -70,7 +70,7 @@ public class CtrlCustomer
     public MKundenstamm deleteCustomer(@RequestBody MKundenstamm dtokundenstamm)
     {
 
-        return customerservice.getIdaocustomer().deleteCusomter(dtokundenstamm);
+        return customerservice.getDaocustomer().deleteCusomter(dtokundenstamm);
     }
 
 
@@ -82,7 +82,7 @@ public class CtrlCustomer
     @GetMapping("/getcustomerdocuments/{customernumber}")
     public ResponseEntity<List<Buchungsdaten>> getcustomerdocuments(@PathVariable("customernumber") String customernumber)
     {
-        List<Buchungsdaten> dokumentlist = customerservice.getIdaocustomer().getDocumentsforcustomer(customernumber);
+        List<Buchungsdaten> dokumentlist = customerservice.getDaocustomer().getDocumentsforcustomer(customernumber);
         return new ResponseEntity<List<Buchungsdaten>>(dokumentlist, HttpStatus.OK);
     }
 
