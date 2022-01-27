@@ -7,6 +7,7 @@ package de.jgsoftware.lanserver.dao;
 
 import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
 import de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -94,6 +95,18 @@ public class DaoCustomer implements iDaoCustomer
     {
         restjpacustomer.deleteById(dtokundenstamm.getId());
         return dtokundenstamm;
+    }
+
+    @Override
+    public List<Buchungsdaten> getDocumentsforcustomer(String customernumber)
+    {
+
+        Integer year = null;
+        Integer month = null;
+
+
+        List<Buchungsdaten> documentlsit = jtm.query("", new BeanPropertyRowMapper(Buchungsdaten.class));
+        return documentlsit;
     }
    
 }

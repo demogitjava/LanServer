@@ -1,6 +1,7 @@
 package de.jgsoftware.lanserver.dao.interfaces;
 
 import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface iDaoCustomer
     public MKundenstamm save(MKundenstamm mKundenstamm);
     public List createnewCustomer();
     public MKundenstamm deleteCusomter(MKundenstamm dtokundenstamm);
+    public List<Buchungsdaten> getDocumentsforcustomer(String customernumber);
 }

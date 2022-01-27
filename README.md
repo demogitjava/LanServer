@@ -71,17 +71,20 @@ Java JDK
 ----------------------------------------------
 
 used jdk:
-**or Java Bell Soft**
-
-https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64-lite.tar.gz
-----------------------------------------------
-
-
+** Graal VM **
 GraalVM
 https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0
 
+----------------------------------------------
+
+
+Bell Soft
+https://download.bell-sw.com/java/11.0.14+9/bellsoft-jdk11.0.14+9-linux-amd64-lite.tar.gz
+
+
 or
 
+Open JKD
 https://openjdk.java.net/
 
 or

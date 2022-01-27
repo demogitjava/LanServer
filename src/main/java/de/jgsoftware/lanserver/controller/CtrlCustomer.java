@@ -7,6 +7,7 @@ package de.jgsoftware.lanserver.controller;
 
 import de.jgsoftware.lanserver.dto.dtoMKundenstamm;
 import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import de.jgsoftware.lanserver.service.SCustomer;
 import de.jgsoftware.lanserver.service.interfaces.iSCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,19 @@ public class CtrlCustomer
     {
 
         return customerservice.getDaocustomer().deleteCusomter(dtokundenstamm);
+    }
+
+
+    /*
+            return all documents
+            from customer
+            with year and the last 4 month
+     */
+    @GetMapping("/getcustomerdocuments/{customernumber}")
+    public ResponseEntity<List<Buchungsdaten>> getUserById(@PathVariable("customernumber") String customernumber)
+    {
+        List<Buchungsdaten> dokumentlist = customerservice.getIdaocustomer().getDocumentsforcustomer(customernumber);
+        return new ResponseEntity<List<Buchungsdaten>>(dokumentlist, HttpStatus.OK);
     }
 
 }

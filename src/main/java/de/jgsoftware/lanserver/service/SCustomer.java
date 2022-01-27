@@ -8,7 +8,7 @@ package de.jgsoftware.lanserver.service;
 import de.jgsoftware.lanserver.dao.DaoCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
 /**
  *
  * @author hoscho
@@ -19,10 +19,23 @@ public class SCustomer implements de.jgsoftware.lanserver.service.interfaces.iSC
     @Autowired
     DaoCustomer daocustomer;
 
+    @Autowired
+    iDaoCustomer idaocustomer;
+
     public SCustomer()
     {
 
     }
+
+    @Override
+    public iDaoCustomer getIdaocustomer() {
+        return idaocustomer;
+    }
+    @Override
+    public void setIdaocustomer(iDaoCustomer idaocustomer) {
+        this.idaocustomer = idaocustomer;
+    }
+
     @Override
     public DaoCustomer getDaocustomer() {
         return daocustomer;
