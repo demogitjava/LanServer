@@ -26,7 +26,7 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
     @Autowired
     DataSource dataSource;
 
-    @Autowired
+
     iDaoOffer idaooffer;
 
     @Autowired
@@ -38,12 +38,12 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
 
     }
 
-    @Override
+
     public iDaoOffer getIdaooffer() {
         return idaooffer;
     }
 
-    @Override
+
     public void setIdaooffer(iDaoOffer idaooffer) {
         this.idaooffer = idaooffer;
     }
