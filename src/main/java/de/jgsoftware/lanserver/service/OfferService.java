@@ -2,6 +2,7 @@ package de.jgsoftware.lanserver.service;
 
 import de.jgsoftware.lanserver.config.MaWiDBConfig;
 import de.jgsoftware.lanserver.dao.DaoOffer;
+import de.jgsoftware.lanserver.dao.interfaces.iDaoOffer;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,6 +26,8 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
     @Autowired
     DataSource dataSource;
 
+    @Autowired
+    iDaoOffer idaooffer;
 
     @Autowired
     @Qualifier("mawiJdbcTemplate")
@@ -33,6 +36,16 @@ public class OfferService implements de.jgsoftware.lanserver.service.interfaces.
     public OfferService()
     {
 
+    }
+
+    @Override
+    public iDaoOffer getIdaooffer() {
+        return idaooffer;
+    }
+
+    @Override
+    public void setIdaooffer(iDaoOffer idaooffer) {
+        this.idaooffer = idaooffer;
     }
 
     @Override
