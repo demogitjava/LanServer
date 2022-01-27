@@ -59,7 +59,7 @@ start H2 console
 download form here and start the h2 jar with
 http://www.h2database.com/html/download.html
 
-'java -cp h2.jar org.h2.tools.Console'
+'java -cp h2.jar org.h2.tools.Console -webAllowOthers'
 
 
 

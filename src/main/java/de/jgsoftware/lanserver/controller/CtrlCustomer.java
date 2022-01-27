@@ -80,7 +80,7 @@ public class CtrlCustomer
             with year and the last 4 month
      */
     @GetMapping("/getcustomerdocuments/{customernumber}")
-    public ResponseEntity<List<Buchungsdaten>> getUserById(@PathVariable("customernumber") String customernumber)
+    public ResponseEntity<List<Buchungsdaten>> getcustomerdocuments(@PathVariable("customernumber") String customernumber)
     {
         List<Buchungsdaten> dokumentlist = customerservice.getIdaocustomer().getDocumentsforcustomer(customernumber);
         return new ResponseEntity<List<Buchungsdaten>>(dokumentlist, HttpStatus.OK);
