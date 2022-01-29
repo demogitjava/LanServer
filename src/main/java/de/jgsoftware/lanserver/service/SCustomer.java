@@ -19,22 +19,13 @@ public class SCustomer implements de.jgsoftware.lanserver.service.interfaces.iSC
     @Autowired
     DaoCustomer daocustomer;
 
-    @Autowired
-    iDaoCustomer idaocustomer;
+
 
     public SCustomer()
     {
 
     }
 
-    @Override
-    public iDaoCustomer getIdaocustomer() {
-        return idaocustomer;
-    }
-    @Override
-    public void setIdaocustomer(iDaoCustomer idaocustomer) {
-        this.idaocustomer = idaocustomer;
-    }
 
     @Override
     public DaoCustomer getDaocustomer() {

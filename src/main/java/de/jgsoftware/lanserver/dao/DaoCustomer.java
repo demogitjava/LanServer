@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -29,6 +30,10 @@ public class DaoCustomer implements iDaoCustomer
     @Autowired
     @Qualifier("defaultJdbcTemplate")
     JdbcTemplate jtm;
+
+    @Autowired
+    @Qualifier("mawiJdbcTemplate")
+    JdbcTemplate jtm1;
 
     @Autowired
     DCustomer interfaceDCustomer;
@@ -101,12 +106,83 @@ public class DaoCustomer implements iDaoCustomer
     public List<Buchungsdaten> getDocumentsforcustomer(String customernumber)
     {
 
-        Integer year = null;
-        Integer month = null;
 
 
-        List<Buchungsdaten> documentlsit = jtm.query("", new BeanPropertyRowMapper(Buchungsdaten.class));
-        return documentlsit;
+        Calendar calendar = new GregorianCalendar();
+
+
+        int intyear = calendar.get(Calendar.YEAR);
+
+
+
+        // quarter period
+        int intmonth = calendar.get(Calendar.MONTH);
+        switch(intmonth)
+        {
+
+            case 1:
+                intmonth = 0;
+                break;
+
+            case 2:
+                intmonth = 0;
+                break;
+
+            case 3:
+                intmonth = 0;
+                break;
+
+            case 4:
+                intmonth = 3;
+                break;
+
+            case 5:
+                intmonth = 3;
+                break;
+
+            case 6:
+                intmonth = 3;
+                break;
+
+            case 7:
+                intmonth = 6;
+                break;
+
+            case 8:
+                intmonth = 6;
+                break;
+
+            case 9:
+                intmonth = 6;
+                break;
+
+            case 10:
+                intmonth = 9;
+                break;
+
+            case 11:
+                intmonth = 9;
+                break;
+
+            case 12:
+                intmonth = 9;
+                break;
+
+            default:
+                break;
+
+
+        }
+
+
+        // select id, kdnummer, beleg, wg, vk, bdatum, artikelnummer, belegart, buchungskz, menge, month(bdatum) as month, year(bdatum) as year from buchungsdaten where year(bdatum) = 2021 and month(bdatum) > 9
+        String sql = "select id, kdnummer, beleg, wg, vk, bdatum, artikelnummer, belegart, buchungskz, menge, month(bdatum) as month, year(bdatum) as year from buchungsdaten where year(bdatum) = "
+                + "" + intyear + ""
+                + " and month(bdatum) > " + intmonth;
+
+
+        List<Buchungsdaten> documentlist = jtm1.query(sql, new BeanPropertyRowMapper(Buchungsdaten.class));
+        return documentlist;
     }
    
 }
