@@ -86,4 +86,6 @@ public class CtrlCustomer
         return new ResponseEntity<List<Buchungsdaten>>(dokumentlist, HttpStatus.OK);
     }
 
+
+
 }
