@@ -26,7 +26,7 @@ public class Yourcompanydata implements iMYourcompanydata
 
     private String steuernummer;
     private String UstIdNr;
-    private String geschÃ¤ftsfÃ¼hrer;
+    private String geschäftsführer;
     private String amtsgericht;
     private String bank;
     private String kontoinhaber;
@@ -110,12 +110,12 @@ public class Yourcompanydata implements iMYourcompanydata
         UstIdNr = ustIdNr;
     }
     @Override
-    public String getGeschÃ¤ftsfÃ¼hrer() {
-        return geschÃ¤ftsfÃ¼hrer;
+    public String getGeschäftsführer() {
+        return geschäftsführer;
     }
     @Override
-    public void setGeschÃ¤ftsfÃ¼hrer(String geschÃ¤ftsfÃ¼hrer) {
-        this.geschÃ¤ftsfÃ¼hrer = geschÃ¤ftsfÃ¼hrer;
+    public void setGeschäftsführer(String geschäftsführer) {
+        this.geschäftsführer = geschäftsführer;
     }
     @Override
     public String getAmtsgericht() {
