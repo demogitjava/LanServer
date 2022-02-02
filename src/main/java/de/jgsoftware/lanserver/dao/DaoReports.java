@@ -164,8 +164,8 @@ public class DaoReports implements iDaoReports
         parameters.put("yourcompanyemail", "Email: " + companydata.get(0).getEmail());
         parameters.put("yourcompanytelefon", "Telefon: " + companydata.get(0).getTelefon());
         parameters.put("steuernummer", "Steuernummer: " + companydata.get(0).getSteuernummer());
-        parameters.put("Ust.IdNr", "Ust.IdNr: " + companydata.get(0).getUstIdNr());
-        parameters.put("Geschäftsführer", "Geschäftsführer: " + companydata.get(0).getGeschäftsführer());
+        parameters.put("Ust.IdNr", "Ust.IdNr: " + companydata.get(0).getUstIdNr());  // getGeschäftsführer
+        parameters.put("Geschäftsführer", "Geschäftsführer: " + companydata.get(0).getGeschfhr());
         parameters.put("amtsgericht", "Amtsgericht: " + companydata.get(0).getAmtsgericht());
         parameters.put("Bank", "Bank: " + companydata.get(0).getBank());
         parameters.put("Kontoinhaber", "Kontoinhaber: " + companydata.get(0).getKontoinhaber());

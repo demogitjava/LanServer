@@ -22,8 +22,10 @@ public interface iMYourcompanydata
     public void setSteuernummer(String steuernummer);
     public String getUstIdNr();
     public void setUstIdNr(String ustIdNr);
-    public String getGeschäftsführer();
-    public void setGeschäftsführer(String geschäftsführer);
+
+    public String getGeschfhr();
+    public void setGeschfhr(String geschfhr);
+
     public String getAmtsgericht();
     public void setAmtsgericht(String amtsgericht);
     public String getBank();
