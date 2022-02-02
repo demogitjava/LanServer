@@ -1,14 +1,20 @@
 #FROM ghcr.io/graalvm/graalvm-ce:latest
-FROM jgsoftwares/jgsoftwares:ubuntu_noip_gui_server_graalvm
+FROM jgsoftwares/jgsoftwares:ubuntujavaddclient
 
 # locale to german
 ENV LANG=de_DE.UTF-8
 ENV LANGUAGE de_DE:de
 ENV LC_ALL de_DE.UTF-8
 
+
+
 ADD https://github.com/demogitjava/demodatabase/raw/master/demodb.mv.db /root/demodb.mv.db
 ADD https://github.com/demogitjava/demodatabase/raw/master/mawi.mv.db /root/mawi.mv.db
 ADD https://github.com/demogitjava/demodatabase/raw/master/shopdb.mv.db /root/shopdb.mv.db
+
+ADD https://raw.githubusercontent.com/demogitjava/demodatabase/master/ddclient.conf /etc/ddclient.conf
+
+
 
 # add jar to maschine
 # dropbox client
