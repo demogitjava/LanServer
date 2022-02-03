@@ -2,9 +2,9 @@
 FROM jgsoftwares/jgsoftwares:ubuntujavaddclient
 
 # locale to german
-ENV LANG=de_DE.UTF-8
+ENV LANG=de_DE.ISO-8859-1
 ENV LANGUAGE de_DE:de
-ENV LC_ALL de_DE.UTF-8
+ENV LC_ALL de_DE.ISO-8859-1
 
 
 
