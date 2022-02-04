@@ -1,5 +1,5 @@
-#FROM ghcr.io/graalvm/graalvm-ce:latest
-FROM jgsoftwares/jgsoftwares:ubuntujavaddclient
+FROM jgsoftwares/jgsoftwares:linuxgraalvmce
+#FROM jgsoftwares/jgsoftwares:i386ubuntuopenjdk
 
 # locale to german
 ENV LANG=de_DE.ISO-8859-1
