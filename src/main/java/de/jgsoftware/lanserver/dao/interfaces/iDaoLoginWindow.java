@@ -7,6 +7,6 @@ import java.util.List;
 @Repository
 public interface iDaoLoginWindow
 {
-    public List<Desktoplayout> getlogintextentry();
-    public List<Desktoplayout> getFrameDesktopEntry(String framename);
+    List<Desktoplayout> getlogintextentry();
+    List<Desktoplayout> getFrameDesktopEntry(String framename);
 }

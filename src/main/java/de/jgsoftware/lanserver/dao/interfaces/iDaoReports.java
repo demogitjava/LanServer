@@ -9,5 +9,5 @@ import java.sql.SQLException;
 @Repository
 public interface iDaoReports
 {
-    public JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException;
+    JasperPrint createOffer(String offernumber) throws SQLException, JRException, IOException;
 }

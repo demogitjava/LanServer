@@ -8,7 +8,7 @@ import java.util.List;
 @Repository
 public interface iDaoArtikelstamm
 {
-    public List<Artikelstamm> getAllArtikel();
-    public List<Artikelstamm> getArtikelselectionclient(String bezeichnung);
-    public List<Artikelstamm> getSelectedAllArtikel();
+    List<Artikelstamm> getAllArtikel();
+    List<Artikelstamm> getArtikelselectionclient(String bezeichnung);
+    List<Artikelstamm> getSelectedAllArtikel();
 }

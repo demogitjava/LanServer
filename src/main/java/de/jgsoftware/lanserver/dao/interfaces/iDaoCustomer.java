@@ -8,10 +8,10 @@ import java.util.List;
 @Repository
 public interface iDaoCustomer
 {
-    public List<MKundenstamm> getCustomerbyname(String customername);
-    public MKundenstamm UpdateCustomer(MKundenstamm dtokundenstamm);
-    public MKundenstamm save(MKundenstamm mKundenstamm);
-    public List createnewCustomer();
-    public MKundenstamm deleteCusomter(MKundenstamm dtokundenstamm);
-    public List<Buchungsdaten> getDocumentsforcustomer(String customernumber);
+    List<MKundenstamm> getCustomerbyname(String customername);
+    MKundenstamm UpdateCustomer(MKundenstamm dtokundenstamm);
+    MKundenstamm save(MKundenstamm mKundenstamm);
+    List createnewCustomer();
+    MKundenstamm deleteCusomter(MKundenstamm dtokundenstamm);
+    List<Buchungsdaten> getDocumentsforcustomer(String customernumber);
 }

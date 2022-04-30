@@ -10,13 +10,13 @@ import java.util.List;
 @Repository
 public interface iDaoUsers
 {
-    public List<Users> getAllUsers();
-    public Users getItembyId(int id);
-    public List getYourCompanydata();
-    public List getAllUserdata();
-    public Users edituser(Users users);
-    public Users createnewuser(Users users);
+    List<Users> getAllUsers();
+    Users getItembyId(int id);
+    List getYourCompanydata();
+    List getAllUserdata();
+    Users edituser(Users users);
+    Users createnewuser(Users users);
 
-    public Integer deleteusers(Integer id);
-    public Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata);
+    Integer deleteusers(Integer id);
+    Yourcompanydata edityourcompanydata(Yourcompanydata ycomdata);
 }
