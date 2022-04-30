@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface iSCustomer
 {
-    public DaoCustomer getDaocustomer();
-    public void setDaocustomer(DaoCustomer daocustomer);
+    DaoCustomer getDaocustomer();
+    void setDaocustomer(DaoCustomer daocustomer);
 
 
 }

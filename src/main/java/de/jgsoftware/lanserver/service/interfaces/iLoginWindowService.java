@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface iLoginWindowService
 {
-    public DaoLoginWindow getLoginWindow();
-    public void setLoginWindow(DaoLoginWindow loginWindow);
+    DaoLoginWindow getLoginWindow();
+    void setLoginWindow(DaoLoginWindow loginWindow);
 
 }

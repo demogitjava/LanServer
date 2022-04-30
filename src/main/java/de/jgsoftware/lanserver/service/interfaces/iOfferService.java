@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface iOfferService
 {
-    public DaoOffer getDaoOffer();
-    public void setDaoOffer(DaoOffer daoOffer);
+    DaoOffer getDaoOffer();
+    void setDaoOffer(DaoOffer daoOffer);
 
 }

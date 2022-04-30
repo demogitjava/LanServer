@@ -8,6 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface iReportService
 {
     DaoReports getDaoReports();
-    public void setDaoReports(DaoReports daoReports);
+    void setDaoReports(DaoReports daoReports);
 
 }

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface iUserService
 {
-    public DaoUsers getDuser();
-    public void setDuser(DaoUsers duser);
+    DaoUsers getDuser();
+    void setDuser(DaoUsers duser);
 
 
 }

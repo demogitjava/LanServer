@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface iArtikelservice
 {
-    public DaoArtikelstamm getDartstamm();
-    public void setDartstamm(DaoArtikelstamm dartstamm);
+    DaoArtikelstamm getDartstamm();
+    void setDartstamm(DaoArtikelstamm dartstamm);
 }
