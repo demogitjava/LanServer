@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
-
+import de.jgsoftware.lanserver.controller.interfaces.i_CtrlArtikelstamm;
 
 @Controller
-@RequestMapping("/artikelstamm")
-public class CtrArtikelstamm
+public class CtrArtikelstamm implements i_CtrlArtikelstamm
 {
 
 
@@ -25,7 +24,7 @@ public class CtrArtikelstamm
     iArtikelservice artikelservice;
 
 
-    @GetMapping("/getallartikel")
+    @Override
     public ResponseEntity<List<Artikelstamm>> getAllArtikel()
     {
         List<Artikelstamm> allArikellist = artikelservice.getDartstamm().getAllArtikel();
@@ -37,7 +36,7 @@ public class CtrArtikelstamm
             search items over item description
             Table Artikelstamm
      */
-    @GetMapping("/getArtikelbyArtikelbezeichnung/{bezeichnung}")
+    @Override
     public ResponseEntity<List<Artikelstamm>> getUserById(@PathVariable("bezeichnung") String bezeichnung)
     {
         List<Artikelstamm> artikelselectionclientlist = artikelservice.getDartstamm().getArtikelselectionclient(bezeichnung);
@@ -48,7 +47,7 @@ public class CtrArtikelstamm
     /*
            Table Artikelstamm - selectionclient = 1
     */
-    @GetMapping("/getselectedArtikel")
+    @Override
     public ResponseEntity<List<Artikelstamm>> getselectedAllArtikel()
     {
         List<Artikelstamm> selectedArikellist = artikelservice.getDartstamm().getSelectedAllArtikel();

@@ -2,21 +2,15 @@ package de.jgsoftware.lanserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import de.jgsoftware.lanserver.iLanServerApplication;
 
 //@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @SpringBootApplication
-public class LanServerApplication
+public class LanServerApplication implements iLanServerApplication
 {
 
 
-    private org.h2.tools.Server h2Server;
 
-    public LanServerApplication()
-    {
-
-
-    }
 
 
 
@@ -52,21 +46,6 @@ public class LanServerApplication
     */
 
 
-    static {
-        //for localhost testing only
-        javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(
-                (hostname, sslSession) -> hostname.equals("localhost"));
-    }
 
-
-
-    public static void main(String[] args)
-    {
-        /*
-        System.setProperty("spring.profiles.default", "dev");
-        System.setProperty("spring.devtools.restart.enabled", "true");
-            */
-        SpringApplication.run(LanServerApplication.class, args);
-    }
 
 }

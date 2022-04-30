@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-
+import de.jgsoftware.lanserver.controller.interfaces.i_CtrDesktopLabel;
 
 // /detaillabeldesktopentry/getloginlabel
 @Controller
-@RequestMapping("/detaillabeldesktopentry")
-public class CtlDesktopLabel
+
+public class CtlDesktopLabel implements i_CtrDesktopLabel
 {
 
     @Autowired
@@ -28,7 +28,7 @@ public class CtlDesktopLabel
         List with Text
         for Login JInternalFrame only
      */
-    @GetMapping("/getloginlabel")
+    @Override
     public ResponseEntity<List<Desktoplayout>> getLoginEntry()
     {
         List<Desktoplayout> deskloginentry = loginWindowService.getLoginWindow().getlogintextentry();
@@ -43,7 +43,7 @@ public class CtlDesktopLabel
 
         over String for framename
      */
-    @GetMapping("/getloginlabel/{framename}")
+   @Override
     public ResponseEntity<List<Desktoplayout>> getUserById(@PathVariable("framename") String framename)
     {
         List<Desktoplayout> deskloginentry = loginWindowService.getLoginWindow().getFrameDesktopEntry(framename);

@@ -14,8 +14,11 @@ import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.util.List;
 
+import de.jgsoftware.lanserver.controller.interfaces.i_CtrUsers;
+
+
 @RestController
-public class CtrlUsers
+public class CtrlUsers implements i_CtrUsers
 {
 
 
@@ -24,14 +27,14 @@ public class CtrlUsers
 
 
 
-    @RequestMapping("/")
+    @Override
     public Principal user(Principal user)
     {
         return user;
     }
 
 
-    @PostMapping(value = "/user")
+    @Override
     public ResponseEntity<String> getUserById(String token)
     {
 
@@ -39,7 +42,7 @@ public class CtrlUsers
         return new ResponseEntity<String>("success", HttpStatus.OK);
     }
 
-    @PostMapping("/loginclientuser")
+    @Override
     public ResponseEntity<Users> loginclientuser(String username, String password)
     {
 
@@ -52,14 +55,14 @@ public class CtrlUsers
     }
 
 
-    @RequestMapping("/getUserData")
+    @Override
     public String getTestLogin()
     {
 
         return "ok test string";
     }
 
-    @PostMapping(value = "/createnewuser")
+    @Override
     public ResponseEntity<Users> createUser(@RequestBody Users users)
     {
 
@@ -67,7 +70,7 @@ public class CtrlUsers
         return new ResponseEntity<Users>(users, HttpStatus.OK);
     }
 
-    @PostMapping(value = "/deleteuser")
+    @Override
     public ResponseEntity<Users> deleteuser(@RequestBody Users users)
     {
 
@@ -78,7 +81,7 @@ public class CtrlUsers
     }
 
 
-    @GetMapping("/getCompanydata")
+    @Override
     public ResponseEntity<List<Yourcompanydata>> getCompanydata()
     {
 
@@ -89,7 +92,7 @@ public class CtrlUsers
 
 
     // returns all users from database
-    @GetMapping("/getuserdata")
+    @Override
     public ResponseEntity<List<Users>> getAllUserData()
     {
 
@@ -102,7 +105,7 @@ public class CtrlUsers
     /*
             edit company data
      */
-    @PostMapping(value = "/editcompanydata")
+    @Override
     public Yourcompanydata editcompydata(@RequestBody Yourcompanydata ycomdata)
     {
          return userService.getDuser().edityourcompanydata(ycomdata);

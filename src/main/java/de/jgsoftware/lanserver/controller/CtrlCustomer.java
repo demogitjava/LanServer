@@ -18,10 +18,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import de.jgsoftware.lanserver.controller.interfaces.i_CtrCustomer;
 
 @Controller
-@RequestMapping("/customer")
-public class CtrlCustomer 
+public class CtrlCustomer implements i_CtrCustomer
 {
 
     @Qualifier("SCustomer")
@@ -32,15 +32,14 @@ public class CtrlCustomer
     dtoMKundenstamm dtokundenstamm;
 
 
-    @GetMapping("/getCustomerbyName/{customername}")
+    @Override
     public ResponseEntity<List<MKundenstamm>> getUserById(@PathVariable("customername") String customername)
     {
         List<MKundenstamm> customerlist = customerservice.getDaocustomer().getCustomerbyname(customername);
         return new ResponseEntity<List<MKundenstamm>>(customerlist, HttpStatus.OK);
     }
 
-    @PostMapping("/savenewcustomer")
-    @ResponseStatus(HttpStatus.CREATED)
+    @Override
     public ResponseEntity<MKundenstamm> createnewcustomer(@RequestBody MKundenstamm mKundenstamm)
     {
 
@@ -49,8 +48,7 @@ public class CtrlCustomer
     }
 
 
-    @PostMapping("/updatenewcustomer")
-    @ResponseStatus(HttpStatus.OK)
+    @Override
     public ResponseEntity<MKundenstamm> updatecustomer(@RequestBody MKundenstamm dtokundenstamm)
     {
 
@@ -58,15 +56,14 @@ public class CtrlCustomer
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @GetMapping("/newCustomer")
-    @ResponseStatus(HttpStatus.OK)
+    @Override
     public ResponseEntity<List<MKundenstamm>> getnewcustomer()
     {
         List<MKundenstamm> newcustomerlist = customerservice.getDaocustomer().createnewCustomer();
         return new ResponseEntity<List<MKundenstamm>>(newcustomerlist, HttpStatus.OK);
     }
 
-    @PostMapping("/deletecustomer")
+    @Override
     public MKundenstamm deleteCustomer(@RequestBody MKundenstamm dtokundenstamm)
     {
 
@@ -79,7 +76,7 @@ public class CtrlCustomer
             from customer
             with year and the last 4 month
      */
-    @GetMapping("/getcustomerdocuments/{customernumber}")
+    @Override
     public ResponseEntity<List<Buchungsdaten>> getcustomerdocuments(@PathVariable("customernumber") String customernumber)
     {
         List<Buchungsdaten> dokumentlist = customerservice.getDaocustomer().getDocumentsforcustomer(customernumber);
