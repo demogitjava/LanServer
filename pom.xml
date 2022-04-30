@@ -12,7 +12,7 @@
     <groupId>de.jgsoftware.lanserver</groupId>
     <artifactId>LanServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>LanServer</name>
+    <name>DemoLanServer</name>
     <description>DemoLanServer</description>
 
     <properties>
