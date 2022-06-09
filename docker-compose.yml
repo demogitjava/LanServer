@@ -1,5 +1,0 @@
-version: "3.0"
-services:
-  dns:
-    image: sha256:98a93b704012f58bc4df358dd85153d0ba431ff37117a14854da7e621968886d
-    hostname: jgsoftwares.de
