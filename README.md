@@ -15,8 +15,6 @@ https://netbeans.apache.org/download/nb125/nb125.html
 
 
 
-
-
 install the h2 database
 
 http://www.h2database.com/html/download.html
@@ -30,6 +28,24 @@ https://github.com/demogitjava/demodatabase
 
 - demodb.mv.db
 - mawi.mv.db
+
+                
+------------------------------------------------------------------
+        
+                     Internet or 
+                     Dokcker Desktop
+
+------------------------------------------------------------------
+
+                             127.0.0.1
+----------              ----------------------------
+-        -              -                          -
+- client -   -------->  -  LanServer over Internet -
+-        -              -  -> vpn connect          -
+----------              ----------------------------
+
+------------------------------------------------------------------
+
 
 
 
