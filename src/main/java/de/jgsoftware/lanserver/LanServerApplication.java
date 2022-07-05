@@ -9,11 +9,6 @@ import de.jgsoftware.lanserver.iLanServerApplication;
 public class LanServerApplication implements iLanServerApplication
 {
 
-
-
-
-
-
     /*
     // demodb
     @Bean
