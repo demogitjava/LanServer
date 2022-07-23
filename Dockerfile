@@ -1,5 +1,6 @@
 
-FROM jgsoftwares/jgsoftwares:linuxgraalvmce
+FROM imglanserver:latest
+#FROM jgsoftwares/jgsoftwares:linuxgraalvmce
 #FROM jgsoftwares/jgsoftwares:i386ubuntuopenjdk
 
 # locale to german
