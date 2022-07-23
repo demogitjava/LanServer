@@ -1,0 +1,14 @@
+version: '3'
+
+
+services:
+
+  webshop:
+    image: imglanserver:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: lanserver
+    ports:
+      - "217.160.255.254:8443:8443"
+
