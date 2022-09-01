@@ -9,7 +9,6 @@ ENV LANGUAGE de_DE:de
 ENV LC_ALL de_DE.ISO-8859-1
 
 
-
 ADD https://github.com/demogitjava/demodatabase/raw/master/demodb.mv.db /root/demodb.mv.db
 ADD https://github.com/demogitjava/demodatabase/raw/master/mawi.mv.db /root/mawi.mv.db
 ADD https://github.com/demogitjava/demodatabase/raw/master/shopdb.mv.db /root/shopdb.mv.db
