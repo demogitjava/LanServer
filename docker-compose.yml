@@ -1,17 +1,21 @@
 version: '3'
-
-
 services:
 
-  lanserver:
-    image: imglanserver:latest
-    container_name: lanserver
-    build:
-      context: ./
-      dockerfile: Dockerfile
+  de_lanserver:
+    image: de_lanserver
+    container_name: de_lanserver
     ports:
-      - "217.160.255.254:8443:8443"
+      - "217.160.255.254:80:80"
+    networks:
+      - 192.168.178.0
+    environment:
+      - TZ=Europe/Berlin
+    dns:
+      - 8.8.8.8
+      - 8.8.4.4
 
-
+networks:
+  192.168.178.0:
+    external: true
 
 
