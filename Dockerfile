@@ -1,6 +1,4 @@
-
-#FROM imglanserver:latest
-FROM de_lanserver:latest
+FROM jgsoftwares/jgsoftwares:linuxgraalvmce
 #FROM jgsoftwares/jgsoftwares:i386ubuntuopenjdk
 
 # locale to german

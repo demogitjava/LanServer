@@ -2,10 +2,10 @@ version: '3'
 services:
 
   de_lanserver:
-    image: de_lanserver
+    image: de_lanserver:latest
     container_name: de_lanserver
     ports:
-      - "217.160.255.254:80:80"
+      - "217.160.255.254:8443:8443"
     networks:
       - 192.168.178.0
     environment:
