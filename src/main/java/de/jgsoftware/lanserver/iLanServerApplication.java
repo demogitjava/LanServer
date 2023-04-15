@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author hoscho
@@ -14,12 +16,16 @@ import java.time.ZonedDateTime;
 @SpringBootApplication
 public interface iLanServerApplication
 {
+    public static String st_timezones = "Europe/Berlin";
 
     static void main(String[] args)
     {
-        ZonedDateTime now = ZonedDateTime.now(ZoneId.of("Europe/Berlin"));
+        ZonedDateTime now = ZonedDateTime.now(ZoneId.of(st_timezones));
         //ZonedDateTime now = ZonedDateTime.now();
 
+        // set up to GMT
+        now.withZoneSameInstant( ZoneId.of("UTC") )
+                .format( DateTimeFormatter.ISO_OFFSET_DATE_TIME );
         // 1. ZonedDateTime to TimeStamp
         Timestamp timestamp = Timestamp.valueOf(now.toLocalDateTime());
 
