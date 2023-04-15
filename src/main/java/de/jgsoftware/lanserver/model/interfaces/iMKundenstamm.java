@@ -3,7 +3,10 @@ package de.jgsoftware.lanserver.model.interfaces;
 import de.jgsoftware.lanserver.model.MKundenstamm;
 
 import java.util.Date;
-
+/**
+ *
+ * @author hoscho
+ */
 public interface iMKundenstamm
 {
     public Long getId();

@@ -27,6 +27,11 @@ import java.io.IOException;
 import java.net.URLClassLoader;
 import java.net.MalformedURLException;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Configuration
 public class FileConfiguration implements WebMvcConfigurer
 {

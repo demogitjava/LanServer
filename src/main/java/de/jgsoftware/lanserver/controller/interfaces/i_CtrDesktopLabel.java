@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-
+/**
+ *
+ * @author hoscho
+ */
 @RequestMapping("/detaillabeldesktopentry")
 public interface i_CtrDesktopLabel
 {

@@ -23,6 +23,11 @@ import java.util.zip.*;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static org.hibernate.engine.jdbc.StreamUtils.copy;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @ShellComponent
 public class shellcommands
 {

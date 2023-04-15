@@ -5,6 +5,13 @@ import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public interface iDaoOffer {
     List<Buchungsdaten> savenewOffer(List<Buchungsdaten> buchungsdaten);

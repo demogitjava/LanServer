@@ -2,7 +2,10 @@ package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
 import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsarten;
-
+/**
+ *
+ * @author hoscho
+ */
 
 @Entity
 @Table(name = "BUCHUNGSARTEN", schema = "PUBLIC", catalog = "MAWI")

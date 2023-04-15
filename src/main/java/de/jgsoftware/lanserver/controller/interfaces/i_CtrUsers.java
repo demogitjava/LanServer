@@ -14,6 +14,11 @@ import java.nio.charset.StandardCharsets;
 import java.security.Principal;
 import java.util.List;
 
+
+/**
+ *
+ * @author hoscho
+ */
 public interface i_CtrUsers
 {
 

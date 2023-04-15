@@ -4,6 +4,11 @@ import de.jgsoftware.lanserver.dao.DaoReports;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
+/**
+ *
+ * @author hoscho
+ */
 @Service
 public interface iReportService
 {

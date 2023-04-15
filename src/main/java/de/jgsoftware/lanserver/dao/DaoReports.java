@@ -39,6 +39,11 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public class DaoReports implements iDaoReports
 {

@@ -22,6 +22,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import de.jgsoftware.lanserver.dao.interfaces.DCustomer;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public class DaoCustomer implements iDaoCustomer
 {

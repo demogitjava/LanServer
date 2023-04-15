@@ -3,7 +3,10 @@ package de.jgsoftware.lanserver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import de.jgsoftware.lanserver.iLanServerApplication;
-
+/**
+ *
+ * @author hoscho
+ */
 //@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @SpringBootApplication
 public class LanServerApplication implements iLanServerApplication

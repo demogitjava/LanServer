@@ -1,5 +1,10 @@
 package de.jgsoftware.lanserver.model.interfaces;
 
+/**
+ *
+ * @author hoscho
+ */
+
 public interface iMReports
 {
     public Integer getId();

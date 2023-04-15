@@ -7,6 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public interface iDaoUsers
 {

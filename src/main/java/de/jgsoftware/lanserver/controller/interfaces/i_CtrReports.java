@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.io.IOException;
 import java.sql.SQLException;
 
+
+/**
+ *
+ * @author hoscho
+ */
 @RequestMapping("/report")
 public interface i_CtrReports
 {

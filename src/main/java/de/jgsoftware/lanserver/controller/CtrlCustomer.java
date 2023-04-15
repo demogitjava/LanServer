@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import de.jgsoftware.lanserver.controller.interfaces.i_CtrCustomer;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Controller
 public class CtrlCustomer implements i_CtrCustomer
 {

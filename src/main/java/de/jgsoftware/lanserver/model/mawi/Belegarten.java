@@ -2,7 +2,10 @@ package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
 import de.jgsoftware.lanserver.model.interfaces.mawi.iMBelegarten;
-
+/**
+ *
+ * @author hoscho
+ */
 @Entity
 @Table(name = "Belegarten", schema = "PUBLIC", catalog = "MAWI")
 public class Belegarten implements iMBelegarten

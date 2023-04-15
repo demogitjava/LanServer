@@ -17,7 +17,10 @@ import de.jgsoftware.lanserver.model.MKundenstamm;
 
 import javax.persistence.Id;
 
-
+/**
+ *
+ * @author hoscho
+ */
 @Repository
 public interface CrudBuchungsdaten extends CrudRepository<Buchungsdaten, Integer>
 {

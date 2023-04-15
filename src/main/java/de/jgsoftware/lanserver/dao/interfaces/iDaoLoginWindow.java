@@ -4,6 +4,11 @@ import de.jgsoftware.lanserver.model.Desktoplayout;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public interface iDaoLoginWindow
 {

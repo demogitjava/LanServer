@@ -16,6 +16,10 @@ import java.util.List;
 
 import de.jgsoftware.lanserver.controller.interfaces.i_CtrUsers;
 
+/**
+ *
+ * @author hoscho
+ */
 
 @RestController
 public class CtrlUsers implements i_CtrUsers

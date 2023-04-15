@@ -8,7 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import javax.persistence.Lob;
-
+/**
+ *
+ * @author hoscho
+ */
 @Entity
 @Table(name = "Reports", schema = "PUBLIC", catalog = "DEMODB")
 public class Reports implements iMReports

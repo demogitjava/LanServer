@@ -2,7 +2,10 @@ package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
 import de.jgsoftware.lanserver.model.interfaces.mawi.iMSpringSession;
-
+/**
+ *
+ * @author hoscho
+ */
 @Entity
 @Table(name = "SPRING_SESSION", schema = "PUBLIC", catalog = "MAWI")
 public class SpringSession implements iMSpringSession

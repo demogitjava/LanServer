@@ -15,6 +15,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import de.jgsoftware.lanserver.controller.interfaces.i_CtrlArtikelstamm;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Controller
 public class CtrArtikelstamm implements i_CtrlArtikelstamm
 {

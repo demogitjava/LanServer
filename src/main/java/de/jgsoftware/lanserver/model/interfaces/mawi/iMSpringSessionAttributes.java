@@ -1,5 +1,10 @@
 package de.jgsoftware.lanserver.model.interfaces.mawi;
 
+/**
+ *
+ * @author hoscho
+ */
+
 public interface iMSpringSessionAttributes
 {
     public Integer getSessionPrimaryId();

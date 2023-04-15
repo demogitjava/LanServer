@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import de.jgsoftware.lanserver.controller.interfaces.i_CtrOffer;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Controller
 public class CtrOffer implements i_CtrOffer
 {

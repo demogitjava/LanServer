@@ -6,7 +6,10 @@ import javax.persistence.*;
 import javax.sql.DataSource;
 import java.util.Date;
 import de.jgsoftware.lanserver.model.interfaces.mawi.iMArtikelstamm;
-
+/**
+ *
+ * @author hoscho
+ */
 @Entity
 @Table(name = "ARTIKELSTAMM", schema = "PUBLIC", catalog = "MAWI")
 public class Artikelstamm implements iMArtikelstamm

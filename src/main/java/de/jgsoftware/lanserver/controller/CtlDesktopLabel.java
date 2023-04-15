@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 import de.jgsoftware.lanserver.controller.interfaces.i_CtrDesktopLabel;
 
+/**
+ *
+ * @author hoscho
+ */
+
 // /detaillabeldesktopentry/getloginlabel
 @Controller
 

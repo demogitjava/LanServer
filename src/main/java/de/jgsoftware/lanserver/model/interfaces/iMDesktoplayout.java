@@ -1,5 +1,8 @@
 package de.jgsoftware.lanserver.model.interfaces;
-
+/**
+ *
+ * @author hoscho
+ */
 public interface iMDesktoplayout
 {
     public String getGuicomponentname();

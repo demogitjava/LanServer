@@ -12,8 +12,12 @@ import de.jgsoftware.lanserver.controller.interfaces.i_CtrReports;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@Controller
+/**
+ *
+ * @author hoscho
+ */
 
+@Controller
 public class CtrReports implements i_CtrReports
 {
 

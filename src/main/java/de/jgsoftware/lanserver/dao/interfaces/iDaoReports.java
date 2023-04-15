@@ -6,6 +6,13 @@ import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
+
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public interface iDaoReports
 {

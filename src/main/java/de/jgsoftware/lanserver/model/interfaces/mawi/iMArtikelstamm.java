@@ -2,6 +2,11 @@ package de.jgsoftware.lanserver.model.interfaces.mawi;
 
 import java.util.Date;
 
+
+/**
+ *
+ * @author hoscho
+ */
 public interface iMArtikelstamm
 {
     public int getId();

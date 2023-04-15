@@ -6,7 +6,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsdaten;
-
+/**
+ *
+ * @author hoscho
+ */
 @Entity
 @Table(name = "BUCHUNGSDATEN", schema = "PUBLIC", catalog = "MAWI")
 public class Buchungsdaten implements iMBuchungsdaten {

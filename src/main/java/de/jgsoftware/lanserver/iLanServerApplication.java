@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-
+/**
+ *
+ * @author hoscho
+ */
 @SpringBootApplication
 public interface iLanServerApplication
 {

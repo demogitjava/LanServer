@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-
+/**
+ *
+ * @author hoscho
+ */
 @RequestMapping("/artikelstamm")
 public interface i_CtrlArtikelstamm
 {

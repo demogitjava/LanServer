@@ -13,7 +13,10 @@ import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.util.List;
-
+/**
+ *
+ * @author hoscho
+ */
 @Service
 public class OfferService implements de.jgsoftware.lanserver.service.interfaces.iOfferService
 {

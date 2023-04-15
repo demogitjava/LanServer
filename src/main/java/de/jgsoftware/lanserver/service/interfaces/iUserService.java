@@ -4,7 +4,10 @@ package de.jgsoftware.lanserver.service.interfaces;
 import de.jgsoftware.lanserver.dao.DaoUsers;
 import de.jgsoftware.lanserver.model.Yourcompanydata;
 import org.springframework.stereotype.Service;
-
+/**
+ *
+ * @author hoscho
+ */
 @Service
 public interface iUserService
 {

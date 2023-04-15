@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @RequestMapping("/offer")
 public interface i_CtrOffer
 {

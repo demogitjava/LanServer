@@ -15,6 +15,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ *
+ * @author hoscho
+ */
+
 @Repository
 public class DaoUsers implements iDaoUsers {
 

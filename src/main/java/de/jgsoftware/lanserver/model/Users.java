@@ -2,6 +2,11 @@ package de.jgsoftware.lanserver.model;
 
 import javax.persistence.*;
 import de.jgsoftware.lanserver.model.interfaces.iMUsers;
+
+/**
+ *
+ * @author hoscho
+ */
 @Entity
 @Table(name = "USERS", schema = "PUBLIC", catalog = "DEMODB")
 public class Users implements iMUsers

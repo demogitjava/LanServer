@@ -5,6 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import de.jgsoftware.lanserver.model.interfaces.iMYourcompanydata;
+/**
+ *
+ * @author hoscho
+ */
+
 @Entity
 public class Yourcompanydata implements iMYourcompanydata
 {
