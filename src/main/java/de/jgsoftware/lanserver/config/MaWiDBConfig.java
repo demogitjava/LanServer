@@ -4,7 +4,8 @@ package de.jgsoftware.lanserver.config;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-import javax.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityManagerFactory;
+//import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -74,7 +75,7 @@ public class MaWiDBConfig extends HikariConfig
     @Bean(name = "mawiTransactionManager")
     public PlatformTransactionManager mawiTransactionManager(
             @Qualifier("mawiEntityManagerFactory") EntityManagerFactory mawiEntityManagerFactory) {
-        return new JpaTransactionManager(mawiEntityManagerFactory);
+        return new JpaTransactionManager((jakarta.persistence.EntityManagerFactory) mawiEntityManagerFactory);
     }
 
     @Bean(name = "mawiJdbcTemplate")
