@@ -108,7 +108,7 @@ public class DemoDBConfig extends HikariConfig
     @Bean(name = "transactionManager")
     public PlatformTransactionManager transactionManager(
             @Qualifier("entityManagerFactory") EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager((jakarta.persistence.EntityManagerFactory) entityManagerFactory);
+        return new JpaTransactionManager((javax.persistence.EntityManagerFactory) entityManagerFactory);
     }
 
 

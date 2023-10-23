@@ -44,6 +44,7 @@ public class MaWiDBConfig extends HikariConfig
     @Autowired
     DataSource dataSource;
 
+    jakarta.persistence.EntityManagerFactory mawiEntityManagerFactory;
 
 
     public MaWiDBConfig()
@@ -75,7 +76,7 @@ public class MaWiDBConfig extends HikariConfig
     @Bean(name = "mawiTransactionManager")
     public PlatformTransactionManager mawiTransactionManager(
             @Qualifier("mawiEntityManagerFactory") EntityManagerFactory mawiEntityManagerFactory) {
-        return new JpaTransactionManager((jakarta.persistence.EntityManagerFactory) mawiEntityManagerFactory);
+        return new JpaTransactionManager((javax.persistence.EntityManagerFactory) mawiEntityManagerFactory);
     }
 
     @Bean(name = "mawiJdbcTemplate")

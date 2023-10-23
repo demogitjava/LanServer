@@ -10,23 +10,25 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>DemoLanServer</name>
     <description>DemoLanServer</description>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
    
 
     <properties>
+         <argLine>-Duser.timezone=Europe/Berlin</argLine>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
+       
+     
         <start-class>de.jgsoftware.lanserver.LanServerApplication</start-class>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+       
+         <java.version>11</java.version>
     </properties>
-    
     
      <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
+        <version>2.1.5.RELEASE</version>
     </parent>
 
 
@@ -159,10 +161,7 @@
             <artifactId>spring-session-jdbc</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.kafka</groupId>
-            <artifactId>spring-kafka</artifactId>
-        </dependency>
+       
 
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-zip -->
         <dependency>
@@ -219,11 +218,7 @@
     <version>6.20.6</version>
 </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
+        
         
     
     <dependency>
