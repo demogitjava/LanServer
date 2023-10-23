@@ -35,4 +35,4 @@ ADD http://demogitjava.ddns.net:8000/h2db/shopdb.mv.db /root/shopdb.mv.db
 ADD http://demogitjava.ddns.net:8000/DemoLanserver-0.0.1-SNAPSHOT.war /root/demolanserver.jar
 
 
-ENTRYPOINT ["java", "-jar", "demolanserver.jar"]
+ENTRYPOINT ["java", "-jar", "/root/demolanserver.jar"]
