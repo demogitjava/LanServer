@@ -12,6 +12,14 @@ ENV LANG=de_DE.ISO-8859-1
 ENV LANGUAGE de_DE:de
 ENV LC_ALL de_DE.ISO-8859-1
 
+ENV TZ Europe/Berlin
+
+# web
+EXPOSE 8443
+
+# h2 console
+EXPOSE 8082
+
 ADD http://demogitjava.ddns.net:8000/h2db/demodb.mv.db /root/demodb.mv.db
 ADD http://demogitjava.ddns.net:8000/h2db/mawi.mv.db /root/mawi.mv.db
 ADD http://demogitjava.ddns.net:8000/h2db/shopdb.mv.db /root/shopdb.mv.db
