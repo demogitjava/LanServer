@@ -14,7 +14,7 @@ ENV LC_ALL de_DE.ISO-8859-1
 
 ENV TZ Europe/Berlin
 
-# web
+# lan-server
 EXPOSE 8443
 
 # h2 console
