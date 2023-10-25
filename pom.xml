@@ -229,18 +229,7 @@
             <type>jar</type>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.experimental/spring-native -->
-        <dependency>
-            <groupId>org.springframework.experimental</groupId>
-            <artifactId>spring-native</artifactId>
-            <version>0.10.5</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.experimental/spring-aot-maven-plugin -->
-        <dependency>
-            <groupId>org.springframework.experimental</groupId>
-            <artifactId>spring-aot-maven-plugin</artifactId>
-            <version>0.10.5</version>
-        </dependency>
+      
 
     </dependencies>
 
