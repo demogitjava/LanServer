@@ -32,7 +32,7 @@ ADD http://demogitjava.ddns.net:8000/h2db/shopdb.mv.db /root/shopdb.mv.db
 
 #ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 #COPY target/Lanserver.jar lanserver.jar
-ADD http://demogitjava.ddns.net:8000/DemoLanserver-0.0.1-SNAPSHOT.war /root/demolanserver.war
+ADD http://demogitjava.ddns.net:8000/LanServer-0.0.1-SNAPSHOT.war /root/demolanserver.war
 
 
 ENTRYPOINT ["java", "-jar", "/root/demolanserver.war"]
