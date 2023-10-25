@@ -3,36 +3,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.1</version>
+    </parent>
 
     <groupId>de.jgsoftware.lanserver</groupId>
     <artifactId>LanServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>DemoLanServer</name>
     <description>DemoLanServer</description>
-    <packaging>jar</packaging>
-
-   
 
     <properties>
-         <argLine>-Duser.timezone=Europe/Berlin</argLine>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
-       
-     
         <start-class>de.jgsoftware.lanserver.LanServerApplication</start-class>
-       
-         <java.version>11</java.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
     </properties>
-    
-     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.5.RELEASE</version>
-    </parent>
-
 
     <repositories>
 
@@ -84,7 +71,6 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.199</version>
         </dependency>
 
         <dependency>
@@ -131,39 +117,28 @@
             <version>1.1.1</version>
         </dependency>
 
-       <dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-core-jakarta</artifactId>
-			    <version>5.5.0.Final</version>
-			</dependency>
-		
-	
-		
-		
-			<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-entitymanager</artifactId>
-			    <version>5.5.0.Final</version>
-			</dependency>
-			
-				<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-jpamodelgen-jakarta</artifactId>
-			    <version>5.5.0.Final</version>
-			</dependency>
-			
-			 <dependency>
-	            <groupId>jakarta.validation</groupId>
-	            <artifactId>jakarta.validation-api</artifactId>
-	            <version>3.0.2</version>
-	        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.6.1.Final</version>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-kotlin -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>2.13.0</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-jdbc</artifactId>
         </dependency>
 
-       
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-zip -->
         <dependency>
@@ -204,25 +179,30 @@
             <version>2.2.13.RELEASE</version>
         </dependency>
 
-       
-        <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.20.6</version>
-            <type>jar</type>
+            <version>6.18.1</version>
         </dependency>
 
-<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
-<dependency>
-    <groupId>net.sf.jasperreports</groupId>
-    <artifactId>jasperreports</artifactId>
-    <version>6.20.6</version>
-</dependency>
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
         
-        
-    
+          <dependency>
+        <groupId>org.teavm</groupId>
+        <artifactId>teavm-classlib</artifactId>
+        <version>0.6.1</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.teavm</groupId>
+      <artifactId>teavm-jso</artifactId>
+      <version>0.6.1</version>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -235,24 +215,22 @@
         <dependency>
             <groupId>com.dropbox.core</groupId>
             <artifactId>dropbox-core-sdk</artifactId>
-            <version>5.4.6</version>
-            <type>jar</type>
+            <version>2.1.1</version>
         </dependency>
 
-        
-       
+        <!-- https://mvnrepository.com/artifact/org.springframework.experimental/spring-native -->
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>5.7.10</version>
-            <type>jar</type>
+            <groupId>org.springframework.experimental</groupId>
+            <artifactId>spring-native</artifactId>
+            <version>0.10.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.experimental/spring-aot-maven-plugin -->
         <dependency>
-            <groupId>jasperreports</groupId>
-            <artifactId>jasperreports</artifactId>
-            <version>3.5.3</version>
-            <type>jar</type>
+            <groupId>org.springframework.experimental</groupId>
+            <artifactId>spring-aot-maven-plugin</artifactId>
+            <version>0.10.5</version>
         </dependency>
+
     </dependencies>
 
 
@@ -279,17 +257,10 @@
                         <version>2.5.3</version>
 
                         <configuration>
-                            <mainClass>de.jgsoftware.lanserver.iLanServerApplication</mainClass>
+                            <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
                         </configuration>
                     </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
+
         </plugins>
 
 

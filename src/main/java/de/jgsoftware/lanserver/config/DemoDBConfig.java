@@ -3,8 +3,8 @@ package de.jgsoftware.lanserver.config;
 
 import java.sql.SQLException;
 import java.util.HashMap;
-import jakarta.persistence.EntityManagerFactory;
-//import javax.persistence.EntityManagerFactory;
+
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import com.zaxxer.hikari.HikariConfig;
@@ -33,8 +33,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import jakarta.persistence.EntityManagerFactory;
-//import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
@@ -108,7 +107,7 @@ public class DemoDBConfig extends HikariConfig
     @Bean(name = "transactionManager")
     public PlatformTransactionManager transactionManager(
             @Qualifier("entityManagerFactory") EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager((javax.persistence.EntityManagerFactory) entityManagerFactory);
+        return new JpaTransactionManager(entityManagerFactory);
     }
 
 
