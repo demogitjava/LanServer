@@ -24,7 +24,7 @@ public interface iLanServerApplication
         //ZonedDateTime now = ZonedDateTime.now();
 
         // set up to GMT
-        now.withZoneSameInstant( ZoneId.of("UTC") )
+        now.withZoneSameInstant( ZoneId.of("GMT") )
                 .format( DateTimeFormatter.ISO_OFFSET_DATE_TIME );
         // 1. ZonedDateTime to TimeStamp
         Timestamp timestamp = Timestamp.valueOf(now.toLocalDateTime());

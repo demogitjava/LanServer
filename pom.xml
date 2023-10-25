@@ -23,6 +23,8 @@
         <start-class>de.jgsoftware.lanserver.LanServerApplication</start-class>
        
          <java.version>11</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
     
      <parent>
