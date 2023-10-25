@@ -3,6 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <groupId>de.jgsoftware.lanserver</groupId>
+    <artifactId>LanServer</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>DemoLanServer</name>
+    <description>DemoLanServer</description>
+    <packaging>jar</packaging>
+
      <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -10,12 +18,7 @@
     </parent>
 
 
-    <groupId>de.jgsoftware.lanserver</groupId>
-    <artifactId>LanServer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>DemoLanServer</name>
-    <description>DemoLanServer</description>
-
+   
      <properties>
         <spring-boot.run.jvmArguments>-Duser.timezone=UTC</spring-boot.run.jvmArguments>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
