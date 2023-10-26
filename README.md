@@ -2,12 +2,6 @@ Demo Lanserver
 ============================================================
 
 
-
-this is a demolanserver application to 
-run rest-services behind a router.
-
-
-
 Used IDE is Apache Netbeans
 
 https://netbeans.apache.org/download/nb125/nb125.html
@@ -30,26 +24,6 @@ https://github.com/demogitjava/demodatabase
 - mawi.mv.db
 
                 
-------------------------------------------------------------------
-        
-                     Internet or 
-                     Dokcker Desktop
-
-------------------------------------------------------------------
-
-                             127.0.0.1
-----------              ----------------------------
--        -              -                          -
-- client -   -------->  -  LanServer over Internet -
--        -              -  -> vpn connect          -
-----------              ----------------------------
-
-------------------------------------------------------------------
-
-
-
-
-
 
 To run the application over maven from source type
 

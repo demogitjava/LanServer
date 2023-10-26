@@ -9,7 +9,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>DemoLanServer</name>
     <description>DemoLanServer</description>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
      <parent>
         <groupId>org.springframework.boot</groupId>
