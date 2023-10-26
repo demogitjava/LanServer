@@ -1,7 +1,8 @@
 package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
-import de.jgsoftware.lanserver.model.interfaces.mawi.iMSpringSession;
+
+import main.java.de.jgsoftware.lanserver.model.interfaces.mawi.iMSpringSession;
 /**
  *
  * @author hoscho

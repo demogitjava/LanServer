@@ -2,10 +2,11 @@ package de.jgsoftware.lanserver.model.mawi;
 
 
 
-import javax.persistence.*;
-import javax.sql.DataSource;
 import java.util.Date;
-import de.jgsoftware.lanserver.model.interfaces.mawi.iMArtikelstamm;
+
+import javax.persistence.*;
+
+import main.java.de.jgsoftware.lanserver.model.interfaces.mawi.iMArtikelstamm;
 /**
  *
  * @author hoscho

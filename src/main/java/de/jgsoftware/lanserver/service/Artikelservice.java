@@ -5,7 +5,7 @@ package de.jgsoftware.lanserver.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import de.jgsoftware.lanserver.dao.DaoArtikelstamm;
+import main.java.de.jgsoftware.lanserver.dao.DaoArtikelstamm;
 /**
  *
  * @author hoscho

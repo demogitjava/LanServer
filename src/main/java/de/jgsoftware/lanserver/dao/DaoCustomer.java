@@ -5,22 +5,22 @@
  */
 package de.jgsoftware.lanserver.dao;
 
-import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
-import de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
-import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Repository;
-import de.jgsoftware.lanserver.model.MKundenstamm;
-
-import java.text.SimpleDateFormat;
-import java.util.*;
-
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-import de.jgsoftware.lanserver.dao.interfaces.DCustomer;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.DCustomer;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
+import main.java.de.jgsoftware.lanserver.model.MKundenstamm;
+import main.java.de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 
 /**
  *

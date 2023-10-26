@@ -5,17 +5,10 @@
  */
 package de.jgsoftware.lanserver.dao.interfaces;
 
-import de.jgsoftware.lanserver.model.MKundenstamm;
-import java.io.Serializable;
-import java.util.List;
-
-import org.hibernate.Hibernate;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import de.jgsoftware.lanserver.model.MKundenstamm;
 
-import javax.persistence.Id;
+import main.java.de.jgsoftware.lanserver.model.MKundenstamm;
 
 /**
  *

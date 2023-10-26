@@ -3,8 +3,8 @@ package de.jgsoftware.lanserver.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import de.jgsoftware.lanserver.model.interfaces.iMYourcompanydata;
+
+import main.java.de.jgsoftware.lanserver.model.interfaces.iMYourcompanydata;
 /**
  *
  * @author hoscho

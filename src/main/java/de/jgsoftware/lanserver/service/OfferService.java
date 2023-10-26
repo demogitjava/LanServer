@@ -1,18 +1,15 @@
 package de.jgsoftware.lanserver.service;
 
-import de.jgsoftware.lanserver.config.MaWiDBConfig;
-import de.jgsoftware.lanserver.dao.DaoOffer;
-import de.jgsoftware.lanserver.dao.interfaces.iDaoOffer;
-import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.stereotype.Service;
 
-import javax.sql.DataSource;
-import java.util.List;
+import main.java.de.jgsoftware.lanserver.dao.DaoOffer;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoOffer;
 /**
  *
  * @author hoscho

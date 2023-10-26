@@ -1,19 +1,20 @@
 
 package de.jgsoftware.lanserver.dao;
 
-import de.jgsoftware.lanserver.dao.interfaces.iDaoCrudRepositoryYourCompanydata;
-import de.jgsoftware.lanserver.dao.interfaces.iDaoUsers;
-import de.jgsoftware.lanserver.dao.interfaces.iDaoUsersCrud;
-import de.jgsoftware.lanserver.dao.interfaces.iDaoUsersJPA;
-import de.jgsoftware.lanserver.model.Users;
-import de.jgsoftware.lanserver.model.Yourcompanydata;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoCrudRepositoryYourCompanydata;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoUsers;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoUsersCrud;
+import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoUsersJPA;
+import main.java.de.jgsoftware.lanserver.model.Users;
+import main.java.de.jgsoftware.lanserver.model.Yourcompanydata;
 
 /**
  *

@@ -3,7 +3,6 @@ package de.jgsoftware.lanserver.dto;
 
 
 import javax.persistence.*;
-import de.jgsoftware.lanserver.model.interfaces.iMUsers;
 
 /**
  *

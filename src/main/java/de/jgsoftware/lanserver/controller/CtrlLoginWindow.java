@@ -3,7 +3,7 @@ package de.jgsoftware.lanserver.controller;
 
 import org.springframework.stereotype.Controller;
 
-import de.jgsoftware.lanserver.controller.interfaces.i_CtrLoginWindows;
+import main.java.de.jgsoftware.lanserver.controller.interfaces.i_CtrLoginWindows;
 
 /**
  *

@@ -5,10 +5,10 @@
  */
 package de.jgsoftware.lanserver.service;
 
-import de.jgsoftware.lanserver.dao.DaoCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
+
+import main.java.de.jgsoftware.lanserver.dao.DaoCustomer;
 /**
  *
  * @author hoscho

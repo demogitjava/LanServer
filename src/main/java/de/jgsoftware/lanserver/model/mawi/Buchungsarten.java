@@ -1,7 +1,8 @@
 package de.jgsoftware.lanserver.model.mawi;
 
 import javax.persistence.*;
-import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsarten;
+
+import main.java.de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsarten;
 /**
  *
  * @author hoscho

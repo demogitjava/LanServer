@@ -1,9 +1,10 @@
 package de.jgsoftware.lanserver.dao.interfaces;
 
-import de.jgsoftware.lanserver.model.Desktoplayout;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import main.java.de.jgsoftware.lanserver.model.Desktoplayout;
 /**
  *
  * @author hoscho
