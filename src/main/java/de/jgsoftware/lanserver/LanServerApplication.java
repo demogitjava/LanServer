@@ -7,12 +7,14 @@ import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  *
  * @author hoscho
  */
-//@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @SpringBootApplication
+//@EnableJpaRepositories(basePackages = "de.jgsoftware.landingpage.dao.interfaces.*") 
+@EnableTransactionManagement
 public class LanServerApplication implements iLanServerApplication
 {
 
