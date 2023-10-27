@@ -1,19 +1,20 @@
 package de.jgsoftware.lanserver.controller;
 
 
-import java.nio.charset.StandardCharsets;
-import java.security.Principal;
-import java.util.List;
-
+import de.jgsoftware.lanserver.dto.dtoUsers;
+import de.jgsoftware.lanserver.model.Users;
+import de.jgsoftware.lanserver.model.Yourcompanydata;
+import de.jgsoftware.lanserver.service.interfaces.iUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import main.java.de.jgsoftware.lanserver.controller.interfaces.i_CtrUsers;
-import main.java.de.jgsoftware.lanserver.model.Users;
-import main.java.de.jgsoftware.lanserver.model.Yourcompanydata;
-import main.java.de.jgsoftware.lanserver.service.interfaces.iUserService;
+import java.nio.charset.StandardCharsets;
+import java.security.Principal;
+import java.util.List;
+
+import de.jgsoftware.lanserver.controller.interfaces.i_CtrUsers;
 
 /**
  *

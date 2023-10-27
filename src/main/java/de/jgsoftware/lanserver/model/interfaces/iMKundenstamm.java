@@ -1,5 +1,7 @@
 package de.jgsoftware.lanserver.model.interfaces;
 
+import de.jgsoftware.lanserver.model.MKundenstamm;
+
 import java.util.Date;
 /**
  *

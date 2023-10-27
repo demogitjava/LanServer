@@ -1,8 +1,7 @@
 package de.jgsoftware.lanserver.model;
 
 import javax.persistence.*;
-
-import main.java.de.jgsoftware.lanserver.model.interfaces.iMUsers;
+import de.jgsoftware.lanserver.model.interfaces.iMUsers;
 
 /**
  *

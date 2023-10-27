@@ -1,19 +1,19 @@
 package de.jgsoftware.lanserver;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import de.jgsoftware.lanserver.iLanServerApplication;
 import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  *
  * @author hoscho
  */
 //@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 @SpringBootApplication
-public class LanServerApplication
+public class LanServerApplication implements iLanServerApplication
 {
 
     /*
@@ -46,7 +46,6 @@ public class LanServerApplication
     }
 
     */
-
     public static String st_timezones = "Europe/Berlin";
 
     public static void main(String[] args)
@@ -71,6 +70,7 @@ public class LanServerApplication
 
         SpringApplication.run(LanServerApplication.class, args);
     }
+
 
 
 

@@ -1,13 +1,13 @@
 package de.jgsoftware.lanserver.controller.interfaces;
 
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import main.java.de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import java.util.List;
 
 /**
  *

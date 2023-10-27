@@ -1,12 +1,13 @@
 package de.jgsoftware.lanserver.model;
 
 
+import de.jgsoftware.lanserver.model.interfaces.iMReports;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 
-import main.java.de.jgsoftware.lanserver.model.interfaces.iMReports;
+import javax.persistence.Lob;
 /**
  *
  * @author hoscho

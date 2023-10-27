@@ -1,8 +1,7 @@
 package de.jgsoftware.lanserver.service.interfaces;
 
+import de.jgsoftware.lanserver.dao.DaoArtikelstamm;
 import org.springframework.stereotype.Service;
-
-import main.java.de.jgsoftware.lanserver.dao.DaoArtikelstamm;
 
 /**
  *

@@ -1,11 +1,10 @@
 package de.jgsoftware.lanserver.dao.interfaces;
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.stereotype.Repository;
 
-import main.java.de.jgsoftware.lanserver.model.MKundenstamm;
-import main.java.de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import java.util.List;
 
 /**
  *

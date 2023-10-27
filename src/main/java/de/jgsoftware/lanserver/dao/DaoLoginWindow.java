@@ -1,16 +1,15 @@
 package de.jgsoftware.lanserver.dao;
 
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.dao.interfaces.iDaoLoginWindow;
+import de.jgsoftware.lanserver.model.Desktoplayout;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoLoginWindow;
-import main.java.de.jgsoftware.lanserver.model.Desktoplayout;
+import java.util.List;
 
 /**
  *

@@ -1,11 +1,12 @@
 package de.jgsoftware.lanserver.dao.interfaces;
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.model.Users;
+import de.jgsoftware.lanserver.model.Yourcompanydata;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
-import main.java.de.jgsoftware.lanserver.model.Users;
-import main.java.de.jgsoftware.lanserver.model.Yourcompanydata;
+import java.util.List;
 
 
 /**

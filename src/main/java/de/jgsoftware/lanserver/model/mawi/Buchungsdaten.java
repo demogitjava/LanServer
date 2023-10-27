@@ -1,11 +1,11 @@
 package de.jgsoftware.lanserver.model.mawi;
 
 
-import java.util.Date;
-
 import javax.persistence.*;
-
-import main.java.de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsdaten;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import de.jgsoftware.lanserver.model.interfaces.mawi.iMBuchungsdaten;
 /**
  *
  * @author hoscho

@@ -2,8 +2,7 @@ package de.jgsoftware.lanserver.model;
 
 
 import javax.persistence.*;
-
-import main.java.de.jgsoftware.lanserver.model.interfaces.iMDesktoplayout;
+import de.jgsoftware.lanserver.model.interfaces.iMDesktoplayout;
 /**
  *
  * @author hoscho

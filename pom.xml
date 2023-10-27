@@ -3,33 +3,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.1</version>
+    </parent>
 
     <groupId>de.jgsoftware.lanserver</groupId>
     <artifactId>LanServer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>DemoLanServer</name>
     <description>DemoLanServer</description>
-    <packaging>jar</packaging>
 
-     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.15.RELEASE</version>
-    </parent>
-
-
-   
-     <properties>
-        <spring-boot.run.jvmArguments>-Duser.timezone=UTC</spring-boot.run.jvmArguments>
+    <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
-    
-        
-        <maven.compiler.release>11</maven.compiler.release>
-	<jakartaee-api.version>10.0.0</jakartaee-api.version>
-	<compiler-plugin.version>3.11.0</compiler-plugin.version>
+        <start-class>de.jgsoftware.lanserver.LanServerApplication</start-class>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
-
 
     <repositories>
 
@@ -81,8 +73,6 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.199</version>
-            <type>jar</type>
         </dependency>
 
         <dependency>
@@ -194,28 +184,10 @@
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>6.20.6</version>
-            <type>jar</type>
+            <version>6.18.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        
-          <dependency>
-        <groupId>org.teavm</groupId>
-        <artifactId>teavm-classlib</artifactId>
-        <version>0.6.1</version>
-        <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.teavm</groupId>
-      <artifactId>teavm-jso</artifactId>
-      <version>0.6.1</version>
-      <scope>provided</scope>
-    </dependency>
+   
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -228,73 +200,135 @@
         <dependency>
             <groupId>com.dropbox.core</groupId>
             <artifactId>dropbox-core-sdk</artifactId>
-            <version>5.4.6</version>
-            <type>jar</type>
+            <version>2.1.1</version>
         </dependency>
 
-      
-
+    
     </dependencies>
 
- <build>
-        <plugins>
 
-                    <plugin>
-                        <groupId>org.apache.openejb.maven</groupId>
-                        <artifactId>tomee-maven-plugin</artifactId>
-                        <version>1.7.1</version>
-                        <configuration>
-                          <tomeeVersion>1.7.1</tomeeVersion>
-                          <tomeeClassifier>plus</tomeeClassifier>
-                        
-                          <tomeeHttpPort>80</tomeeHttpPort>
-                          <tomeeHost>localhost</tomeeHost>
-                          <user>tomee</user>
-                          <password>tomee</password>
-                          <path>${project.build.directory}/${project.build.finalName}.war</path>
-                        </configuration>
-                    </plugin>
-                    
-                    <plugin>
-                        <groupId>org.graalvm.buildtools</groupId>
-                        <artifactId>native-maven-plugin</artifactId>
-                    </plugin>
-            
+    <build>
+        <finalName>Lanserver</finalName>
+
+        <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                        <configuration>
-
-                            <classifier>spring-boot</classifier>
-                            <mainClass>de.jgsoftware.lanserver.LanServerApplication</mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
-             
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
                 <configuration>
-                    <showDeprecation>false</showDeprecation>
-                    <debug>false</debug>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
                 </configuration>
             </plugin>
-            
-         
-   
 
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <version>2.5.3</version>
+
+                        <configuration>
+                            <mainClass>de.jgsoftware.lanserver.iLanServerApplication</mainClass>
+                        </configuration>
+                    </plugin>
 
         </plugins>
+
+
     </build>
 
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M5</version>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/FunctionalTests.*</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>spring-native</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.experimental</groupId>
+                    <artifactId>spring-native</artifactId>
 
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.experimental</groupId>
+                        <artifactId>spring-aot-maven-plugin</artifactId>
+
+                        <executions>
+                            <execution>
+                                <id>test-generate</id>
+                                <goals>
+                                    <goal>test-generate</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>generate</id>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>build-docker-image</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <image>
+                                <name>hantsy/${project.artifactId}:latest</name>
+                                <builder>paketobuildpacks/builder:tiny</builder>
+                                <env>
+                                    <BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+                                </env>
+                            </image>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>build-native-image</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <configuration>
+                            <classifier>exec</classifier>
+                        </configuration>
+                    </plugin>
+
+
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 </project>

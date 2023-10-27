@@ -1,14 +1,13 @@
 package de.jgsoftware.lanserver.controller.interfaces;
 
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import main.java.de.jgsoftware.lanserver.model.mawi.Artikelstamm;
+import java.util.List;
 /**
  *
  * @author hoscho

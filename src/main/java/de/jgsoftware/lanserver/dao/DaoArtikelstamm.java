@@ -1,16 +1,16 @@
 package de.jgsoftware.lanserver.dao;
 
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.dao.interfaces.iDaoArtikelstamm;
+import de.jgsoftware.lanserver.model.MKundenstamm;
+import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoArtikelstamm;
-import main.java.de.jgsoftware.lanserver.model.mawi.Artikelstamm;
+import java.util.List;
 
 /**
  *

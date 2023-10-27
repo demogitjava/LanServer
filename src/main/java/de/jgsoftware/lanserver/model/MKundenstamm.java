@@ -1,11 +1,10 @@
 package de.jgsoftware.lanserver.model;
 
+import java.io.Serializable;
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import main.java.de.jgsoftware.lanserver.model.interfaces.iMKundenstamm;
+import de.jgsoftware.lanserver.model.interfaces.iMKundenstamm;
 /**
  *
  * @author hoscho

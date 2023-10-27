@@ -1,10 +1,9 @@
 package de.jgsoftware.lanserver.dao.interfaces;
 
-import java.util.List;
-
+import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
 import org.springframework.stereotype.Repository;
 
-import main.java.de.jgsoftware.lanserver.model.mawi.Artikelstamm;
+import java.util.List;
 
 
 /**

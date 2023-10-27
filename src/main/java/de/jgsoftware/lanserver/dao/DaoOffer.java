@@ -1,20 +1,22 @@
 package de.jgsoftware.lanserver.dao;
 
 
-import java.util.Date;
-import java.util.List;
-
+import de.jgsoftware.lanserver.config.MaWiDBConfig;
+import de.jgsoftware.lanserver.dao.interfaces.iDaoOffer;
+import de.jgsoftware.lanserver.dao.interfaces.mawi.CrudBuchungsdaten;
+import de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
+import de.jgsoftware.lanserver.model.mawi.Artikelstamm;
+import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import main.java.de.jgsoftware.lanserver.dao.interfaces.iDaoOffer;
-import main.java.de.jgsoftware.lanserver.dao.interfaces.mawi.CrudBuchungsdaten;
-import main.java.de.jgsoftware.lanserver.dao.interfaces.mawi.JPABuchungsdaten;
-import main.java.de.jgsoftware.lanserver.model.mawi.Artikelstamm;
-import main.java.de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
