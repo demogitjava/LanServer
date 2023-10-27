@@ -63,7 +63,7 @@ Java JDK
 used jdk:
 ** Graal VM **
 GraalVM
-https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0
+http://demogitjava.ddns.net:8000/graalvm-ce-java11-linux-amd64-22.0.0.2.tar.gz
 
 ----------------------------------------------
 
@@ -73,7 +73,11 @@ https://github.com/graalvm/graalvm-ce-builds/releases/tag/vm-21.3.0
 
 To build the image type:
 
-`docker build -f Dockerfile -t demolanserver .`
+LAN
+`docker build -f LanDockerfile -t demolanserverlan .`
+
+WEB
+`docker build -f Dockerfile -t demolanserverweb .`
 
 and you create a docker image with ***CentOS*** 
 runs in a container over port 8443.
