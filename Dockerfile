@@ -20,9 +20,9 @@ EXPOSE 8443
 # h2 console
 EXPOSE 8082
 
-ADD http://demogitjava.ddns.net:8000/h2db/demodb.mv.db /root/demodb.mv.db
-ADD http://demogitjava.ddns.net:8000/h2db/mawi.mv.db /root/mawi.mv.db
-ADD http://demogitjava.ddns.net:8000/h2db/shopdb.mv.db /root/shopdb.mv.db
+ADD h2/demodb.mv.db /root/demodb.mv.db
+ADD h2/mawi.mv.db /root/mawi.mv.db
+ADD h2/shopdb.mv.db /root/shopdb.mv.db
 
 #ADD https://raw.githubusercontent.com/demogitjava/demodatabase/master/ddclient.conf /etc/ddclient.conf
 
@@ -32,7 +32,5 @@ ADD http://demogitjava.ddns.net:8000/h2db/shopdb.mv.db /root/shopdb.mv.db
 
 #ENV JAVA_TOOL_OPTIONS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 #COPY target/Lanserver.jar lanserver.jar
-ADD http://demogitjava.ddns.net:8000/LanServer-0.0.1-SNAPSHOT.war /root/demolanserver.war
-
-
-ENTRYPOINT ["java", "-jar", "/root/demolanserver.war"]
+ADD target/Lanserver.jar /root/demolanserver.jar
+ENTRYPOINT ["java", "-jar", "/root/demolanserver.jar"]
