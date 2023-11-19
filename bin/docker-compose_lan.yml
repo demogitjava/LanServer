@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+
+  #lan config
+  # lan
+  de_lanserver:
+    image: de_lanserver:latest
+    container_name: de_lanserver
+    ports:
+      - "217.160.255.254:8443:8443"
+    networks:
+      172.17.0.0:
+        ipv4_address: 172.17.0.11
+
+    build:
+      context: ./
+      dockerfile: Dockerfile_lan
+
+
+    environment:
+      - TZ=Europe/Berlin
+    dns:
+      - 208.67.222.222
+      - 208.67.220.220
+      - 208.67.220.222
+      - 208.67.222.220
+
+
+
+networks:
+  172.17.0.0:
+    external: true
+
+
+
