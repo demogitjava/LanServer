@@ -2,12 +2,6 @@ Demo Lanserver - Jakarta Persistence
 ============================================================
 
 
-Used IDE is Apache Netbeans
-
-https://netbeans.apache.org/download/nb125/nb125.html
-
-
-
 
 install the h2 database
 
