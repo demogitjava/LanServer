@@ -1,4 +1,4 @@
-Demo Lanserver
+Demo Lanserver - Jakarta Persistence
 ============================================================
 
 
