@@ -2,6 +2,8 @@ Demo Lanserver - Jakarta Persistence
 ============================================================
 
 
+`tls is disabled by default the connection`
+`is over port http 8843`
 
 install the h2 database
 
@@ -11,12 +13,19 @@ an start the server h2.bat under windows.
 
 the console is enabled by default
 
-http://->yourip/8082/
+`http://->yourip/8082/`
 and you get access to the database
 the default password for the h2 database by default ist
 
 admin
 jj78mvpr52k1
+
+
+for more information go to 
+`demogitjava.ddns.net`
+
+
+
 
 
 used databases:
