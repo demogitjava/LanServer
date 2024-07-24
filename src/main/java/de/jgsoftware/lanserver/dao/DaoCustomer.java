@@ -8,7 +8,7 @@ package de.jgsoftware.lanserver.dao;
 import de.jgsoftware.lanserver.dao.interfaces.JPACustomer;
 import de.jgsoftware.lanserver.dao.interfaces.iDaoCustomer;
 import de.jgsoftware.lanserver.model.mawi.Buchungsdaten;
-import org.jetbrains.annotations.NotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
