@@ -1,6 +1,14 @@
 Demo Lanserver - Jakarta Persistence
 ============================================================
 
+used java version
+openjdk version "11.0.2" 2019-01-15
+OpenJDK Runtime Environment 18.9 (build 11.0.2+9)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.2+9, mixed mode)
+
+the java jdk 
+http://demogitjava.ddns.net:8000/Java_JDK/openjdk-11.0.2_linux-x64_bin.tar.gz
+
 
 `tls is disabled by default the connection`
 `is over port http 8843`
