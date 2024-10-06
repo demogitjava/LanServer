@@ -104,6 +104,11 @@ runs in a container over port 8443.
 
 
 
+copy jar to container
+`docker cp /root/git/landingpage/target/LanServer-0.0.1-SNAPSHOT.jar oraclelinuxlanservertcp:/root` 
+
+access to lanserver container 
+`docker exec oraclelinuxlanservertcp /bin/bash`  
 
 
 
