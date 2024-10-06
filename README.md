@@ -81,9 +81,8 @@ Java JDK
 ----------------------------------------------
 
 used jdk:
-** Graal VM **
-GraalVM
-http://demogitjava.ddns.net:8000/graalvm-ce-java11-linux-amd64-22.0.0.2.tar.gz
+** OpenJDK 11 **
+http://demogitjava.ddns.net:8000/Java_JDK/oracleopenjdk-11.0.2_linux-x64_bin.tar.gz
 
 ----------------------------------------------
 
