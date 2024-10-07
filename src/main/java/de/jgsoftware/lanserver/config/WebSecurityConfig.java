@@ -43,6 +43,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
+
+        /*
+            disable h2-console
+                
+        http.authorizerequest()
+            .antMatchers("/h2-console/*").denyAll()
+            .and().headers().frameOptions().disable();
+
+        */
+
         http.csrf().disable();
 
 
