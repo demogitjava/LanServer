@@ -18,6 +18,8 @@
     <properties>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <project.reporting.outputEncoding>ISO-8859-1</project.reporting.outputEncoding>
+         <!-- enable http3 over utp -->
+        <reactor-bom.version>2024.0.0</reactor-bom.version>
         <start-class>de.jgsoftware.lanserver.LanServerApplication</start-class>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -251,6 +253,13 @@
        </dependency>
 
 
+    <!-- http3 -->
+          <dependency>
+        <groupId>io.netty.incubator</groupId>
+        <artifactId>netty-incubator-codec-http3</artifactId>
+        <version>0.0.28.Final</version>
+        
+    </dependency> 
     
     </dependencies>
 
@@ -266,7 +275,7 @@
                           <tomeeVersion>1.7.1</tomeeVersion>
                           <tomeeClassifier>plus</tomeeClassifier>
                         
-                          <tomeeHttpPort>80</tomeeHttpPort>
+                          <tomeeHttpPort>8443</tomeeHttpPort>
                           <tomeeHost>localhost</tomeeHost>
                           <user>tomee</user>
                           <password>tomee</password>
