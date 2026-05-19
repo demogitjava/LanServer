@@ -97,12 +97,31 @@
 		</exclusion>
 	</exclusions>
         </dependency>
+        
+        
+           <!-- jetty http2 -->
+         <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jetty</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-alpn-server</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-alpn-conscrypt-server</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.eclipse.jetty.http2</groupId>
+        <artifactId>http2-server</artifactId>
+    </dependency>
+
        
-       
+         <!-- undertow http2
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
-             
         </dependency>
         
         <dependency>
@@ -110,7 +129,7 @@
             <artifactId>undertow-servlet</artifactId>
             <version>2.0.30.Final</version>
         </dependency>
-        
+         -->
        
         <!-- Source: https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core 
         <dependency>
